@@ -143,61 +143,7 @@ function spawnObstacles(){[[30,70],[55,62],[75,78]].forEach(p=>{let o=document.c
 function move(e){if($("gameScreen").classList.contains("hidden"))return;let k=e.key.toLowerCase();if(!["arrowleft","arrowright","arrowup","arrowdown","a","d","w","s"].includes(k))return;e.preventDefault();if(k==="arrowleft"||k==="a")x-=2;if(k==="arrowright"||k==="d")x+=2;if(k==="arrowup"||k==="w")y-=2;if(k==="arrowdown"||k==="s")y+=2;x=Math.max(1,Math.min(96,x));y=Math.max(8,Math.min(91,y));$("player").style.left=x+"%";$("player").style.top=y+"%";items=items.filter(it=>{if(Math.abs(x-Number(it.dataset.x))<5&&Math.abs(y-Number(it.dataset.y))<7){it.remove();score++;user.coins=(user.coins||100)+5;save();$("gameMessage").textContent="Collected "+score+" item(s)! +5 coins.";return false}return true});if(game==="coin"&&score===6)$("gameMessage").textContent="You won Coin Dash!";if(game!=="town"&&items.length===0)$("gameMessage").textContent="You found everything! Great job!"}
 supabaseClient.auth.getSession().then(({data})=>{if(data.session){let saved=localStorage.getItem("robloxJrUser");user=saved?JSON.parse(saved):{id:data.session.user.id,username:data.session.user.user_metadata?.username||data.session.user.email?.split("@")[0]||"Player",coins:100,friends:[],color:avatarColor};enterHub()}else{show("account")}}).catch(()=>show("account"));
 
-let roomX = 360, roomY = 250;
-let activeRoom = false;
-const roomPlayer = document.getElementById('roomPlayer');
-const roomFurniture = document.getElementById('roomFurniture');
-const roomPlay = document.getElementById('roomPlay');
 
-function drawRoomPlayer(){
-  if(!roomPlayer) return;
-  roomPlayer.style.display = 'block';
-  roomPlayer.style.position = 'absolute';
-  roomPlayer.style.left = roomX + 'px';
-  roomPlayer.style.top = roomY + 'px';
-  roomPlayer.style.zIndex = '100';
-}
-
-function enterRoom(name){
-  activeRoom = true;
-  roomX = 360;
-  roomY = 250;
-  document.getElementById('roomTitle').textContent = name;
-  document.getElementById('roomDescription').textContent =
-    'You are inside the ' + name.toLowerCase() + '.';
-  document.getElementById('roomView').style.display = 'block';
-  roomFurniture.style.left = '270px';
-  roomFurniture.style.top = '125px';
-  roomFurniture.style.width = '180px';
-  roomFurniture.style.height = '85px';
-  drawRoomPlayer();
-}
-
-document.querySelectorAll('.homeObject').forEach(obj => {
-  obj.onclick = function(){
-    enterRoom(this.dataset.room || this.textContent.trim());
-  };
-});
-
-function moveInsideRoom(dx, dy){
-  if(!activeRoom || document.getElementById('roomView').style.display !== 'block') return;
-  const nextX = Math.max(5, Math.min(710, roomX + dx));
-  const nextY = Math.max(5, Math.min(310, roomY + dy));
-  roomX = nextX;
-  roomY = nextY;
-  drawRoomPlayer();
-}
-
-document.addEventListener('keydown', function(e){
-  if(!activeRoom || document.getElementById('roomView').style.display !== 'block') return;
-  const key = e.key.toLowerCase();
-  if(['arrowup','arrowdown','arrowleft','arrowright','w','a','s','d'].includes(key)){
-    e.preventDefault();
-    if(key === 'arrowup' || key === 'w') moveInsideRoom(0,-12);
-    if(key === 'arrowdown' || key === 's') moveInsideRoom(0,12);
-    if(key === 'arrowleft' || key === 'a') moveInsideRoom(-12,0);
-    if(key === 'arrowright' || key === 'd') moveInsideRoom(12,0);
-  }
 });
 
 
