@@ -144,7 +144,7 @@ function move(e){if($("gameScreen").classList.contains("hidden"))return;let k=e.
 supabaseClient.auth.getSession().then(({data})=>{if(data.session){let saved=localStorage.getItem("robloxJrUser");user=saved?JSON.parse(saved):{id:data.session.user.id,username:data.session.user.user_metadata?.username||data.session.user.email?.split("@")[0]||"Player",coins:100,friends:[],color:avatarColor};enterHub()}else{show("account")}}).catch(()=>show("account"));
 
 
-});
+
 
 
 </script>
