@@ -4,199 +4,1844 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Roblox Jr. Game Hub</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#10152b,#294b78);color:#fff;min-height:100vh}button,input{font:inherit}button{border:0;border-radius:10px;padding:10px 14px;font-weight:bold;cursor:pointer}button:hover{filter:brightness(1.12)}.hidden{display:none!important}.screen{min-height:100vh;padding:22px}.panel{max-width:1100px;margin:auto;background:#101a31ee;border:1px solid #ffffff22;border-radius:20px;padding:22px;box-shadow:0 15px 45px #0005}.brand{color:#72d6ff}.muted{color:#b9c5e4}.form{max-width:430px;margin:8vh auto}label{display:block;margin:12px 0 6px}input{width:100%;padding:12px;border:1px solid #5d719e;border-radius:9px;background:#17213d;color:#fff}.primary{background:#4f9cff;color:#fff}.secondary{background:#344463;color:#fff}.danger{background:#e05261;color:#fff}.success{background:#32b982;color:#fff}.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #ffffff22;padding-bottom:16px;margin-bottom:18px}.stats,.tabs,.choices{display:flex;gap:8px;flex-wrap:wrap}.pill{background:#202f51;padding:9px 12px;border-radius:999px}.tab.active{background:#72d6ff;color:#0b1630}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{background:#182541;border:1px solid #33496e;border-radius:15px;padding:16px}.art{height:110px;border-radius:12px;display:grid;place-items:center;font-size:42px;background:linear-gradient(135deg,#4f9cff,#755cff);margin-bottom:12px}.green{background:linear-gradient(135deg,#65c8a4,#4a8bdc)}.orange{background:linear-gradient(135deg,#f0ad3d,#e05261)}.purple{background:linear-gradient(135deg,#a76cf0,#4f70e8)}.pink{background:linear-gradient(135deg,#f28ab2,#755cff)}.friend-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #ffffff18}.game-shell{max-width:1100px;margin:auto}.game-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}#world{position:relative;height:560px;overflow:hidden;border:4px solid #263c58;border-radius:18px;background:#91cfee}.sky{position:absolute;inset:0 0 45%;background:#91d3f2}.ground{position:absolute;inset:55% 0 0;background:#77b96c}.road{position:absolute;left:0;right:0;top:64%;height:85px;background:#4c5967;border-top:5px solid #d6dce1;border-bottom:5px solid #d6dce1}.road:after{content:"";position:absolute;left:0;right:0;top:35px;border-top:5px dashed #f5d66a}.building{position:absolute;width:145px;height:115px;background:#f1c27d;border:5px solid #8c5c42;border-radius:8px;bottom:39%;padding-top:45px;text-align:center;color:#543b30;font-weight:bold}.building:before{content:"";position:absolute;left:-13px;top:-40px;width:160px;height:55px;background:#c96b62;border:5px solid #8c5c42;transform:skewX(-25deg);border-radius:5px}.house1{left:7%}.house2{right:8%;background:#b5d9f4}.house2:before{background:#6b8fd1}.tree{position:absolute;width:35px;height:80px;background:#79513a;bottom:35%}.tree:before{content:"";position:absolute;width:95px;height:95px;background:#328b58;border-radius:50%;left:-30px;top:-70px;border:5px solid #256b46}.tree1{left:32%}.tree2{right:31%}#player{position:absolute;width:34px;height:48px;background:#4f70e8;border:3px solid #172c72;border-radius:7px;left:48%;top:76%;z-index:5;transition:left .08s,top .08s}#player:before{content:"";position:absolute;width:28px;height:28px;border-radius:50%;background:#ffd3a1;border:3px solid #9d704f;left:0;top:-31px}#playerName{position:absolute;top:-61px;left:50%;transform:translateX(-50%);color:#15233c;background:#fff;padding:3px 7px;border-radius:6px;white-space:nowrap;font-size:12px;font-weight:bold}.controls{margin-top:12px;background:#0f182fdd;border-radius:12px;padding:12px}.notice{min-height:22px;color:#a9e9c8;margin-top:10px}.coin{position:absolute;font-size:30px;z-index:4}.obstacle{position:absolute;width:40px;height:40px;background:#9b5947;border:3px solid #63392e;border-radius:8px;z-index:3}.mini-stat{display:inline-block;background:#263858;padding:7px 10px;border-radius:8px;margin:3px}@media(max-width:600px){.screen{padding:12px}.panel{padding:16px}#world{height:460px}}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#10152b,#294b78);
+  color:#fff;
+  min-height:100vh
+}
+button,input{font:inherit}
+button{
+  border:0;
+  border-radius:10px;
+  padding:10px 14px;
+  font-weight:bold;
+  cursor:pointer
+}
+button:hover{filter:brightness(1.12)}
+.hidden{display:none!important}
+.screen{min-height:100vh;padding:22px}
+.panel{
+  max-width:1100px;
+  margin:auto;
+  background:#101a31ee;
+  border:1px solid #ffffff22;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 15px 45px #0005
+}
+.brand{color:#72d6ff}
+.muted{color:#b9c5e4}
+.form{max-width:430px;margin:8vh auto}
+label{display:block;margin:12px 0 6px}
+input{
+  width:100%;
+  padding:12px;
+  border:1px solid #5d719e;
+  border-radius:9px;
+  background:#17213d;
+  color:#fff
+}
+.primary{background:#4f9cff;color:#fff}
+.secondary{background:#344463;color:#fff}
+.danger{background:#e05261;color:#fff}
+.success{background:#32b982;color:#fff}
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  border-bottom:1px solid #ffffff22;
+  padding-bottom:16px;
+  margin-bottom:18px
+}
+.stats,.tabs,.choices{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap
+}
+.pill{
+  background:#202f51;
+  padding:9px 12px;
+  border-radius:999px
+}
+.tab.active{background:#72d6ff;color:#0b1630}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px
+}
+.card{
+  background:#182541;
+  border:1px solid #33496e;
+  border-radius:15px;
+  padding:16px
+}
+.art{
+  height:110px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  font-size:42px;
+  background:linear-gradient(135deg,#4f9cff,#755cff);
+  margin-bottom:12px
+}
+.green{background:linear-gradient(135deg,#65c8a4,#4a8bdc)}
+.orange{background:linear-gradient(135deg,#f0ad3d,#e05261)}
+.purple{background:linear-gradient(135deg,#a76cf0,#4f70e8)}
+.pink{background:linear-gradient(135deg,#f28ab2,#755cff)}
+.friend-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:11px 0;
+  border-bottom:1px solid #ffffff18
+}
+
+/* GAME */
+.game-shell{max-width:1100px;margin:auto}
+.game-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:12px
+}
+
+#world{
+  position:relative;
+  height:560px;
+  overflow:hidden;
+  border:4px solid #263c58;
+  border-radius:18px;
+  background:#91cfee
+}
+
+.sky{
+  position:absolute;
+  inset:0 0 45%;
+  background:#91d3f2
+}
+
+.ground{
+  position:absolute;
+  inset:55% 0 0;
+  background:#77b96c
+}
+
+.road{
+  position:absolute;
+  left:0;
+  right:0;
+  top:64%;
+  height:85px;
+  background:#4c5967;
+  border-top:5px solid #d6dce1;
+  border-bottom:5px solid #d6dce1
+}
+
+.road:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:35px;
+  border-top:5px dashed #f5d66a
+}
+
+.building{
+  position:absolute;
+  width:145px;
+  height:115px;
+  background:#f1c27d;
+  border:5px solid #8c5c42;
+  border-radius:8px;
+  bottom:39%;
+  padding-top:45px;
+  text-align:center;
+  color:#543b30;
+  font-weight:bold
+}
+
+.building:before{
+  content:"";
+  position:absolute;
+  left:-13px;
+  top:-40px;
+  width:160px;
+  height:55px;
+  background:#c96b62;
+  border:5px solid #8c5c42;
+  transform:skewX(-25deg);
+  border-radius:5px
+}
+
+.house1{left:7%}
+.house2{
+  right:8%;
+  background:#b5d9f4
+}
+.house2:before{background:#6b8fd1}
+
+.tree{
+  position:absolute;
+  width:35px;
+  height:80px;
+  background:#79513a;
+  bottom:35%
+}
+.tree:before{
+  content:"";
+  position:absolute;
+  width:95px;
+  height:95px;
+  background:#328b58;
+  border-radius:50%;
+  left:-30px;
+  top:-70px;
+  border:5px solid #256b46
+}
+.tree1{left:32%}
+.tree2{right:31%}
+
+/* =========================
+   FULL BODY CHARACTER
+   ========================= */
+
+#player{
+  position:absolute;
+  width:46px;
+  height:100px;
+  left:48%;
+  top:70%;
+  z-index:10;
+  transition:left .08s,top .08s;
+  pointer-events:none;
+}
+
+/* head */
+.player-head{
+  position:absolute;
+  width:38px;
+  height:38px;
+  left:4px;
+  top:0;
+  background:#ffd3a1;
+  border:3px solid #9d704f;
+  border-radius:50%;
+  z-index:4
+}
+
+/* eyes */
+.player-head:before,
+.player-head:after{
+  content:"";
+  position:absolute;
+  width:5px;
+  height:7px;
+  background:#222;
+  border-radius:50%;
+  top:11px
+}
+.player-head:before{left:9px}
+.player-head:after{right:9px}
+
+/* body */
+.player-body{
+  position:absolute;
+  width:34px;
+  height:38px;
+  left:6px;
+  top:35px;
+  background:#4f70e8;
+  border:3px solid #172c72;
+  border-radius:6px;
+  z-index:3
+}
+
+/* arms */
+.player-arm{
+  position:absolute;
+  width:11px;
+  height:35px;
+  top:38px;
+  background:#ffd3a1;
+  border:3px solid #9d704f;
+  border-radius:7px;
+  z-index:2;
+  transform-origin:top center
+}
+
+.left-arm{left:-5px}
+.right-arm{right:-5px}
+
+/* legs */
+.player-leg{
+  position:absolute;
+  width:13px;
+  height:31px;
+  top:70px;
+  background:#263b9b;
+  border:3px solid #172c72;
+  border-radius:6px;
+  z-index:1;
+  transform-origin:top center
+}
+
+.left-leg{left:7px}
+.right-leg{right:7px}
+
+/* walking animation */
+#player.walking .left-leg{
+  animation:walkLeft .22s infinite alternate ease-in-out
+}
+
+#player.walking .right-leg{
+  animation:walkRight .22s infinite alternate ease-in-out
+}
+
+#player.walking .left-arm{
+  animation:armLeft .22s infinite alternate ease-in-out
+}
+
+#player.walking .right-arm{
+  animation:armRight .22s infinite alternate ease-in-out
+}
+
+@keyframes walkLeft{
+  from{transform:rotate(22deg)}
+  to{transform:rotate(-22deg)}
+}
+
+@keyframes walkRight{
+  from{transform:rotate(-22deg)}
+  to{transform:rotate(22deg)}
+}
+
+@keyframes armLeft{
+  from{transform:rotate(-18deg)}
+  to{transform:rotate(18deg)}
+}
+
+@keyframes armRight{
+  from{transform:rotate(18deg)}
+  to{transform:rotate(-18deg)}
+}
+
+#playerName{
+  position:absolute;
+  top:-28px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#15233c;
+  background:#fff;
+  padding:3px 7px;
+  border-radius:6px;
+  white-space:nowrap;
+  font-size:12px;
+  font-weight:bold;
+  z-index:20
+}
+
+/* SPACE WORLD */
+.space-world{
+  background:#02030d!important
+}
+
+.space-world .sky{
+  background:
+    radial-gradient(circle at 15% 20%,#fff 0 2px,transparent 3px),
+    radial-gradient(circle at 35% 70%,#fff 0 2px,transparent 3px),
+    radial-gradient(circle at 55% 30%,#fff 0 2px,transparent 3px),
+    radial-gradient(circle at 75% 15%,#fff 0 2px,transparent 3px),
+    radial-gradient(circle at 90% 60%,#fff 0 2px,transparent 3px),
+    #02030d;
+  inset:0
+}
+
+.space-world .ground{
+  background:transparent
+}
+
+.space-world .road,
+.space-world .building,
+.space-world .tree{
+  display:none
+}
+
+.space-world:before{
+  content:"🌍";
+  position:absolute;
+  font-size:110px;
+  right:10%;
+  top:12%;
+  z-index:1
+}
+
+/* CASTLE WORLD */
+.castle-world{
+  background:#21162f!important
+}
+
+.castle-world .sky{
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      #3b2850 0 12%,
+      #6d496f 12% 16%,
+      #24182f 16% 84%,
+      #6d496f 84% 88%,
+      #3b2850 88%
+    )
+}
+
+.castle-world .ground{
+  inset:70% 0 0;
+  background:#6b513f;
+  border-top:8px solid #4c382d
+}
+
+.castle-world .road{
+  top:72%;
+  height:8px;
+  background:#8b6b4f;
+  border:0
+}
+
+.castle-world .building,
+.castle-world .tree{
+  display:none
+}
+
+.castle-world:before{
+  content:"🏰";
+  position:absolute;
+  font-size:180px;
+  left:50%;
+  top:20%;
+  transform:translateX(-50%);
+  opacity:.45;
+  z-index:1
+}
+
+.coin{
+  position:absolute;
+  font-size:30px;
+  z-index:6
+}
+
+.obstacle{
+  position:absolute;
+  width:40px;
+  height:40px;
+  background:#9b5947;
+  border:3px solid #63392e;
+  border-radius:8px;
+  z-index:3
+}
+
+.controls{
+  margin-top:12px;
+  background:#0f182fdd;
+  border-radius:12px;
+  padding:12px
+}
+
+.notice{
+  min-height:22px;
+  color:#a9e9c8;
+  margin-top:10px
+}
+
+@media(max-width:600px){
+  .screen{padding:12px}
+  .panel{padding:16px}
+  #world{height:460px}
+}
 </style>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
+
 <body>
-<section id="accountScreen" class="screen"><div class="panel form">
-<h1><span class="brand">Roblox Jr.</span></h1><h2>Create your account</h2>
-  <button type="button" id="showLogin" class="secondary">
-  Log In Instead
+
+<section id="accountScreen" class="screen">
+<div class="panel form">
+
+<h1><span class="brand">Roblox Jr.</span></h1>
+<h2>Create your account</h2>
+
+<button type="button" id="showLogin" class="secondary">
+Log In Instead
 </button>
 
 <div id="loginBox" class="hidden">
-  <h2>Log In</h2>
-  <input id="loginEmail" type="email" placeholder="Email">
-  <input id="loginPassword" type="password" placeholder="Password">
-  <button type="button" id="loginButton" class="primary">Log In</button>
-  <button type="button" id="showSignup" class="secondary">
-    Create Account Instead
-  </button>
-  <p id="loginMessage" class="notice"></p>
-</div>
-<p class="muted">Create a real Roblox Jr. account powered by Supabase.</p>
-<form id="accountForm"><label>Username</label><input id="username" required minlength="3" maxlength="20" autocomplete="off"><label>Email</label><input id="email" type="email" required autocomplete="email" placeholder="you@example.com"><label>Password</label><input id="password" type="password" required minlength="4"><label>Confirm password</label><input id="confirmPassword" type="password" required minlength="4"><button class="primary" type="submit" style="width:100%;margin-top:15px">Create Account</button></form><p id="accountMessage" class="notice"></p>
-</div></section>
+<h2>Log In</h2>
+<input id="loginEmail" type="email" placeholder="Email">
+<input id="loginPassword" type="password" placeholder="Password">
 
-<section id="hubScreen" class="screen hidden"><div class="panel">
-<div class="topbar"><div><h1><span class="brand">Roblox Jr.</span> Game Hub</h1><p class="muted">Welcome, <strong id="welcomeName"></strong>!</p></div><div class="stats"><span class="pill">🪙 <span id="coins">100</span></span><button id="logout" class="danger">Log Out</button></div></div>
-<div class="tabs"><button class="tab active" data-tab="games">Games</button><button class="tab" data-tab="friends">Friends</button><button class="tab" data-tab="customize">Customize</button></div>
+<button type="button" id="loginButton" class="primary">
+Log In
+</button>
+
+<button type="button" id="showSignup" class="secondary">
+Create Account Instead
+</button>
+
+<p id="loginMessage" class="notice"></p>
+</div>
+
+<p class="muted">
+Create a real Roblox Jr. account powered by Supabase.
+</p>
+
+<form id="accountForm">
+
+<label>Username</label>
+<input id="username" required minlength="3" maxlength="20" autocomplete="off">
+
+<label>Email</label>
+<input id="email" type="email" required autocomplete="email" placeholder="you@example.com">
+
+<label>Password</label>
+<input id="password" type="password" required minlength="6">
+
+<label>Confirm password</label>
+<input id="confirmPassword" type="password" required minlength="6">
+
+<button class="primary" type="submit" style="width:100%;margin-top:15px">
+Create Account
+</button>
+
+</form>
+
+<p id="accountMessage" class="notice"></p>
+
+</div>
+</section>
+
+
+<section id="hubScreen" class="screen hidden">
+<div class="panel">
+
+<div class="topbar">
+<div>
+<h1><span class="brand">Roblox Jr.</span> Game Hub</h1>
+<p class="muted">
+Welcome, <strong id="welcomeName"></strong>!
+</p>
+</div>
+
+<div class="stats">
+<span class="pill">🪙 <span id="coins">100</span></span>
+<button id="logout" class="danger">Log Out</button>
+</div>
+</div>
+
+<div class="tabs">
+<button class="tab active" data-tab="games">Games</button>
+<button class="tab" data-tab="friends">Friends</button>
+<button class="tab" data-tab="customize">Customize</button>
+</div>
+
+
 <div id="gamesTab">
-<h2>Recently Played</h2>
-<div id="recentGames" class="grid"><p class="muted">You have not played any games yet.</p></div>
-<h2 style="margin-top:24px;">All Games</h2>
-<div class="grid" id="gameCards">
-<div class="card"><div class="art">🪙🏃</div><h3>Coin Dash</h3><p class="muted">Collect coins and avoid obstacles.</p><button class="primary play" data-game="coin">Play</button></div>
-<div class="card"><div class="art">🧠💰</div><h3>Brainrot Heist</h3><p class="muted">Collect silly brainrots for rewards.</p><button class="primary play" data-game="brainrot">Play</button></div>
-<div class="card"><div class="art green">🏡🚗🌳</div><h3>Town Life</h3><p class="muted">Explore a small roleplay town.</p><button class="success play" data-game="town">Play</button></div>
-<div class="card"><div class="art orange">🚀🌌</div><h3>Space Escape</h3><p class="muted">Move around a space station and gather stars.</p><button class="primary play" data-game="space">Play</button></div>
-<div class="card"><div class="art purple">💎🧩</div><h3>Gem Hunt</h3><p class="muted">Find hidden gems around the map.</p><button class="primary play" data-game="gem">Play</button></div>
-<div class="card"><div class="art pink">🐾🏁</div><h3>Pet Race</h3><p class="muted">Run around the course and collect treats.</p><button class="primary play" data-game="pet">Play</button></div>
-<div class="card"><div class="art green">🌲🏕️</div><h3>Forest Adventure</h3><p class="muted">Explore the forest and find treasures.</p><button class="success play" data-game="forest">Play</button></div>
-<div class="card"><div class="art orange">🏰🗝️</div><h3>Castle Quest</h3><p class="muted">Search the castle for magical keys.</p><button class="primary play" data-game="castle">Play</button></div>
-</div></div>
-<div id="friendsTab" class="hidden"><h2>Friends</h2><form id="friendForm" style="display:flex;gap:8px;flex-wrap:wrap"><input id="friendName" required placeholder="Roblox Jr. username" style="flex:1;min-width:220px"><button class="primary" type="submit">Add Friend</button></form><p class="muted">These are local Roblox Jr. friends, not real Roblox requests.</p><div id="friendsList"></div></div>
-<div id="customizeTab" class="hidden"><h2>Customize</h2><p class="muted">Choose your avatar color.</p><div class="choices" id="colors"><button class="secondary" data-color="#4f70e8">Blue</button><button class="secondary" data-color="#e05261">Red</button><button class="secondary" data-color="#32b982">Green</button><button class="secondary" data-color="#a76cf0">Purple</button><button class="secondary" data-color="#f0ad3d">Orange</button></div><p id="customMessage" class="notice"></p></div>
-</div></section>
 
-<section id="gameScreen" class="screen hidden"><div class="game-shell"><div class="game-head"><div><h1 id="gameTitle">Game</h1><p id="gameSubtitle" class="muted">Use WASD or arrow keys.</p></div><button id="back" class="secondary">← Back to Hub</button></div><div id="world"><div class="sky"></div><div class="ground"></div><div class="road"></div><div class="building house1">Sunny House</div><div class="building house2">Blue House</div><div class="tree tree1"></div><div class="tree tree2"></div><div id="player"><span id="playerName"></span></div>
-<div id="homeInterior" class="hidden" style="position:absolute;inset:0;background:linear-gradient(#f4dfbd,#d2a777);z-index:20;color:#4b3325;padding:28px;text-align:center;">
+<h2>Recently Played</h2>
+
+<div id="recentGames" class="grid">
+<p class="muted">You have not played any games yet.</p>
+</div>
+
+<h2 style="margin-top:24px;">All Games</h2>
+
+<div class="grid" id="gameCards">
+
+<div class="card">
+<div class="art">🪙🏃</div>
+<h3>Coin Dash</h3>
+<p class="muted">Collect coins and avoid obstacles.</p>
+<button class="primary play" data-game="coin">Play</button>
+</div>
+
+<div class="card">
+<div class="art">🧠💰</div>
+<h3>Brainrot Heist</h3>
+<p class="muted">Collect silly brainrots for rewards.</p>
+<button class="primary play" data-game="brainrot">Play</button>
+</div>
+
+<div class="card">
+<div class="art green">🏡🚗🌳</div>
+<h3>Town Life</h3>
+<p class="muted">Explore a small roleplay town.</p>
+<button class="success play" data-game="town">Play</button>
+</div>
+
+<div class="card">
+<div class="art orange">🚀🌌</div>
+<h3>Space Escape</h3>
+<p class="muted">Move around a space station and gather stars.</p>
+<button class="primary play" data-game="space">Play</button>
+</div>
+
+<div class="card">
+<div class="art purple">💎🧩</div>
+<h3>Gem Hunt</h3>
+<p class="muted">Find hidden gems around the map.</p>
+<button class="primary play" data-game="gem">Play</button>
+</div>
+
+<div class="card">
+<div class="art pink">🐾🏁</div>
+<h3>Pet Race</h3>
+<p class="muted">Run around the course and collect treats.</p>
+<button class="primary play" data-game="pet">Play</button>
+</div>
+
+<div class="card">
+<div class="art green">🌲🏕️</div>
+<h3>Forest Adventure</h3>
+<p class="muted">Explore the forest and find treasures.</p>
+<button class="success play" data-game="forest">Play</button>
+</div>
+
+<div class="card">
+<div class="art orange">🏰🗝️</div>
+<h3>Castle Quest</h3>
+<p class="muted">Search the castle for magical keys.</p>
+<button class="primary play" data-game="castle">Play</button>
+</div>
+
+</div>
+</div>
+
+
+<div id="friendsTab" class="hidden">
+
+<h2>Friends</h2>
+
+<form id="friendForm" style="display:flex;gap:8px;flex-wrap:wrap">
+
+<input id="friendName"
+required
+placeholder="Roblox Jr. username"
+style="flex:1;min-width:220px">
+
+<button class="primary" type="submit">
+Add Friend
+</button>
+
+</form>
+
+<p class="muted">
+These are local Roblox Jr. friends, not real Roblox requests.
+</p>
+
+<div id="friendsList"></div>
+
+</div>
+
+
+<div id="customizeTab" class="hidden">
+
+<h2>Customize</h2>
+<p class="muted">Choose your avatar color.</p>
+
+<div class="choices" id="colors">
+
+<button class="secondary" data-color="#4f70e8">Blue</button>
+<button class="secondary" data-color="#e05261">Red</button>
+<button class="secondary" data-color="#32b982">Green</button>
+<button class="secondary" data-color="#a76cf0">Purple</button>
+<button class="secondary" data-color="#f0ad3d">Orange</button>
+
+</div>
+
+<p id="customMessage" class="notice"></p>
+
+</div>
+
+</div>
+</section>
+
+
+<section id="gameScreen" class="screen hidden">
+
+<div class="game-shell">
+
+<div class="game-head">
+
+<div>
+<h1 id="gameTitle">Game</h1>
+<p id="gameSubtitle" class="muted">
+Use WASD or arrow keys.
+</p>
+</div>
+
+<button id="back" class="secondary">
+← Back to Hub
+</button>
+
+</div>
+
+
+<div id="world">
+
+<div class="sky"></div>
+<div class="ground"></div>
+<div class="road"></div>
+
+<div class="building house1">Sunny House</div>
+<div class="building house2">Blue House</div>
+
+<div class="tree tree1"></div>
+<div class="tree tree2"></div>
+
+
+<!-- FULL BODY CHARACTER -->
+
+<div id="player">
+
+<span id="playerName"></span>
+
+<div class="player-head"></div>
+
+<div class="player-body"></div>
+
+<div class="player-arm left-arm"></div>
+<div class="player-arm right-arm"></div>
+
+<div class="player-leg left-leg"></div>
+<div class="player-leg right-leg"></div>
+
+</div>
+
+
+<div id="homeInterior"
+class="hidden"
+style="
+position:absolute;
+inset:0;
+background:linear-gradient(#f4dfbd,#d2a777);
+z-index:20;
+color:#4b3325;
+padding:28px;
+text-align:center;
+">
+
 <h2 id="interiorTitle">House Interior</h2>
+
 <p>You are inside the home!</p>
-<div style="display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:35px;">
-<button class="homeObject" data-object="sofa" style="background:#b97855;padding:24px;border-radius:12px;color:white;">🛋️ Sofa</button>
-<button class="homeObject" data-object="table" style="background:#d9b36c;padding:24px;border-radius:12px;color:#4b3325;">🍽️ Table</button>
-<button class="homeObject" data-object="bed" style="background:#9e7bc4;padding:24px;border-radius:12px;color:white;">🛏️ Bed</button>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+margin-top:35px;
+">
+
+<button class="homeObject"
+data-object="sofa"
+style="background:#b97855;padding:24px;border-radius:12px;color:white;">
+🛋️ Sofa
+</button>
+
+<button class="homeObject"
+data-object="table"
+style="background:#d9b36c;padding:24px;border-radius:12px;color:#4b3325;">
+🍽️ Table
+</button>
+
+<button class="homeObject"
+data-object="bed"
+style="background:#9e7bc4;padding:24px;border-radius:12px;color:white;">
+🛏️ Bed
+</button>
+
 </div>
-<div id="roomView" class="hidden" style="margin:25px auto 0;max-width:600px;background:#ead6b7;border:4px solid #8c5c42;border-radius:14px;padding:30px;color:#4b3325;">
+
+
+<div id="roomView"
+class="hidden"
+style="
+margin:25px auto 0;
+max-width:600px;
+background:#ead6b7;
+border:4px solid #8c5c42;
+border-radius:14px;
+padding:30px;
+color:#4b3325;
+">
+
 <h2 id="roomTitle">Room</h2>
-<div id="roomDecor" style="font-size:70px;margin:25px 0;">🛋️</div>
-<p id="roomDescription">You entered a room.</p>
-<button id="backToInterior" class="secondary">← Back to Home Interior</button>
+
+<div id="roomDecor"
+style="font-size:70px;margin:25px 0;">
+🛋️
 </div>
-<p id="objectMessage" style="font-weight:bold;margin-top:25px;">Choose an object to enter its room.</p>
-<button id="leaveHome" class="secondary" style="margin-top:25px;">← Leave Home</button>
-</div></div><div class="controls"><strong>Controls:</strong> Arrow keys / WASD to move. <span id="gameMessage" class="notice"></span></div></div></section>
+
+<p id="roomDescription">
+You entered a room.
+</p>
+
+<button id="backToInterior" class="secondary">
+← Back to Home Interior
+</button>
+
+</div>
+
+<p id="objectMessage" style="font-weight:bold;margin-top:25px;">
+Choose an object to enter its room.
+</p>
+
+<button id="leaveHome" class="secondary" style="margin-top:25px;">
+← Leave Home
+</button>
+
+</div>
+
+</div>
+
+
+<div class="controls">
+
+<strong>Controls:</strong>
+
+Arrow keys / WASD to move.
+
+<span id="gameMessage" class="notice"></span>
+
+</div>
+
+</div>
+
+</section>
+
 
 <script>
 "use strict";
+
 const SUPABASE_URL="https://rewbdyajylagepnrbixu.supabase.co";
+
 const SUPABASE_KEY="sb_publishable_77k0d-o6J210zPyWGtsqEA_yB71FFi6";
-const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+
+const supabaseClient=
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
 const $=id=>document.getElementById(id);
-let user=null,game="",x=48,y=76,items=[],score=0,avatarColor="#4f70e8",recentGames=[];
-const names={coin:"Coin Dash",brainrot:"Brainrot Heist",town:"Town Life",space:"Space Escape",gem:"Gem Hunt",pet:"Pet Race",forest:"Forest Adventure",castle:"Castle Quest"};
-const emojis={coin:["🪙","🪙","🪙","🪙","🪙","🪙"],brainrot:["🧠","🍌","🐸","🦆","🥔"],space:["⭐","🌟","✨","💫","🌠"],gem:["💎","💠","🔷","🔹","💎"],pet:["🦴","🍖","🥕","🧸","🦴"],forest:["🍄","🌰","🌿","🍓","🪵"],castle:["🗝️","🔑","🗝️","🔐","🔑"]};
-function show(s){$("accountScreen").classList.toggle("hidden",s!=="account");$("hubScreen").classList.toggle("hidden",s!=="hub");$("gameScreen").classList.toggle("hidden",s!=="game")}
-function save(){localStorage.setItem("robloxJrUser",JSON.stringify(user));$("coins").textContent=user.coins||100}
-function renderFriends(){let box=$("friendsList");box.innerHTML="";if(!user.friends.length){box.innerHTML='<p class="muted">No friends yet.</p>';return}user.friends.forEach((f,i)=>{let row=document.createElement("div");row.className="friend-row";let n=document.createElement("strong");n.textContent="👤 "+f;let b=document.createElement("button");b.className="danger";b.textContent="Remove";b.onclick=()=>{user.friends.splice(i,1);save();renderFriends()};row.append(n,b);box.append(row)})}
-function renderRecentGames(){
-  const box=$("recentGames");
-  box.innerHTML="";
-  if(!recentGames.length){
-    box.innerHTML='<p class="muted">You have not played any games yet.</p>';
-    return;
-  }
-  recentGames.forEach(type=>{
-    const card=document.createElement("div");
-    card.className="card";
-    const title=document.createElement("h3");
-    title.textContent=names[type]||type;
-    const description=document.createElement("p");
-    description.className="muted";
-    description.textContent="Played recently";
-    const play=document.createElement("button");
-    play.className="primary";
-    play.textContent="Play Again";
-    play.onclick=()=>start(type);
-    card.append(title,description,play);
-    box.appendChild(card);
-  });
-}
-function rememberGame(type){
-  recentGames=[type,...recentGames.filter(g=>g!==type)].slice(0,5);
-  user.recentGames=recentGames;
-  save();
-  renderRecentGames();
-}
-function enterHub(){$("welcomeName").textContent=user.username;recentGames=Array.isArray(user.recentGames)?user.recentGames:[];$("coins").textContent=user.coins||100;renderFriends();renderRecentGames();show("hub")}
-$("accountForm").addEventListener("submit",async e=>{e.preventDefault();let n=$("username").value.trim(),email=$("email").value.trim(),p=$("password").value,c=$("confirmPassword").value;$("accountMessage").textContent="";if(n.length<3){$("accountMessage").textContent="Username must have 3 characters.";return}if(p.length<6){$("accountMessage").textContent="Password must have at least 6 characters.";return}if(p!==c){$("accountMessage").textContent="Passwords do not match.";return}$("accountMessage").textContent="Creating your account...";const {data,error}=await supabaseClient.auth.signUp({email,password:p,options:{data:{username:n},emailRedirectTo:"https://paxisinsane.github.io/roblox-jr/"}});if(error){$("accountMessage").textContent=error.message;return}user={id:data.user?.id,username:n,coins:100,friends:[],color:avatarColor};localStorage.setItem("robloxJrUser",JSON.stringify(user));if(data.session){enterHub()}else{$("accountMessage").textContent="Account created! Check your email to confirm, then sign in through the game again."}});
-$("logout").onclick=async()=>{await supabaseClient.auth.signOut();localStorage.removeItem("robloxJrUser");user=null;$("accountForm").reset();show("account")};
-document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));b.classList.add("active");["games","friends","customize"].forEach(t=>$ (t+"Tab").classList.toggle("hidden",b.dataset.tab!==t))});
-$("friendForm").addEventListener("submit",e=>{e.preventDefault();let n=$("friendName").value.trim();if(!n)return;if(n.toLowerCase()===user.username.toLowerCase()){alert("You cannot add yourself.");return}if(user.friends.some(f=>f.toLowerCase()===n.toLowerCase())){alert("Already added.");return}user.friends.push(n);$("friendName").value="";save();renderFriends()});
-$("colors").onclick=e=>{let b=e.target.closest("[data-color]");if(!b)return;avatarColor=b.dataset.color;user.color=avatarColor;save();$("customMessage").textContent="Avatar color saved!"};
-document.querySelectorAll(".play").forEach(b=>b.onclick=()=>start(b.dataset.game));
-$("back").onclick=()=>{closeHome();document.removeEventListener("keydown",move);clearItems();show("hub")};
-function openHome(title){
-  if(game!=="town")return;
-  $("roomView").classList.add("hidden");
-  $("interiorTitle").textContent=title+" Interior";
-  $("homeInterior").classList.remove("hidden");
-}
-function closeHome(){$("homeInterior").classList.add("hidden");$("roomView").classList.add("hidden")}
-$("leaveHome").onclick=closeHome;
-document.querySelectorAll(".homeObject").forEach(button=>{
-  button.addEventListener("click",()=>{
-    const rooms={
-      sofa:{title:"Living Room",emoji:"🛋️",description:"You entered the living room. There is a comfy sofa and a television here."},
-      table:{title:"Dining Room",emoji:"🍽️",description:"You entered the dining room. The table is ready for a family meal."},
-      bed:{title:"Bedroom",emoji:"🛏️",description:"You entered the bedroom. There is a bed, a lamp, and a wardrobe."}
-    };
-    const room=rooms[button.dataset.object];
-    $("roomTitle").textContent=room.title;
-    $("roomDecor").textContent=room.emoji;
-    $("roomDescription").textContent=room.description;
-    $("roomView").classList.remove("hidden");
-    $("objectMessage").textContent="You entered the "+room.title+".";
-  });
-});
-$("backToInterior").onclick=()=>{
-  $("roomView").classList.add("hidden");
-  $("objectMessage").textContent="Choose an object to enter its room.";
+
+let user=null;
+let game="";
+let x=48;
+let y=76;
+let items=[];
+let score=0;
+let avatarColor="#4f70e8";
+let recentGames=[];
+
+
+const names={
+coin:"Coin Dash",
+brainrot:"Brainrot Heist",
+town:"Town Life",
+space:"Space Escape",
+gem:"Gem Hunt",
+pet:"Pet Race",
+forest:"Forest Adventure",
+castle:"Castle Quest"
 };
-$("world").querySelector(".house1").style.cursor="pointer";
-$("world").querySelector(".house2").style.cursor="pointer";
-$("world").querySelector(".house1").onclick=()=>openHome("Sunny House");
-$("world").querySelector(".house2").onclick=()=>openHome("Blue House");
-function clearItems(){items.forEach(i=>i.remove());items=[];document.querySelectorAll(".obstacle").forEach(i=>i.remove())}
-function start(type){closeHome();rememberGame(type);game=type;x=48;y=76;score=0;clearItems();$("player").style.left=x+"%";$("player").style.top=y+"%";$("player").style.background=user.color||avatarColor;$("playerName").textContent=user.username;$("gameTitle").textContent=names[type];$("gameSubtitle").textContent=type==="town"?"Explore the town and click a house to enter it.":"Collect items and explore the map.";$("gameMessage").textContent="Good luck!";if(type!=="town")spawnItems(type);if(type==="coin")spawnObstacles();show("game");document.removeEventListener("keydown",move);document.addEventListener("keydown",move)}
-function spawnItems(type){(emojis[type]||[]).forEach((emoji,i)=>{let el=document.createElement("div");el.className="coin";el.textContent=emoji;el.style.left=(12+i*13)+"%";el.style.top=(25+(i%3)*22)+"%";el.dataset.x=12+i*13;el.dataset.y=25+(i%3)*22;$("world").append(el);items.push(el)})}
-function spawnObstacles(){[[30,70],[55,62],[75,78]].forEach(p=>{let o=document.createElement("div");o.className="obstacle";o.style.left=p[0]+"%";o.style.top=p[1]+"%";$("world").append(o)})}
-function move(e){if($("gameScreen").classList.contains("hidden"))return;let k=e.key.toLowerCase();if(!["arrowleft","arrowright","arrowup","arrowdown","a","d","w","s"].includes(k))return;e.preventDefault();if(k==="arrowleft"||k==="a")x-=2;if(k==="arrowright"||k==="d")x+=2;if(k==="arrowup"||k==="w")y-=2;if(k==="arrowdown"||k==="s")y+=2;x=Math.max(1,Math.min(96,x));y=Math.max(8,Math.min(91,y));$("player").style.left=x+"%";$("player").style.top=y+"%";items=items.filter(it=>{if(Math.abs(x-Number(it.dataset.x))<5&&Math.abs(y-Number(it.dataset.y))<7){it.remove();score++;user.coins=(user.coins||100)+5;save();$("gameMessage").textContent="Collected "+score+" item(s)! +5 coins.";return false}return true});if(game==="coin"&&score===6)$("gameMessage").textContent="You won Coin Dash!";if(game!=="town"&&items.length===0)$("gameMessage").textContent="You found everything! Great job!"}
-supabaseClient.auth.getSession().then(({data})=>{if(data.session){let saved=localStorage.getItem("robloxJrUser");user=saved?JSON.parse(saved):{id:data.session.user.id,username:data.session.user.user_metadata?.username||data.session.user.email?.split("@")[0]||"Player",coins:100,friends:[],color:avatarColor};enterHub()}else{show("account")}}).catch(()=>show("account"));
 
 
+const emojis={
+coin:["🪙","🪙","🪙","🪙","🪙","🪙"],
+brainrot:["🧠","🍌","🐸","🦆","🥔"],
+space:["⭐","🌟","✨","💫","🌠"],
+gem:["💎","💠","🔷","🔹","💎"],
+pet:["🦴","🍖","🥕","🧸","🦴"],
+forest:["🍄","🌰","🌿","🍓","🪵"],
+castle:["🗝️","🔑","🗝️","🔐","🔑"]
+};
 
+
+function show(s){
+
+$("accountScreen")
+.classList.toggle("hidden",s!=="account");
+
+$("hubScreen")
+.classList.toggle("hidden",s!=="hub");
+
+$("gameScreen")
+.classList.toggle("hidden",s!=="game");
+
+}
+
+
+function save(){
+
+localStorage.setItem(
+"robloxJrUser",
+JSON.stringify(user)
+);
+
+$("coins").textContent=user.coins||100;
+
+}
+
+
+function renderFriends(){
+
+let box=$("friendsList");
+
+box.innerHTML="";
+
+if(!user.friends.length){
+
+box.innerHTML=
+'<p class="muted">No friends yet.</p>';
+
+return;
+
+}
+
+user.friends.forEach((f,i)=>{
+
+let row=document.createElement("div");
+
+row.className="friend-row";
+
+let n=document.createElement("strong");
+
+n.textContent="👤 "+f;
+
+let b=document.createElement("button");
+
+b.className="danger";
+
+b.textContent="Remove";
+
+b.onclick=()=>{
+
+user.friends.splice(i,1);
+
+save();
+
+renderFriends();
+
+};
+
+row.append(n,b);
+
+box.append(row);
+
+});
+
+}
+
+
+function renderRecentGames(){
+
+const box=$("recentGames");
+
+box.innerHTML="";
+
+if(!recentGames.length){
+
+box.innerHTML=
+'<p class="muted">You have not played any games yet.</p>';
+
+return;
+
+}
+
+recentGames.forEach(type=>{
+
+const card=document.createElement("div");
+
+card.className="card";
+
+const title=document.createElement("h3");
+
+title.textContent=names[type]||type;
+
+const description=document.createElement("p");
+
+description.className="muted";
+
+description.textContent="Played recently";
+
+const play=document.createElement("button");
+
+play.className="primary";
+
+play.textContent="Play Again";
+
+play.onclick=()=>start(type);
+
+card.append(title,description,play);
+
+box.appendChild(card);
+
+});
+
+}
+
+
+function rememberGame(type){
+
+recentGames=[
+type,
+...recentGames.filter(g=>g!==type)
+].slice(0,5);
+
+user.recentGames=recentGames;
+
+save();
+
+renderRecentGames();
+
+}
+
+
+function enterHub(){
+
+$("welcomeName").textContent=user.username;
+
+recentGames=
+Array.isArray(user.recentGames)
+?user.recentGames
+:[];
+
+$("coins").textContent=user.coins||100;
+
+renderFriends();
+
+renderRecentGames();
+
+show("hub");
+
+}
+
+
+/* ACCOUNT */
+
+$("accountForm").addEventListener(
+"submit",
+async e=>{
+
+e.preventDefault();
+
+let n=$("username").value.trim();
+let email=$("email").value.trim();
+let p=$("password").value;
+let c=$("confirmPassword").value;
+
+$("accountMessage").textContent="";
+
+if(n.length<3){
+
+$("accountMessage").textContent=
+"Username must have 3 characters.";
+
+return;
+
+}
+
+if(p.length<6){
+
+$("accountMessage").textContent=
+"Password must have at least 6 characters.";
+
+return;
+
+}
+
+if(p!==c){
+
+$("accountMessage").textContent=
+"Passwords do not match.";
+
+return;
+
+}
+
+$("accountMessage").textContent=
+"Creating your account...";
+
+const {data,error}=
+await supabaseClient.auth.signUp({
+
+email,
+
+password:p,
+
+options:{
+data:{
+username:n
+},
+emailRedirectTo:
+"https://paxisinsane.github.io/roblox-jr/"
+}
+
+});
+
+if(error){
+
+$("accountMessage").textContent=
+error.message;
+
+return;
+
+}
+
+user={
+id:data.user?.id,
+username:n,
+coins:100,
+friends:[],
+color:avatarColor
+};
+
+localStorage.setItem(
+"robloxJrUser",
+JSON.stringify(user)
+);
+
+if(data.session){
+
+enterHub();
+
+}else{
+
+$("accountMessage").textContent=
+"Account created! Check your email to confirm, then sign in through the game again.";
+
+}
+
+});
+
+
+$("logout").onclick=async()=>{
+
+await supabaseClient.auth.signOut();
+
+localStorage.removeItem("robloxJrUser");
+
+user=null;
+
+$("accountForm").reset();
+
+show("account");
+
+};
+
+
+/* TABS */
+
+document.querySelectorAll(".tab")
+.forEach(b=>
+
+b.onclick=()=>{
+
+document.querySelectorAll(".tab")
+.forEach(t=>
+t.classList.remove("active")
+);
+
+b.classList.add("active");
+
+["games","friends","customize"]
+.forEach(t=>
+
+$(t+"Tab")
+.classList.toggle(
+"hidden",
+b.dataset.tab!==t
+)
+
+);
+
+});
+
+
+/* FRIENDS */
+
+$("friendForm").addEventListener(
+"submit",
+e=>{
+
+e.preventDefault();
+
+let n=$("friendName").value.trim();
+
+if(!n)return;
+
+if(
+n.toLowerCase()===
+user.username.toLowerCase()
+){
+
+alert("You cannot add yourself.");
+
+return;
+
+}
+
+if(
+user.friends.some(
+f=>f.toLowerCase()===n.toLowerCase()
+)
+){
+
+alert("Already added.");
+
+return;
+
+}
+
+user.friends.push(n);
+
+$("friendName").value="";
+
+save();
+
+renderFriends();
+
+});
+
+
+/* CUSTOMIZE */
+
+$("colors").onclick=e=>{
+
+let b=e.target.closest("[data-color]");
+
+if(!b)return;
+
+avatarColor=b.dataset.color;
+
+user.color=avatarColor;
+
+save();
+
+$("customMessage").textContent=
+"Avatar color saved!";
+
+};
+
+
+/* GAMES */
+
+document.querySelectorAll(".play")
+.forEach(
+b=>b.onclick=()=>start(b.dataset.game)
+);
+
+
+$("back").onclick=()=>{
+
+closeHome();
+
+document.removeEventListener("keydown",move);
+
+clearItems();
+
+$("player").classList.remove("walking");
+
+show("hub");
+
+};
+
+
+function openHome(title){
+
+if(game!=="town")return;
+
+$("roomView").classList.add("hidden");
+
+$("interiorTitle").textContent=
+title+" Interior";
+
+$("homeInterior")
+.classList.remove("hidden");
+
+}
+
+
+function closeHome(){
+
+$("homeInterior")
+.classList.add("hidden");
+
+$("roomView")
+.classList.add("hidden");
+
+}
+
+
+$("leaveHome").onclick=closeHome;
+
+
+document.querySelectorAll(".homeObject")
+.forEach(button=>{
+
+button.addEventListener(
+"click",
+()=>{
+
+const rooms={
+
+sofa:{
+title:"Living Room",
+emoji:"🛋️",
+description:
+"You entered the living room. There is a comfy sofa and a television here."
+},
+
+table:{
+title:"Dining Room",
+emoji:"🍽️",
+description:
+"You entered the dining room. The table is ready for a family meal."
+},
+
+bed:{
+title:"Bedroom",
+emoji:"🛏️",
+description:
+"You entered the bedroom. There is a bed, a lamp, and a wardrobe."
+}
+
+};
+
+const room=
+rooms[button.dataset.object];
+
+$("roomTitle").textContent=
+room.title;
+
+$("roomDecor").textContent=
+room.emoji;
+
+$("roomDescription").textContent=
+room.description;
+
+$("roomView")
+.classList.remove("hidden");
+
+$("objectMessage").textContent=
+"You entered the "+room.title+".";
+
+});
+
+});
+
+
+$("backToInterior").onclick=()=>{
+
+$("roomView").classList.add("hidden");
+
+$("objectMessage").textContent=
+"Choose an object to enter its room.";
+
+};
+
+
+/* HOUSES */
+
+$("world").querySelector(".house1")
+.style.cursor="pointer";
+
+$("world").querySelector(".house2")
+.style.cursor="pointer";
+
+$("world").querySelector(".house1")
+.onclick=()=>openHome("Sunny House");
+
+$("world").querySelector(".house2")
+.onclick=()=>openHome("Blue House");
+
+
+/* ITEMS */
+
+function clearItems(){
+
+items.forEach(i=>i.remove());
+
+items=[];
+
+document
+.querySelectorAll(".obstacle")
+.forEach(i=>i.remove());
+
+}
+
+
+function start(type){
+
+closeHome();
+
+rememberGame(type);
+
+game=type;
+
+x=48;
+y=76;
+
+score=0;
+
+clearItems();
+
+$("player").style.left=x+"%";
+$("player").style.top=y+"%";
+
+$("player").style.background="transparent";
+
+$("playerName").textContent=
+user.username;
+
+$("playerName").style.background="white";
+
+
+/*
+Set character body color
+*/
+
+document.querySelector(".player-body")
+.style.background=
+user.color||avatarColor;
+
+
+$("gameTitle").textContent=
+names[type];
+
+
+/*
+WORLD STYLES
+*/
+
+$("world").classList.remove(
+"space-world",
+"castle-world"
+);
+
+if(type==="space"){
+
+$("world")
+.classList.add("space-world");
+
+$("gameSubtitle").textContent=
+"Explore space and collect stars!";
+
+}else if(type==="castle"){
+
+$("world")
+.classList.add("castle-world");
+
+$("gameSubtitle").textContent=
+"Explore the castle and find magical keys!";
+
+}else if(type==="town"){
+
+$("gameSubtitle").textContent=
+"Explore the town and click a house to enter it.";
+
+}else{
+
+$("gameSubtitle").textContent=
+"Collect items and explore the map.";
+
+}
+
+
+$("gameMessage").textContent=
+"Good luck!";
+
+
+if(type!=="town")
+spawnItems(type);
+
+if(type==="coin")
+spawnObstacles();
+
+show("game");
+
+document.removeEventListener(
+"keydown",
+move
+);
+
+document.addEventListener(
+"keydown",
+move
+);
+
+}
+
+
+/* SPAWN ITEMS */
+
+function spawnItems(type){
+
+(emojis[type]||[])
+.forEach((emoji,i)=>{
+
+let el=document.createElement("div");
+
+el.className="coin";
+
+el.textContent=emoji;
+
+let itemX=
+12+i*13;
+
+let itemY=
+25+(i%3)*22;
+
+el.style.left=
+itemX+"%";
+
+el.style.top=
+itemY+"%";
+
+el.dataset.x=itemX;
+
+el.dataset.y=itemY;
+
+$("world").append(el);
+
+items.push(el);
+
+});
+
+}
+
+
+/* OBSTACLES */
+
+function spawnObstacles(){
+
+[
+[30,70],
+[55,62],
+[75,78]
+]
+.forEach(p=>{
+
+let o=document.createElement("div");
+
+o.className="obstacle";
+
+o.style.left=
+p[0]+"%";
+
+o.style.top=
+p[1]+"%";
+
+$("world").append(o);
+
+});
+
+}
+
+
+/* MOVEMENT + WALKING */
+
+function move(e){
+
+if(
+$("gameScreen")
+.classList.contains("hidden")
+)return;
+
+let k=e.key.toLowerCase();
+
+if(
+![
+"arrowleft",
+"arrowright",
+"arrowup",
+"arrowdown",
+"a",
+"d",
+"w",
+"s"
+].includes(k)
+)return;
+
+e.preventDefault();
+
+
+/* Start walking animation */
+
+$("player")
+.classList.add("walking");
+
+
+if(
+k==="arrowleft"||
+k==="a"
+)
+x-=2;
+
+if(
+k==="arrowright"||
+k==="d"
+)
+x+=2;
+
+if(
+k==="arrowup"||
+k==="w"
+)
+y-=2;
+
+if(
+k==="arrowdown"||
+k==="s"
+)
+y+=2;
+
+
+x=Math.max(
+1,
+Math.min(96,x)
+);
+
+y=Math.max(
+8,
+Math.min(88,y)
+);
+
+
+$("player").style.left=
+x+"%";
+
+$("player").style.top=
+y+"%";
+
+
+/* ITEM COLLECTION */
+
+items=items.filter(it=>{
+
+if(
+Math.abs(
+x-Number(it.dataset.x)
+)<5&&
+Math.abs(
+y-Number(it.dataset.y)
+)<7
+){
+
+it.remove();
+
+score++;
+
+user.coins=
+(user.coins||100)+5;
+
+save();
+
+$("gameMessage").textContent=
+"Collected "+score+
+" item(s)! +5 coins.";
+
+return false;
+
+}
+
+return true;
+
+});
+
+
+if(
+game==="coin"&&
+score===6
+){
+
+$("gameMessage").textContent=
+"You won Coin Dash!";
+
+}
+
+if(
+game!=="town"&&
+items.length===0
+){
+
+$("gameMessage").textContent=
+"You found everything! Great job!";
+
+}
+
+}
+
+
+/*
+Stop walking when no key is being pressed.
+*/
+
+document.addEventListener(
+"keyup",
+e=>{
+
+if(
+[
+"arrowleft",
+"arrowright",
+"arrowup",
+"arrowdown",
+"w",
+"a",
+"s",
+"d"
+].includes(e.key.toLowerCase())
+){
+
+$("player")
+.classList.remove("walking");
+
+}
+
+});
+
+
+/* LOGIN */
+
+supabaseClient.auth.getSession()
+.then(({data})=>{
+
+if(data.session){
+
+let saved=
+localStorage.getItem(
+"robloxJrUser"
+);
+
+user=saved
+?JSON.parse(saved)
+:{
+id:data.session.user.id,
+username:
+data.session.user.user_metadata?.username||
+data.session.user.email?.split("@")[0]||
+"Player",
+coins:100,
+friends:[],
+color:avatarColor
+};
+
+enterHub();
+
+}else{
+
+show("account");
+
+}
+
+})
+.catch(()=>show("account"));
+
+
+/* LOGIN / SIGNUP SWITCH */
 
 $("showLogin").onclick=()=>{
-  $("accountForm").classList.add("hidden");
-  $("loginBox").classList.remove("hidden");
+
+$("accountForm")
+.classList.add("hidden");
+
+$("loginBox")
+.classList.remove("hidden");
+
 };
+
 
 $("showSignup").onclick=()=>{
-  $("accountForm").classList.remove("hidden");
-  $("loginBox").classList.add("hidden");
+
+$("accountForm")
+.classList.remove("hidden");
+
+$("loginBox")
+.classList.add("hidden");
+
 };
+
+
+/* LOGIN BUTTON */
 
 $("loginButton").onclick=async()=>{
-  const email=$("loginEmail").value.trim();
-  const password=$("loginPassword").value;
 
-  $("loginMessage").textContent="Logging in...";
+const email=
+$("loginEmail").value.trim();
 
-  const {data,error}=await supabaseClient.auth.signInWithPassword({
-    email,
-    password
-  });
+const password=
+$("loginPassword").value;
 
-  if(error){
-    $("loginMessage").textContent=error.message;
-    return;
-  }
+$("loginMessage").textContent=
+"Logging in...";
 
-  user={
-    id:data.user.id,
-    username:data.user.user_metadata?.username||email.split("@")[0],
-    coins:100,
-    friends:[],
-    color:avatarColor
-  };
 
-  localStorage.setItem("robloxJrUser",JSON.stringify(user));
-  enterHub();
+const {data,error}=
+await supabaseClient.auth.signInWithPassword({
+
+email,
+password
+
+});
+
+
+if(error){
+
+$("loginMessage").textContent=
+error.message;
+
+return;
+
+}
+
+
+user={
+
+id:data.user.id,
+
+username:
+data.user.user_metadata?.username||
+email.split("@")[0],
+
+coins:100,
+
+friends:[],
+
+color:avatarColor
+
 };
+
+
+localStorage.setItem(
+"robloxJrUser",
+JSON.stringify(user)
+);
+
+enterHub();
+
+};
+
 </script>
+
 </body>
 </html>
