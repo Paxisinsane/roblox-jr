@@ -10,12 +10,17 @@
   box-sizing:border-box;
 }
 
-body{
+html,body{
   margin:0;
+  width:100%;
+  min-height:100%;
   font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#10152b,#294b78);
+  background:#10152b;
   color:white;
-  min-height:100vh;
+}
+
+body{
+  overflow-x:hidden;
 }
 
 .hidden{
@@ -23,7 +28,7 @@ body{
 }
 
 button{
-  border:none;
+  border:0;
   border-radius:10px;
   padding:10px 16px;
   font-weight:bold;
@@ -31,7 +36,7 @@ button{
 }
 
 button:hover{
-  transform:scale(1.04);
+  transform:scale(1.03);
 }
 
 /* ================= ACCOUNT ================= */
@@ -39,30 +44,32 @@ button:hover{
 #accountScreen{
   min-height:100vh;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#10152b,#294b78);
 }
 
 .accountBox{
-  background:#17213b;
-  padding:35px;
   width:360px;
-  border-radius:20px;
-  box-shadow:0 10px 40px #0008;
+  max-width:90%;
+  padding:35px;
+  background:#18233c;
+  border-radius:22px;
   text-align:center;
+  box-shadow:0 15px 50px #0008;
 }
 
 .accountBox h1{
-  font-size:38px;
   margin-top:0;
+  font-size:36px;
 }
 
 .accountBox input{
   width:100%;
   padding:13px;
   margin:7px 0;
+  border:0;
   border-radius:9px;
-  border:none;
   font-size:16px;
 }
 
@@ -74,57 +81,56 @@ button:hover{
 
 .accountButtons button{
   flex:1;
+  color:white;
 }
 
 .loginBtn{
-  background:#28a9ff;
-  color:white;
+  background:#2196f3;
 }
 
 .signupBtn{
-  background:#35d07f;
-  color:white;
+  background:#35bd6b;
 }
 
 #accountMessage{
-  min-height:20px;
   margin-top:12px;
+  min-height:20px;
 }
 
-/* ================= TOP BAR ================= */
+/* ================= HUB ================= */
 
 #hubScreen{
   min-height:100vh;
+  background:linear-gradient(135deg,#10152b,#294b78);
 }
 
 .topbar{
   height:65px;
-  background:#111827;
   display:flex;
   align-items:center;
-  padding:0 20px;
-  gap:20px;
-  box-shadow:0 4px 15px #0006;
+  gap:12px;
+  padding:0 18px;
+  background:#111827;
+  box-shadow:0 4px 15px #0007;
 }
 
 .logo{
-  font-size:25px;
-  font-weight:bold;
   margin-right:auto;
+  font-size:24px;
+  font-weight:bold;
 }
 
 .coins{
-  background:#262f46;
+  background:#29344c;
   padding:9px 15px;
   border-radius:20px;
+  white-space:nowrap;
 }
 
 .topbar button{
-  background:#2c3853;
+  background:#35435e;
   color:white;
 }
-
-/* ================= TABS ================= */
 
 .tabs{
   display:flex;
@@ -145,62 +151,62 @@ button:hover{
 /* ================= GAMES ================= */
 
 #gamesTab{
-  padding:0 25px 30px;
+  padding:0 25px 35px;
 }
 
 .gamesGrid{
+  max-width:1200px;
+  margin:auto;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
-  max-width:1200px;
-  margin:auto;
 }
 
 .gameCard{
+  overflow:hidden;
   background:#18233c;
   border-radius:18px;
-  overflow:hidden;
   box-shadow:0 8px 25px #0005;
 }
 
 .gameImage{
   height:150px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   font-size:65px;
 }
 
 .coinImage{
-  background:linear-gradient(#50b8ff,#69d47a);
+  background:linear-gradient(#55bdff,#65c85d);
 }
 
 .brainImage{
-  background:linear-gradient(#ff7a7a,#8d4dff);
+  background:linear-gradient(#ff7777,#8c4cff);
 }
 
 .obbyImage{
-  background:linear-gradient(#7ed7ff,#53a84e);
+  background:linear-gradient(#7edcff,#55a94d);
 }
 
 .spaceImage{
-  background:linear-gradient(#07001f,#25135e);
+  background:linear-gradient(#050014,#281060);
 }
 
 .gemImage{
-  background:linear-gradient(#092e49,#08a4d8);
+  background:linear-gradient(#07334d,#09a9db);
 }
 
 .petImage{
-  background:linear-gradient(#ffe49b,#74d3ff);
+  background:linear-gradient(#ffe5a0,#71d4ff);
 }
 
 .forestImage{
-  background:linear-gradient(#143c25,#69a84d);
+  background:linear-gradient(#174126,#6bad4e);
 }
 
 .castleImage{
-  background:linear-gradient(#3d2619,#a86b39);
+  background:linear-gradient(#3b2518,#a66b3a);
 }
 
 .gameInfo{
@@ -212,13 +218,13 @@ button:hover{
 }
 
 .gameInfo p{
-  color:#c8d0df;
+  color:#cbd4e2;
   min-height:38px;
 }
 
 .play{
   width:100%;
-  background:#21a4ff;
+  background:#2196f3;
   color:white;
 }
 
@@ -232,36 +238,36 @@ button:hover{
 }
 
 .friend{
-  background:#18233c;
-  padding:15px;
-  border-radius:14px;
-  margin:10px 0;
   display:flex;
   align-items:center;
   gap:15px;
+  padding:15px;
+  margin:10px 0;
+  background:#18233c;
+  border-radius:14px;
 }
 
 .friendAvatar{
   width:50px;
   height:50px;
-  background:#ffca75;
-  border-radius:10px;
   display:flex;
   align-items:center;
   justify-content:center;
+  border-radius:10px;
+  background:#ffca75;
   font-size:25px;
 }
 
-/* ================= MARKETPLACE ================= */
+/* ================= MARKET ================= */
 
 .marketItem{
-  background:#18233c;
-  padding:18px;
-  border-radius:15px;
-  margin:12px 0;
   display:flex;
   align-items:center;
   gap:15px;
+  margin:12px 0;
+  padding:18px;
+  background:#18233c;
+  border-radius:15px;
 }
 
 .marketIcon{
@@ -290,20 +296,26 @@ button:hover{
 
 .characterTop{
   height:65px;
-  background:#111827;
   display:flex;
   align-items:center;
   padding:0 20px;
+  background:#111827;
 }
 
 .characterTop h2{
   margin-left:20px;
 }
 
+.characterTop button{
+  background:#39465e;
+  color:white;
+}
+
 .characterContent{
   display:flex;
   justify-content:center;
-  gap:70px;
+  align-items:flex-start;
+  gap:60px;
   padding:40px;
   flex-wrap:wrap;
 }
@@ -311,17 +323,16 @@ button:hover{
 .characterPreview{
   width:300px;
   height:500px;
-  background:linear-gradient(#63bdf8,#dff6ff);
-  border-radius:25px;
   position:relative;
   overflow:hidden;
+  border-radius:25px;
+  background:linear-gradient(#63bdf8,#e0f7ff);
 }
 
 .characterFloor{
   position:absolute;
   bottom:0;
-  left:0;
-  right:0;
+  width:100%;
   height:110px;
   background:#70bb5d;
 }
@@ -330,34 +341,19 @@ button:hover{
   position:absolute;
   left:50%;
   bottom:80px;
-  transform:translateX(-50%);
   width:100px;
   height:290px;
+  transform:translateX(-50%);
 }
 
 .charHead{
-  width:75px;
-  height:75px;
-  background:#f2bd91;
-  border-radius:12px;
   position:absolute;
   top:0;
   left:12px;
-}
-
-.charHair{
-  position:absolute;
-  width:80px;
-  height:30px;
-  background:#6b4024;
-  border-radius:40px 40px 5px 5px;
-  top:-5px;
-  left:10px;
-  z-index:2;
-  font-size:30px;
-  text-align:center;
-  line-height:30px;
-  background-color:transparent;
+  width:75px;
+  height:75px;
+  border-radius:12px;
+  background:#f2bd91;
 }
 
 .charEyes{
@@ -365,26 +361,36 @@ button:hover{
   top:35px;
   left:25px;
   font-size:12px;
+}
+
+.charHair{
+  position:absolute;
+  top:-5px;
+  left:10px;
+  width:80px;
+  height:30px;
   z-index:3;
+  font-size:30px;
+  text-align:center;
 }
 
 .charBody{
-  width:90px;
-  height:105px;
-  background:#2488e8;
   position:absolute;
   top:80px;
   left:5px;
+  width:90px;
+  height:105px;
   border-radius:8px;
+  background:#2488e8;
 }
 
 .charArm{
-  width:25px;
-  height:95px;
-  background:#f2bd91;
   position:absolute;
   top:85px;
+  width:25px;
+  height:95px;
   border-radius:10px;
+  background:#f2bd91;
 }
 
 .leftArm{
@@ -396,12 +402,12 @@ button:hover{
 }
 
 .charLeg{
-  width:38px;
-  height:105px;
-  background:#333b50;
   position:absolute;
   top:180px;
+  width:38px;
+  height:105px;
   border-radius:7px;
+  background:#333b50;
 }
 
 .leftLeg{
@@ -413,12 +419,12 @@ button:hover{
 }
 
 .charFoot{
-  width:43px;
-  height:22px;
-  background:#20242b;
   position:absolute;
   top:280px;
+  width:43px;
+  height:22px;
   border-radius:8px;
+  background:#20242b;
 }
 
 .leftFoot{
@@ -430,36 +436,36 @@ button:hover{
 }
 
 .accessories{
-  background:#18233c;
+  width:320px;
   padding:25px;
   border-radius:20px;
-  width:320px;
+  background:#18233c;
 }
 
 .accessories button{
   width:100%;
   margin:6px 0;
-  background:#2c9bf0;
   color:white;
+  background:#2c9bf0;
 }
 
-/* ================= GAME ================= */
+/* ================= GAME SCREEN ================= */
 
 #gameScreen{
   position:fixed;
   inset:0;
+  z-index:50;
   background:#111;
-  z-index:20;
 }
 
 .gameHeader{
+  position:relative;
+  z-index:100;
   height:60px;
-  background:#111827;
   display:flex;
   align-items:center;
   padding:0 15px;
-  position:relative;
-  z-index:100;
+  background:#111827;
 }
 
 .gameHeader h2{
@@ -469,34 +475,106 @@ button:hover{
 }
 
 #backToHub{
-  background:#39465e;
   color:white;
+  background:#39465e;
 }
 
 #world{
   position:absolute;
   top:60px;
-  bottom:0;
   left:0;
   right:0;
+  bottom:0;
   overflow:hidden;
-  background:linear-gradient(#72c8ff 0%,#b8edff 65%,#69bb54 65%);
+}
+
+/* ================= PLAYER ================= */
+
+#player{
+  position:absolute;
+  width:42px;
+  height:78px;
+  z-index:80;
+  left:50px;
+  top:50px;
+  pointer-events:none;
+}
+
+.playerHead{
+  position:absolute;
+  top:0;
+  left:7px;
+  width:28px;
+  height:28px;
+  border-radius:6px;
+  background:#f2bd91;
+}
+
+.playerHair{
+  position:absolute;
+  top:-3px;
+  left:5px;
+  width:32px;
+  height:12px;
+  border-radius:10px 10px 2px 2px;
+  background:#6b4024;
+  z-index:2;
+}
+
+.playerBody{
+  position:absolute;
+  top:27px;
+  left:3px;
+  width:36px;
+  height:34px;
+  border-radius:5px;
+  background:#2488e8;
+}
+
+.playerLeg1,
+.playerLeg2{
+  position:absolute;
+  top:58px;
+  width:15px;
+  height:20px;
+  border-radius:3px;
+  background:#333b50;
+}
+
+.playerLeg1{
+  left:5px;
+}
+
+.playerLeg2{
+  right:5px;
+}
+
+.playerAccessory{
+  position:absolute;
+  top:-23px;
+  left:0;
+  z-index:5;
+  font-size:24px;
 }
 
 /* ================= NORMAL WORLD ================= */
 
+.normalWorld{
+  background:linear-gradient(#72c8ff 0%,#b8edff 65%,#69bb54 65%);
+}
+
 .ground{
   position:absolute;
   bottom:0;
-  height:35%;
   width:100%;
+  height:35%;
   background:#65ad4c;
 }
 
 .road{
   position:absolute;
-  bottom:8%;
   left:0;
+  bottom:8%;
   width:100%;
   height:70px;
   background:#555;
@@ -540,98 +618,21 @@ button:hover{
 .tree:before{
   content:"";
   position:absolute;
+  left:-32px;
+  top:-55px;
   width:100px;
   height:100px;
   border-radius:50%;
   background:#32934d;
-  left:-32px;
-  top:-55px;
-}
-
-.tree1{
-  left:35%;
-}
-
-.tree2{
-  right:35%;
-}
-
-/* ================= PLAYER ================= */
-
-#player{
-  position:absolute;
-  width:42px;
-  height:78px;
-  z-index:30;
-  left:50%;
-  top:60%;
-}
-
-.playerHead{
-  position:absolute;
-  top:0;
-  left:7px;
-  width:28px;
-  height:28px;
-  background:#f2bd91;
-  border-radius:6px;
-  z-index:3;
-}
-
-.playerHair{
-  position:absolute;
-  top:-3px;
-  left:5px;
-  width:32px;
-  height:12px;
-  background:#6b4024;
-  border-radius:10px 10px 2px 2px;
-  z-index:4;
-}
-
-.playerBody{
-  position:absolute;
-  top:27px;
-  left:3px;
-  width:36px;
-  height:34px;
-  background:#2488e8;
-  border-radius:5px;
-}
-
-.playerLeg1,
-.playerLeg2{
-  position:absolute;
-  top:58px;
-  width:15px;
-  height:20px;
-  background:#333b50;
-  border-radius:3px;
-}
-
-.playerLeg1{
-  left:5px;
-}
-
-.playerLeg2{
-  right:5px;
-}
-
-.playerAccessory{
-  position:absolute;
-  top:-20px;
-  left:0;
-  z-index:10;
-  font-size:24px;
 }
 
 /* ================= COLLECTIBLES ================= */
 
 .collectible{
   position:absolute;
+  z-index:70;
   font-size:35px;
   cursor:pointer;
-  z-index:15;
   user-select:none;
   animation:bob 1s infinite alternate;
 }
@@ -640,24 +641,24 @@ button:hover{
   from{
     transform:translateY(0);
   }
-
   to{
     transform:translateY(-8px);
   }
 }
 
-/* ================= MESSAGES ================= */
+/* ================= MESSAGE ================= */
 
 .gameMessage{
   position:absolute;
   top:15px;
   left:50%;
-  transform:translateX(-50%);
-  background:#111c;
+  z-index:150;
   padding:12px 20px;
   border-radius:15px;
-  z-index:90;
+  background:#111c;
+  transform:translateX(-50%);
   font-weight:bold;
+  white-space:nowrap;
 }
 
 /* ================= SPACE ================= */
@@ -674,35 +675,30 @@ button:hover{
 
 .planet{
   position:absolute;
+  right:10%;
+  top:20%;
   width:220px;
   height:220px;
   border-radius:50%;
   background:linear-gradient(135deg,#7139c8,#a55bf2);
-  right:10%;
-  top:20%;
   box-shadow:0 0 40px #8b54ff;
 }
 
 .planetRing{
   position:absolute;
+  left:-50px;
+  top:70px;
   width:320px;
   height:80px;
   border:12px solid #d2a8ff;
   border-radius:50%;
   transform:rotate(-15deg);
-  left:-50px;
-  top:70px;
-}
-
-.rocket{
-  position:absolute;
-  font-size:70px;
 }
 
 /* ================= CASTLE ================= */
 
 .castleWorld{
-  background:linear-gradient(#24160f,#533422);
+  background:#2c1b12;
 }
 
 .castleWall{
@@ -720,12 +716,12 @@ button:hover{
 
 .castleWindow{
   position:absolute;
+  top:20%;
   width:70px;
   height:110px;
+  border:10px solid #302017;
   border-radius:50px 50px 5px 5px;
   background:#72cfff;
-  border:10px solid #302017;
-  top:20%;
 }
 
 .castleWindow1{
@@ -738,29 +734,29 @@ button:hover{
 
 .castleDoor{
   position:absolute;
+  left:50%;
+  bottom:0;
   width:130px;
   height:210px;
-  background:#24170f;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
   border:8px solid #a36b3d;
   border-radius:70px 70px 0 0;
+  background:#24170f;
+  transform:translateX(-50%);
 }
 
 /* ================= OBBY ================= */
 
 .obbyWorld{
-  background:#73d2ff;
+  background:#72d2ff;
 }
 
 .obbyPlatform{
   position:absolute;
-  height:22px;
-  background:#38b85a;
+  height:24px;
+  z-index:40;
   border:4px solid #197437;
   border-radius:7px;
-  z-index:12;
+  background:#38b85a;
 }
 
 .obbyPlatform.bad{
@@ -777,11 +773,11 @@ button:hover{
   position:absolute;
   top:10px;
   left:50%;
-  transform:translateX(-50%);
-  background:#111c;
+  z-index:120;
   padding:8px 18px;
   border-radius:15px;
-  z-index:50;
+  background:#111c;
+  transform:translateX(-50%);
   font-weight:bold;
   white-space:nowrap;
 }
@@ -790,11 +786,12 @@ button:hover{
   position:absolute;
   bottom:15px;
   left:50%;
-  transform:translateX(-50%);
-  background:#111c;
+  z-index:120;
   padding:8px 15px;
   border-radius:12px;
-  z-index:50;
+  background:#111c;
+  transform:translateX(-50%);
+  font-size:14px;
   white-space:nowrap;
 }
 
@@ -803,23 +800,23 @@ button:hover{
 #endingOverlay{
   position:absolute;
   inset:0;
-  background:#000b;
-  z-index:200;
+  z-index:300;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  background:#000b;
 }
 
 .endingBox{
   width:min(520px,90%);
-  background:#18233c;
   padding:35px;
   border-radius:25px;
+  background:#18233c;
   text-align:center;
   box-shadow:0 10px 50px #000;
 }
 
-.endingBox .endingEmoji{
+.endingEmoji{
   font-size:65px;
 }
 
@@ -833,9 +830,9 @@ button:hover{
 }
 
 .endingBox button{
-  background:#249df2;
-  color:white;
   margin-top:10px;
+  color:white;
+  background:#249df2;
 }
 
 /* ================= MOBILE ================= */
@@ -843,12 +840,12 @@ button:hover{
 @media(max-width:650px){
 
   .topbar{
-    gap:7px;
     padding:0 8px;
+    gap:6px;
   }
 
   .logo{
-    font-size:18px;
+    font-size:17px;
   }
 
   .topbar button{
@@ -857,20 +854,16 @@ button:hover{
 
   .characterContent{
     padding:20px;
-    gap:20px;
   }
 
   .obbyHint{
-    font-size:12px;
+    font-size:11px;
   }
-
 }
-
 </style>
 </head>
 
 <body>
-
 
 <!-- ================= ACCOUNT ================= -->
 
@@ -882,31 +875,17 @@ button:hover{
 
     <p>Game Hub</p>
 
-    <input
-      id="email"
-      type="email"
-      placeholder="Email"
-    >
+    <input id="email" type="email" placeholder="Email">
 
-    <input
-      id="password"
-      type="password"
-      placeholder="Password"
-    >
+    <input id="password" type="password" placeholder="Password">
 
     <div class="accountButtons">
 
-      <button
-        class="loginBtn"
-        onclick="login()"
-      >
+      <button class="loginBtn" onclick="login()">
         Log In
       </button>
 
-      <button
-        class="signupBtn"
-        onclick="signup()"
-      >
+      <button class="signupBtn" onclick="signup()">
         Sign Up
       </button>
 
@@ -946,388 +925,215 @@ button:hover{
 
   <div class="tabs">
 
-    <button
-      class="tab active"
-      onclick="showTab('gamesTab',this)"
-    >
+    <button class="tab active"
+      onclick="showTab('gamesTab',this)">
       Games
     </button>
 
-    <button
-      class="tab"
-      onclick="showTab('friendsTab',this)"
-    >
+    <button class="tab"
+      onclick="showTab('friendsTab',this)">
       Friends
     </button>
 
-    <button
-      class="tab"
-      onclick="showTab('marketplaceTab',this)"
-    >
+    <button class="tab"
+      onclick="showTab('marketplaceTab',this)">
       Marketplace
     </button>
 
   </div>
 
 
-  <!-- GAMES -->
+  <!-- ================= GAMES ================= -->
 
   <div id="gamesTab">
 
     <div class="gamesGrid">
 
-
       <div class="gameCard">
-
-        <div class="gameImage coinImage">
-          🪙
-        </div>
-
+        <div class="gameImage coinImage">🪙</div>
         <div class="gameInfo">
-
           <h3>Coin Dash</h3>
-
-          <p>
-            Collect every coin you can!
-          </p>
-
-          <button
-            class="play"
-            data-game="coin"
-          >
+          <p>Collect every coin you can!</p>
+          <button class="play" data-game="coin">
             Play
           </button>
-
         </div>
-
       </div>
 
 
       <div class="gameCard">
-
-        <div class="gameImage brainImage">
-          🧠
-        </div>
-
+        <div class="gameImage brainImage">🧠</div>
         <div class="gameInfo">
-
           <h3>Brainrot Heist</h3>
-
-          <p>
-            Grab the brainrot and escape!
-          </p>
-
-          <button
-            class="play"
-            data-game="brain"
-          >
+          <p>Grab the brainrot and escape!</p>
+          <button class="play" data-game="brain">
             Play
           </button>
-
         </div>
-
       </div>
 
 
       <div class="gameCard">
-
-        <div class="gameImage obbyImage">
-          🏃
-        </div>
-
+        <div class="gameImage obbyImage">🏃</div>
         <div class="gameInfo">
-
           <h3>Obby Tower</h3>
-
-          <p>
-            Jump through five different screens!
-          </p>
-
-          <button
-            class="play"
-            data-game="obby"
-          >
+          <p>Jump through five different screens!</p>
+          <button class="play" data-game="obby">
             Play
           </button>
-
         </div>
-
       </div>
 
 
       <div class="gameCard">
-
-        <div class="gameImage spaceImage">
-          🚀
-        </div>
-
+        <div class="gameImage spaceImage">🚀</div>
         <div class="gameInfo">
-
           <h3>Space Escape</h3>
-
-          <p>
-            Find the rocket and escape!
-          </p>
-
-          <button
-            class="play"
-            data-game="space"
-          >
+          <p>Find the rocket and escape!</p>
+          <button class="play" data-game="space">
             Play
           </button>
-
         </div>
-
       </div>
 
 
       <div class="gameCard">
-
-        <div class="gameImage gemImage">
-          💎
-        </div>
-
+        <div class="gameImage gemImage">💎</div>
         <div class="gameInfo">
-
           <h3>Gem Hunt</h3>
-
-          <p>
-            Find all the hidden gems!
-          </p>
-
-          <button
-            class="play"
-            data-game="gem"
-          >
+          <p>Find all the hidden gems!</p>
+          <button class="play" data-game="gem">
             Play
           </button>
-
         </div>
-
       </div>
 
 
       <div class="gameCard">
-
-        <div class="gameImage petImage">
-          🐶
-        </div>
-
+        <div class="gameImage petImage">🐶</div>
         <div class="gameInfo">
-
           <h3>Pet Race</h3>
-
-          <p>
-            Race your pet to the finish!
-          </p>
-
-          <button
-            class="play"
-            data-game="pet"
-          >
+          <p>Race your pet to the finish!</p>
+          <button class="play" data-game="pet">
             Play
           </button>
-
         </div>
-
       </div>
 
 
       <div class="gameCard">
-
-        <div class="gameImage forestImage">
-          🌲
-        </div>
-
+        <div class="gameImage forestImage">🌲</div>
         <div class="gameInfo">
-
           <h3>Forest Adventure</h3>
-
-          <p>
-            Explore the forest and find treasure!
-          </p>
-
-          <button
-            class="play"
-            data-game="forest"
-          >
+          <p>Explore the forest and find treasure!</p>
+          <button class="play" data-game="forest">
             Play
           </button>
-
         </div>
-
       </div>
 
 
       <div class="gameCard">
-
-        <div class="gameImage castleImage">
-          🏰
-        </div>
-
+        <div class="gameImage castleImage">🏰</div>
         <div class="gameInfo">
-
           <h3>Castle Quest</h3>
-
-          <p>
-            Explore the castle and find its treasure!
-          </p>
-
-          <button
-            class="play"
-            data-game="castle"
-          >
+          <p>Explore the castle and find its treasure!</p>
+          <button class="play" data-game="castle">
             Play
           </button>
-
         </div>
-
       </div>
-
 
     </div>
 
   </div>
 
 
-  <!-- FRIENDS -->
+  <!-- ================= FRIENDS ================= -->
 
   <div id="friendsTab" class="hidden">
 
     <h2>👥 Friends</h2>
 
     <div class="friend">
-
-      <div class="friendAvatar">
-        😀
-      </div>
-
+      <div class="friendAvatar">😀</div>
       <div>
         <b>Alex</b>
         <div>Online</div>
       </div>
-
     </div>
 
-
     <div class="friend">
-
-      <div class="friendAvatar">
-        😎
-      </div>
-
+      <div class="friendAvatar">😎</div>
       <div>
         <b>Sam</b>
         <div>Playing Obby Tower</div>
       </div>
-
     </div>
 
-
     <div class="friend">
-
-      <div class="friendAvatar">
-        🤓
-      </div>
-
+      <div class="friendAvatar">🤓</div>
       <div>
         <b>Max</b>
         <div>Offline</div>
       </div>
-
     </div>
 
   </div>
 
 
-  <!-- MARKETPLACE -->
+  <!-- ================= MARKETPLACE ================= -->
 
   <div id="marketplaceTab" class="hidden">
 
     <h2>🛍️ Marketplace</h2>
 
-
     <div class="marketItem">
-
-      <div class="marketIcon">
-        🎩
-      </div>
-
+      <div class="marketIcon">🎩</div>
       <div class="marketText">
         <b>Cool Hat</b>
         <div>25 coins</div>
       </div>
-
-      <button
-        class="buy"
-        onclick="buyItem(this,25,'hat')"
-      >
+      <button class="buy"
+        onclick="buyItem(this,25,'hat')">
         Buy
       </button>
-
     </div>
 
-
     <div class="marketItem">
-
-      <div class="marketIcon">
-        🕶️
-      </div>
-
+      <div class="marketIcon">🕶️</div>
       <div class="marketText">
         <b>Cool Glasses</b>
         <div>30 coins</div>
       </div>
-
-      <button
-        class="buy"
-        onclick="buyItem(this,30,'glasses')"
-      >
+      <button class="buy"
+        onclick="buyItem(this,30,'glasses')">
         Buy
       </button>
-
     </div>
 
-
     <div class="marketItem">
-
-      <div class="marketIcon">
-        👑
-      </div>
-
+      <div class="marketIcon">👑</div>
       <div class="marketText">
         <b>King Crown</b>
         <div>75 coins</div>
       </div>
-
-      <button
-        class="buy"
-        onclick="buyItem(this,75,'crown')"
-      >
+      <button class="buy"
+        onclick="buyItem(this,75,'crown')">
         Buy
       </button>
-
     </div>
 
-
     <div class="marketItem">
-
-      <div class="marketIcon">
-        🎒
-      </div>
-
+      <div class="marketIcon">🎒</div>
       <div class="marketText">
         <b>Adventure Backpack</b>
         <div>50 coins</div>
       </div>
-
-      <button
-        class="buy"
-        onclick="buyItem(this,50,'backpack')"
-      >
+      <button class="buy"
+        onclick="buyItem(this,50,'backpack')">
         Buy
       </button>
-
     </div>
 
   </div>
@@ -1356,32 +1162,23 @@ button:hover{
 
       <div class="fullCharacter">
 
-        <div
-          id="charAccessory"
-          class="charHair"
-        ></div>
+        <div id="charAccessory"
+          class="charHair"></div>
 
         <div class="charHead">
-          <div class="charEyes">
-            • •
-          </div>
+          <div class="charEyes">• •</div>
         </div>
 
-        <div
-          class="charBody"
-          id="charBody"
-        ></div>
+        <div id="charBody"
+          class="charBody"></div>
 
         <div class="charArm leftArm"></div>
-
         <div class="charArm rightArm"></div>
 
         <div class="charLeg leftLeg"></div>
-
         <div class="charLeg rightLeg"></div>
 
         <div class="charFoot leftFoot"></div>
-
         <div class="charFoot rightFoot"></div>
 
       </div>
@@ -1442,10 +1239,8 @@ button:hover{
 
   <div class="gameHeader">
 
-    <button
-      id="backToHub"
-      onclick="leaveGame()"
-    >
+    <button id="backToHub"
+      onclick="leaveGame()">
       ← Back
     </button>
 
@@ -1462,18 +1257,16 @@ button:hover{
 
   <div id="world">
 
-    <div
-      id="gameMessage"
-      class="gameMessage hidden"
-    ></div>
+    <div id="gameMessage"
+      class="gameMessage hidden">
+    </div>
 
 
     <div id="player">
 
-      <div
-        class="playerAccessory"
-        id="playerAccessory"
-      ></div>
+      <div id="playerAccessory"
+        class="playerAccessory">
+      </div>
 
       <div class="playerHair"></div>
 
@@ -1490,17 +1283,13 @@ button:hover{
   </div>
 
 
-  <div
-    id="endingOverlay"
-    class="hidden"
-  >
+  <div id="endingOverlay"
+    class="hidden">
 
     <div class="endingBox">
 
-      <div
-        class="endingEmoji"
-        id="endingEmoji"
-      >
+      <div id="endingEmoji"
+        class="endingEmoji">
         🎉
       </div>
 
@@ -1525,19 +1314,19 @@ button:hover{
 
 <script type="module">
 
-/* ================= SUPABASE ================= */
+/* ==================================================
+   SUPABASE
+================================================== */
 
 import {
   createClient
 } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-
 
 const SUPABASE_URL =
 "https://rewbdyajylagepnrbixu.supabase.co";
 
 const SUPABASE_KEY =
 "sb_publishable_77k0d-o6J210zPyWGtsqEA_yB71FFi6";
-
 
 const supabase =
 createClient(
@@ -1546,7 +1335,9 @@ createClient(
 );
 
 
-/* ================= ELEMENTS ================= */
+/* ==================================================
+   ELEMENTS
+================================================== */
 
 const accountScreen =
 document.getElementById("accountScreen");
@@ -1578,23 +1369,26 @@ document.getElementById("accountMessage");
 const endingOverlay =
 document.getElementById("endingOverlay");
 
+const endingEmoji =
+document.getElementById("endingEmoji");
+
 const endingTitle =
 document.getElementById("endingTitle");
 
 const endingText =
 document.getElementById("endingText");
 
-const endingEmoji =
-document.getElementById("endingEmoji");
 
-
-/* ================= COINS ================= */
+/* ==================================================
+   COINS
+================================================== */
 
 let coins =
 Number(
-  localStorage.getItem("robloxJrCoins") || 100
+  localStorage.getItem(
+    "robloxJrCoins"
+  ) || 100
 );
-
 
 function updateCoins(){
 
@@ -1609,7 +1403,6 @@ function updateCoins(){
 
 }
 
-
 function addCoins(amount){
 
   coins+=amount;
@@ -1619,12 +1412,14 @@ function addCoins(amount){
 }
 
 
-/* ================= ACCOUNT ================= */
+/* ==================================================
+   ACCOUNT
+================================================== */
 
 async function signup(){
 
   const email =
-  document.getElementById("email").value;
+  document.getElementById("email").value.trim();
 
   const password =
   document.getElementById("password").value;
@@ -1661,14 +1456,13 @@ async function signup(){
 
 }
 
-
 window.signup=signup;
 
 
 async function login(){
 
   const email =
-  document.getElementById("email").value;
+  document.getElementById("email").value.trim();
 
   const password =
   document.getElementById("password").value;
@@ -1704,7 +1498,6 @@ async function login(){
 
 }
 
-
 window.login=login;
 
 
@@ -1712,6 +1505,9 @@ async function logout(){
 
   await supabase.auth.signOut();
 
+  gameRunning=false;
+
+  accountScreen.classList.remove("hidden");
 
   hubScreen.classList.add("hidden");
 
@@ -1719,10 +1515,7 @@ async function logout(){
 
   gameScreen.classList.add("hidden");
 
-  accountScreen.classList.remove("hidden");
-
 }
-
 
 window.logout=logout;
 
@@ -1742,7 +1535,9 @@ function showHub(){
 }
 
 
-/* ================= TABS ================= */
+/* ==================================================
+   TABS
+================================================== */
 
 function showTab(tab,button){
 
@@ -1761,8 +1556,8 @@ function showTab(tab,button){
 
 
   document.querySelectorAll(".tab")
-    .forEach(x=>{
-      x.classList.remove("active");
+    .forEach(tabButton=>{
+      tabButton.classList.remove("active");
     });
 
 
@@ -1770,11 +1565,12 @@ function showTab(tab,button){
 
 }
 
-
 window.showTab=showTab;
 
 
-/* ================= CHARACTER ================= */
+/* ==================================================
+   CHARACTER
+================================================== */
 
 function openCharacter(){
 
@@ -1783,7 +1579,6 @@ function openCharacter(){
   characterScreen.classList.remove("hidden");
 
 }
-
 
 window.openCharacter=openCharacter;
 
@@ -1796,36 +1591,42 @@ function closeCharacter(){
 
 }
 
-
 window.closeCharacter=closeCharacter;
 
 
 function changeShirt(color){
 
-  document.getElementById("charBody")
-    .style.background=color;
+  document.getElementById(
+    "charBody"
+  ).style.background=color;
+
+  document.querySelector(
+    ".playerBody"
+  ).style.background=color;
 
 }
-
 
 window.changeShirt=changeShirt;
 
 
 function setAccessory(item){
 
-  document.getElementById("charAccessory")
-    .textContent=item;
+  document.getElementById(
+    "charAccessory"
+  ).textContent=item;
 
-  document.getElementById("playerAccessory")
-    .textContent=item;
+  document.getElementById(
+    "playerAccessory"
+  ).textContent=item;
 
 }
-
 
 window.setAccessory=setAccessory;
 
 
-/* ================= MARKETPLACE ================= */
+/* ==================================================
+   MARKETPLACE
+================================================== */
 
 function buyItem(button,cost,item){
 
@@ -1849,35 +1650,46 @@ function buyItem(button,cost,item){
 
   updateCoins();
 
-
   button.textContent="Owned";
 
   button.classList.add("owned");
 
 }
 
-
 window.buyItem=buyItem;
 
 
-/* ================= GAME STATE ================= */
+/* ==================================================
+   GAME VARIABLES
+================================================== */
 
 let currentGame="";
 
 let gameRunning=false;
 
 
-/* ================= NORMAL PLAYER ================= */
-
-let playerX=50;
-
-let playerY=60;
-
-
-/* ================= KEYBOARD ================= */
+/* ==================================================
+   KEYBOARD STATE
+================================================== */
 
 const keys={};
 
+
+/*
+  IMPORTANT:
+
+  We listen for the keyboard here,
+  but the Obby ONLY uses:
+
+  A
+  D
+  Left Arrow
+  Right Arrow
+  Space
+
+  W/S/Up/Down are NEVER used by
+  the Obby physics.
+*/
 
 document.addEventListener(
   "keydown",
@@ -1889,18 +1701,17 @@ document.addEventListener(
     keys[key]=true;
 
 
-    /*
-      SPACE IS ONLY A JUMP BUTTON
-      IN THE OBBY.
-    */
-
     if(
-      event.code==="Space" &&
-      currentGame==="obby"
+      currentGame==="obby" &&
+      event.code==="Space"
     ){
 
       event.preventDefault();
 
+      /*
+        Jump ONLY if the player is
+        standing on a platform.
+      */
 
       if(
         gameRunning &&
@@ -1909,7 +1720,7 @@ document.addEventListener(
       ){
 
         obbyVelocityY=
-        obbyJumpPower;
+        OBBY_JUMP;
 
         obbyOnGround=false;
 
@@ -1933,7 +1744,9 @@ document.addEventListener(
 );
 
 
-/* ================= START GAME ================= */
+/* ==================================================
+   START GAME
+================================================== */
 
 function start(type){
 
@@ -1941,35 +1754,30 @@ function start(type){
 
   gameRunning=true;
 
+  endingOverlay.classList.add(
+    "hidden"
+  );
 
-  hubScreen.classList.add("hidden");
+  hubScreen.classList.add(
+    "hidden"
+  );
 
-  characterScreen.classList.add("hidden");
+  characterScreen.classList.add(
+    "hidden"
+  );
 
-  gameScreen.classList.remove("hidden");
-
-
-  endingOverlay.classList.add("hidden");
+  gameScreen.classList.remove(
+    "hidden"
+  );
 
 
   clearWorld();
 
 
-  playerX=50;
-
-  playerY=60;
-
-
-  player.style.left=
-  "50%";
-
-  player.style.top=
-  "60%";
-
-
-  document.getElementById("gameTitle")
-    .textContent=
-    getGameTitle(type);
+  document.getElementById(
+    "gameTitle"
+  ).textContent=
+  gameTitles[type];
 
 
   updateCoins();
@@ -1979,69 +1787,63 @@ function start(type){
     startCoinDash();
   }
 
-  if(type==="brain"){
+  else if(type==="brain"){
     startBrainrot();
   }
 
-  if(type==="obby"){
+  else if(type==="obby"){
     startObby();
   }
 
-  if(type==="space"){
+  else if(type==="space"){
     startSpace();
   }
 
-  if(type==="gem"){
+  else if(type==="gem"){
     startGem();
   }
 
-  if(type==="pet"){
+  else if(type==="pet"){
     startPet();
   }
 
-  if(type==="forest"){
+  else if(type==="forest"){
     startForest();
   }
 
-  if(type==="castle"){
+  else if(type==="castle"){
     startCastle();
   }
 
 }
 
-
 window.start=start;
 
 
-function getGameTitle(type){
+const gameTitles={
 
-  const titles={
+  coin:"Coin Dash",
 
-    coin:"Coin Dash",
+  brain:"Brainrot Heist",
 
-    brain:"Brainrot Heist",
+  obby:"Obby Tower",
 
-    obby:"Obby Tower",
+  space:"Space Escape",
 
-    space:"Space Escape",
+  gem:"Gem Hunt",
 
-    gem:"Gem Hunt",
+  pet:"Pet Race",
 
-    pet:"Pet Race",
+  forest:"Forest Adventure",
 
-    forest:"Forest Adventure",
+  castle:"Castle Quest"
 
-    castle:"Castle Quest"
-
-  };
+};
 
 
-  return titles[type] || "Game";
-
-}
-
-
-/* ================= CLEAR WORLD ================= */
+/* ==================================================
+   CLEAR WORLD
+================================================== */
 
 function clearWorld(){
 
@@ -2064,40 +1866,119 @@ function clearWorld(){
     ".castleWall,"+
     ".castleWindow,"+
     ".castleDoor"
-  ).forEach(el=>el.remove());
+  ).forEach(
+    element=>element.remove()
+  );
 
 }
 
 
-/* ================= MESSAGE ================= */
+/* ==================================================
+   BASIC WORLD
+================================================== */
 
-function showMessage(text){
+function createBasicWorld(){
 
-  const message =
+  world.classList.add(
+    "normalWorld"
+  );
+
+
+  const ground=
+  document.createElement("div");
+
+  ground.className="ground";
+
+  world.appendChild(ground);
+
+
+  const road=
+  document.createElement("div");
+
+  road.className="road";
+
+  world.appendChild(road);
+
+
+  const house1=
+  document.createElement("div");
+
+  house1.className=
+  "house house1";
+
+  world.appendChild(house1);
+
+
+  const house2=
+  document.createElement("div");
+
+  house2.className=
+  "house house2";
+
+  world.appendChild(house2);
+
+
+  const tree1=
+  document.createElement("div");
+
+  tree1.className="tree";
+
+  tree1.style.left="35%";
+
+  world.appendChild(tree1);
+
+
+  const tree2=
+  document.createElement("div");
+
+  tree2.className="tree";
+
+  tree2.style.left="60%";
+
+  world.appendChild(tree2);
+
+}
+
+
+/* ==================================================
+   MESSAGE
+================================================== */
+
+function showMessage(message){
+
+  const box=
   document.getElementById(
     "gameMessage"
   );
 
+  box.textContent=message;
 
-  message.textContent=text;
-
-  message.classList.remove(
+  box.classList.remove(
     "hidden"
   );
 
 
-  setTimeout(()=>{
+  clearTimeout(
+    showMessage.timer
+  );
 
-    message.classList.add(
-      "hidden"
-    );
 
-  },1800);
+  showMessage.timer=
+  setTimeout(
+    ()=>{
+      box.classList.add(
+        "hidden"
+      );
+    },
+    1800
+  );
 
 }
 
 
-/* ================= ENDING ================= */
+/* ==================================================
+   ENDING
+================================================== */
 
 function showEnding(
   emoji,
@@ -2115,160 +1996,79 @@ function showEnding(
     "hidden"
   );
 
-
   gameRunning=false;
 
 }
 
 
-/* ================= LEAVE GAME ================= */
-
-function leaveGame(){
-
-  gameRunning=false;
-
-  endingOverlay.classList.add(
-    "hidden"
-  );
-
-  gameScreen.classList.add(
-    "hidden"
-  );
-
-  hubScreen.classList.remove(
-    "hidden"
-  );
-
-  updateCoins();
-
-}
-
-
-window.leaveGame=leaveGame;
-
-
-/* ================= BASIC WORLD ================= */
-
-function createBasicWorld(){
-
-  const ground =
-  document.createElement("div");
-
-  ground.className="ground";
-
-  world.appendChild(ground);
-
-
-  const road =
-  document.createElement("div");
-
-  road.className="road";
-
-  world.appendChild(road);
-
-
-  const house1 =
-  document.createElement("div");
-
-  house1.className=
-  "house house1";
-
-  world.appendChild(house1);
-
-
-  const house2 =
-  document.createElement("div");
-
-  house2.className=
-  "house house2";
-
-  world.appendChild(house2);
-
-
-  const tree1 =
-  document.createElement("div");
-
-  tree1.className=
-  "tree tree1";
-
-  world.appendChild(tree1);
-
-
-  const tree2 =
-  document.createElement("div");
-
-  tree2.className=
-  "tree tree2";
-
-  world.appendChild(tree2);
-
-}
-
-
-/* ================= COLLECTIBLE ================= */
+/* ==================================================
+   COLLECTIBLES
+================================================== */
 
 function createCollectible(
   emoji,
   x,
   y,
   reward,
-  onCollect
+  callback
 ){
 
-  const item =
+  const item=
   document.createElement("div");
 
-  item.className="collectible";
+  item.className=
+  "collectible";
 
   item.textContent=emoji;
 
-  item.style.left=
-  x+"%";
+  item.style.left=x+"%";
 
-  item.style.top=
-  y+"%";
+  item.style.top=y+"%";
 
 
-  item.onclick=()=>{
+  item.addEventListener(
+    "click",
+    ()=>{
 
-    if(!gameRunning){
-      return;
+      if(!gameRunning){
+        return;
+      }
+
+
+      item.remove();
+
+      addCoins(reward);
+
+      showMessage(
+        "+"+reward+" coins!"
+      );
+
+
+      if(callback){
+        callback();
+      }
+
     }
-
-
-    item.remove();
-
-    addCoins(reward);
-
-    showMessage(
-      "+"+reward+" coins!"
-    );
-
-
-    if(onCollect){
-      onCollect();
-    }
-
-  };
+  );
 
 
   world.appendChild(item);
 
-  return item;
-
 }
 
 
-/* ================= COIN DASH ================= */
+/* ==================================================
+   COIN DASH
+================================================== */
 
-let coinDashLeft=0;
+let coinsRemaining=0;
 
 
 function startCoinDash(){
 
   createBasicWorld();
 
-  coinDashLeft=10;
+  coinsRemaining=10;
 
 
   for(let i=0;i<10;i++){
@@ -2277,7 +2077,7 @@ function startCoinDash(){
 
       "🪙",
 
-      8+Math.random()*84,
+      5+Math.random()*88,
 
       15+Math.random()*58,
 
@@ -2285,15 +2085,14 @@ function startCoinDash(){
 
       ()=>{
 
-        coinDashLeft--;
+        coinsRemaining--;
 
-
-        if(coinDashLeft<=0){
+        if(coinsRemaining===0){
 
           showEnding(
             "🪙",
             "Amazing!",
-            "You collected every coin in Coin Dash!"
+            "You collected every coin!"
           );
 
         }
@@ -2305,6 +2104,8 @@ function startCoinDash(){
   }
 
 
+  movePlayerNormal(50,60);
+
   showMessage(
     "Collect all 10 coins!"
   );
@@ -2312,11 +2113,15 @@ function startCoinDash(){
 }
 
 
-/* ================= BRAINROT ================= */
+/* ==================================================
+   BRAINROT
+================================================== */
 
 function startBrainrot(){
 
   createBasicWorld();
+
+  movePlayerNormal(50,60);
 
 
   createCollectible(
@@ -2351,16 +2156,20 @@ function startBrainrot(){
 }
 
 
-/* ================= GEM HUNT ================= */
+/* ==================================================
+   GEM HUNT
+================================================== */
 
-let gemsLeft=0;
+let gemsRemaining=0;
 
 
 function startGem(){
 
   createBasicWorld();
 
-  gemsLeft=8;
+  movePlayerNormal(50,60);
+
+  gemsRemaining=8;
 
 
   for(let i=0;i<8;i++){
@@ -2377,15 +2186,14 @@ function startGem(){
 
       ()=>{
 
-        gemsLeft--;
+        gemsRemaining--;
 
-
-        if(gemsLeft<=0){
+        if(gemsRemaining===0){
 
           showEnding(
             "💎",
             "Treasure Found!",
-            "You found every gem in the hunt!"
+            "You found all the gems!"
           );
 
         }
@@ -2404,11 +2212,15 @@ function startGem(){
 }
 
 
-/* ================= PET RACE ================= */
+/* ==================================================
+   PET RACE
+================================================== */
 
 function startPet(){
 
   createBasicWorld();
+
+  movePlayerNormal(50,60);
 
 
   createCollectible(
@@ -2421,7 +2233,7 @@ function startPet(){
       showEnding(
         "🏆",
         "You Won!",
-        "Your pet crossed the finish line first!"
+        "Your pet crossed the finish line!"
       );
 
     }
@@ -2429,13 +2241,15 @@ function startPet(){
 
 
   showMessage(
-    "Race to your pet!"
+    "Reach the pet!"
   );
 
 }
 
 
-/* ================= FOREST ================= */
+/* ==================================================
+   FOREST
+================================================== */
 
 function startForest(){
 
@@ -2443,7 +2257,7 @@ function startForest(){
   "linear-gradient(#8ed5ff 0%,#c9f2ff 55%,#397b39 55%)";
 
 
-  const ground =
+  const ground=
   document.createElement("div");
 
   ground.className="ground";
@@ -2453,20 +2267,20 @@ function startForest(){
 
   for(let i=0;i<9;i++){
 
-    const tree =
+    const tree=
     document.createElement("div");
 
     tree.className="tree";
 
     tree.style.left=
-    (5+i*11)+"%";
-
-    tree.style.bottom=
-    "35%";
+    (4+i*11)+"%";
 
     world.appendChild(tree);
 
   }
+
+
+  movePlayerNormal(50,60);
 
 
   createCollectible(
@@ -2479,7 +2293,7 @@ function startForest(){
       showEnding(
         "🎁",
         "Forest Treasure!",
-        "You discovered the hidden treasure!"
+        "You found the hidden treasure!"
       );
 
     }
@@ -2493,7 +2307,9 @@ function startForest(){
 }
 
 
-/* ================= CASTLE ================= */
+/* ==================================================
+   CASTLE
+================================================== */
 
 function startCastle(){
 
@@ -2502,7 +2318,7 @@ function startCastle(){
   );
 
 
-  const wall =
+  const wall=
   document.createElement("div");
 
   wall.className="castleWall";
@@ -2510,7 +2326,7 @@ function startCastle(){
   world.appendChild(wall);
 
 
-  const window1 =
+  const window1=
   document.createElement("div");
 
   window1.className=
@@ -2519,7 +2335,7 @@ function startCastle(){
   world.appendChild(window1);
 
 
-  const window2 =
+  const window2=
   document.createElement("div");
 
   window2.className=
@@ -2528,12 +2344,15 @@ function startCastle(){
   world.appendChild(window2);
 
 
-  const door =
+  const door=
   document.createElement("div");
 
   door.className="castleDoor";
 
   world.appendChild(door);
+
+
+  movePlayerNormal(50,60);
 
 
   createCollectible(
@@ -2546,7 +2365,7 @@ function startCastle(){
       showEnding(
         "🏰",
         "Quest Complete!",
-        "You found the treasure hidden inside the castle!"
+        "You found the castle treasure!"
       );
 
     }
@@ -2560,7 +2379,9 @@ function startCastle(){
 }
 
 
-/* ================= SPACE ================= */
+/* ==================================================
+   SPACE ESCAPE
+================================================== */
 
 function startSpace(){
 
@@ -2569,13 +2390,13 @@ function startSpace(){
   );
 
 
-  const planet =
+  const planet=
   document.createElement("div");
 
   planet.className="planet";
 
 
-  const ring =
+  const ring=
   document.createElement("div");
 
   ring.className="planetRing";
@@ -2583,6 +2404,32 @@ function startSpace(){
   planet.appendChild(ring);
 
   world.appendChild(planet);
+
+
+  for(let i=0;i<30;i++){
+
+    const star=
+    document.createElement("div");
+
+    star.textContent="✦";
+
+    star.style.position="absolute";
+
+    star.style.left=
+    Math.random()*100+"%";
+
+    star.style.top=
+    Math.random()*100+"%";
+
+    star.style.fontSize=
+    (8+Math.random()*12)+"px";
+
+    world.appendChild(star);
+
+  }
+
+
+  movePlayerNormal(50,60);
 
 
   createCollectible(
@@ -2602,32 +2449,6 @@ function startSpace(){
   );
 
 
-  for(let i=0;i<25;i++){
-
-    const star =
-    document.createElement("div");
-
-    star.textContent="✦";
-
-    star.style.position=
-    "absolute";
-
-    star.style.left=
-    Math.random()*100+"%";
-
-    star.style.top=
-    Math.random()*100+"%";
-
-    star.style.fontSize=
-    (8+Math.random()*12)+"px";
-
-    star.style.color="white";
-
-    world.appendChild(star);
-
-  }
-
-
   showMessage(
     "Find the rocket!"
   );
@@ -2636,12 +2457,130 @@ function startSpace(){
 
 
 /* ==================================================
-   OBBY
+   NORMAL GAME MOVEMENT
+================================================== */
+
+/*
+  This is ONLY for the non-Obby games.
+
+  The Obby NEVER calls this movement.
+
+  Therefore the Obby cannot fly because
+  of this code.
+*/
+
+let normalX=50;
+
+let normalY=60;
+
+
+function movePlayerNormal(x,y){
+
+  normalX=x;
+
+  normalY=y;
+
+  player.style.left=
+  normalX+"%";
+
+  player.style.top=
+  normalY+"%";
+
+}
+
+
+function normalMovement(){
+
+  if(
+    !gameRunning ||
+    currentGame==="obby"
+  ){
+
+    return;
+
+  }
+
+
+  if(
+    keys["a"] ||
+    keys["arrowleft"]
+  ){
+
+    normalX-=0.8;
+
+  }
+
+
+  if(
+    keys["d"] ||
+    keys["arrowright"]
+  ){
+
+    normalX+=0.8;
+
+  }
+
+
+  if(
+    keys["w"] ||
+    keys["arrowup"]
+  ){
+
+    normalY-=0.8;
+
+  }
+
+
+  if(
+    keys["s"] ||
+    keys["arrowdown"]
+  ){
+
+    normalY+=0.8;
+
+  }
+
+
+  normalX=
+  Math.max(
+    2,
+    Math.min(
+      96,
+      normalX
+    )
+  );
+
+
+  normalY=
+  Math.max(
+    5,
+    Math.min(
+      80,
+      normalY
+    )
+  );
+
+
+  player.style.left=
+  normalX+"%";
+
+  player.style.top=
+  normalY+"%";
+
+}
+
+
+/* ==================================================
+   REAL OBBY
 ================================================== */
 
 let obbyScreen=1;
 
 let obbyPlatforms=[];
+
+let obbyX=100;
+
+let obbyY=100;
 
 let obbyVelocityY=0;
 
@@ -2649,32 +2588,35 @@ let obbyOnGround=false;
 
 let obbyFinished=false;
 
-let obbyRewardGiven=false;
-
 
 /*
-  REAL PLATFORMER PHYSICS
+  Physics values.
+
+  Gravity is positive, so the player
+  constantly accelerates DOWN.
+
+  Jump is negative, so the player
+  initially moves UP.
 */
 
-const obbyGravity=0.75;
+const OBBY_GRAVITY=0.7;
 
-const obbyJumpPower=-14;
+const OBBY_JUMP=-13;
+
+const OBBY_SPEED=5;
 
 
-/* ================= START OBBY ================= */
+/* ==================================================
+   START OBBY
+================================================== */
 
 function startObby(){
 
-  world.classList.add(
-    "obbyWorld"
-  );
-
+  currentGame="obby";
 
   obbyScreen=1;
 
   obbyFinished=false;
-
-  obbyRewardGiven=false;
 
   obbyVelocityY=0;
 
@@ -2686,23 +2628,16 @@ function startObby(){
 }
 
 
-/* ================= WORLD HEIGHT ================= */
-
-function getWorldHeight(){
-
-  return world.clientHeight;
-
-}
-
-
-/* ================= OBBY BACKGROUND ================= */
+/* ==================================================
+   OBBY BACKGROUND
+================================================== */
 
 function setObbyBackground(){
 
   if(obbyScreen===1){
 
     world.style.background=
-    "linear-gradient(#71d1ff 0%,#d8f7ff 58%,#72bd55 58%)";
+    "linear-gradient(#70d1ff 0%,#d8f7ff 60%,#71bc55 60%)";
 
   }
 
@@ -2710,7 +2645,7 @@ function setObbyBackground(){
   if(obbyScreen===2){
 
     world.style.background=
-    "linear-gradient(#7c9bb3 0%,#dce9ef 55%,#4e5662 55%)";
+    "linear-gradient(#9aaebd 0%,#e4edf2 55%,#555c65 55%)";
 
   }
 
@@ -2718,7 +2653,7 @@ function setObbyBackground(){
   if(obbyScreen===3){
 
     world.style.background=
-    "linear-gradient(#72d8ff 0%,#d8ffd7 52%,#39833f 52%)";
+    "linear-gradient(#76d8ff 0%,#d6ffd4 52%,#39833f 52%)";
 
   }
 
@@ -2726,7 +2661,7 @@ function setObbyBackground(){
   if(obbyScreen===4){
 
     world.style.background=
-    "linear-gradient(#3c2a20,#765038 55%,#2b1b13 55%)";
+    "linear-gradient(#422c20,#795038 55%,#29180f 55%)";
 
   }
 
@@ -2734,11 +2669,11 @@ function setObbyBackground(){
   if(obbyScreen===5){
 
     world.style.background=
-    "radial-gradient(circle at 20% 20%,white 0 2px,transparent 3px),"+
-    "radial-gradient(circle at 70% 30%,white 0 2px,transparent 3px),"+
-    "radial-gradient(circle at 45% 75%,white 0 2px,transparent 3px),"+
-    "radial-gradient(circle at 85% 80%,white 0 2px,transparent 3px),"+
-    "radial-gradient(circle at 10% 80%,white 0 2px,transparent 3px),"+
+    "radial-gradient(circle at 15% 15%,white 0 2px,transparent 3px),"+
+    "radial-gradient(circle at 30% 45%,white 0 2px,transparent 3px),"+
+    "radial-gradient(circle at 65% 20%,white 0 2px,transparent 3px),"+
+    "radial-gradient(circle at 80% 65%,white 0 2px,transparent 3px),"+
+    "radial-gradient(circle at 50% 80%,white 0 2px,transparent 3px),"+
     "linear-gradient(#030014,#17043a 60%,#05000f)";
 
   }
@@ -2746,7 +2681,9 @@ function setObbyBackground(){
 }
 
 
-/* ================= GENERATE SCREEN ================= */
+/* ==================================================
+   GENERATE OBBY SCREEN
+================================================== */
 
 function generateObbyScreen(){
 
@@ -2767,58 +2704,61 @@ function generateObbyScreen(){
 
 
   /*
-    PLATFORM POSITIONS
+    Platforms are arranged in a
+    staircase-like path.
 
-    The first platform is at the bottom.
-    Every platform above it is reachable
-    with a normal jump.
+    The vertical gaps are intentionally
+    small enough for the jump.
   */
+
+  const platformHeight=24;
+
 
   const platformData=[
 
     {
-      x:0.38,
-      y:height-45,
-      w:180
+      x:0.05,
+      y:height-55,
+      w:210
     },
 
     {
-      x:0.68,
-      y:height-135,
-      w:150
+      x:0.55,
+      y:height-145,
+      w:190
     },
 
     {
-      x:0.30,
-      y:height-225,
-      w:150
-    },
-
-    {
-      x:0.67,
-      y:height-315,
-      w:145
-    },
-
-    {
-      x:0.34,
-      y:height-405,
-      w:145
+      x:0.18,
+      y:height-235,
+      w:190
     },
 
     {
       x:0.62,
-      y:height-495,
-      w:150
+      y:height-325,
+      w:190
     },
 
     {
-      x:0.25,
+      x:0.30,
+      y:height-415,
+      w:190
+    },
+
+    {
+      x:0.68,
+      y:height-505,
+      w:190
+    },
+
+    {
+      x:0.10,
       y:Math.max(
-        30,
-        height-585
+        35,
+        height-595
       ),
-      w:170
+      w:210
     }
 
   ];
@@ -2834,34 +2774,7 @@ function generateObbyScreen(){
     platformData[i];
 
 
-    /*
-      Use percentage positions
-      so the platforms work on
-      different screen sizes.
-    */
-
-    let left=
-    data.x*width;
-
-
-    const platformWidth=
-    Math.min(
-      data.w,
-      width-30
-    );
-
-
-    left=
-    Math.max(
-      10,
-      Math.min(
-        width-platformWidth-10,
-        left
-      )
-    );
-
-
-    const platform =
+    const platform=
     document.createElement("div");
 
     platform.className=
@@ -2869,7 +2782,8 @@ function generateObbyScreen(){
 
 
     /*
-      Red platforms are hazards.
+      Some screens have different
+      platform types.
     */
 
     if(
@@ -2884,10 +2798,6 @@ function generateObbyScreen(){
     }
 
 
-    /*
-      Purple platforms are special.
-    */
-
     if(
       obbyScreen===3 &&
       (i===1 || i===4)
@@ -2900,6 +2810,23 @@ function generateObbyScreen(){
     }
 
 
+    const platformWidth=
+    Math.min(
+      data.w,
+      width-20
+    );
+
+
+    const left=
+    Math.max(
+      10,
+      Math.min(
+        width-platformWidth-10,
+        data.x*width
+      )
+    );
+
+
     platform.style.left=
     left+"px";
 
@@ -2909,13 +2836,16 @@ function generateObbyScreen(){
     platform.style.width=
     platformWidth+"px";
 
+    platform.style.height=
+    platformHeight+"px";
 
-    world.appendChild(platform);
+
+    world.appendChild(
+      platform
+    );
 
 
     obbyPlatforms.push({
-
-      el:platform,
 
       x:left,
 
@@ -2923,7 +2853,9 @@ function generateObbyScreen(){
 
       width:platformWidth,
 
-      height:22,
+      height:platformHeight,
+
+      element:platform,
 
       bad:
       platform.classList.contains(
@@ -2940,21 +2872,22 @@ function generateObbyScreen(){
 
 
   /*
-    START ON THE BOTTOM PLATFORM
+    Put player on the first
+    platform.
   */
 
-  const bottom=
+  const startingPlatform=
   obbyPlatforms[0];
 
 
-  playerX=
-  bottom.x+
-  bottom.width/2-
+  obbyX=
+  startingPlatform.x+
+  startingPlatform.width/2-
   player.offsetWidth/2;
 
 
-  playerY=
-  bottom.y-
+  obbyY=
+  startingPlatform.y-
   player.offsetHeight;
 
 
@@ -2963,17 +2896,18 @@ function generateObbyScreen(){
   obbyOnGround=true;
 
 
-  updatePlayerPixels();
+  updateObbyPlayer();
 
 
   /*
-    SCREEN NUMBER
+    Screen counter.
   */
 
   const stage=
   document.createElement("div");
 
-  stage.className="obbyStage";
+  stage.className=
+  "obbyStage";
 
 
   if(obbyScreen===5){
@@ -2995,73 +2929,70 @@ function generateObbyScreen(){
 
 
   /*
-    CONTROLS
+    Controls reminder.
   */
 
   const hint=
   document.createElement("div");
 
-  hint.className="obbyHint";
+  hint.className=
+  "obbyHint";
 
   hint.textContent=
-  "A / D or ← / → to move • SPACE to jump";
+  "A / D or ← / → = move     SPACE = jump";
 
 
   world.appendChild(hint);
 
 
-  if(obbyScreen===5){
-
-    showMessage(
-      "Final screen! Reach the last platform!"
-    );
-
-  }else{
-
-    showMessage(
-      "Jump to the top!"
-    );
-
-  }
+  showMessage(
+    obbyScreen===5
+    ? "Final screen! Reach the last platform!"
+    : "Jump to the top!"
+  );
 
 }
 
 
-/* ================= CLEAR OBBY ================= */
+/* ==================================================
+   CLEAR OBBY
+================================================== */
 
 function clearObby(){
 
   world.querySelectorAll(
     ".obbyPlatform,.obbyStage,.obbyHint"
   ).forEach(
-    el=>el.remove()
+    element=>element.remove()
   );
 
 }
 
 
-/* ================= PLAYER POSITION ================= */
+/* ==================================================
+   UPDATE OBBY PLAYER
+================================================== */
 
-function updatePlayerPixels(){
+function updateObbyPlayer(){
 
   player.style.left=
-  playerX+"px";
+  obbyX+"px";
 
   player.style.top=
-  playerY+"px";
+  obbyY+"px";
 
 }
 
 
 /* ==================================================
-   REAL OBBY PHYSICS
+   OBBY COLLISION
 ================================================== */
 
 function obbyPhysics(){
 
   /*
-    NEVER run Obby physics
-    unless the Obby is active.
+    Do absolutely NOTHING if this
+    is not the Obby.
   */
 
   if(
@@ -3082,11 +3013,18 @@ function obbyPhysics(){
   world.clientHeight;
 
 
-  /* =================
-     HORIZONTAL MOVEMENT
-  ================= */
+  const playerWidth=
+  player.offsetWidth;
 
-  let horizontalSpeed=0;
+  const playerHeight=
+  player.offsetHeight;
+
+
+  /* =========================
+     LEFT / RIGHT
+  ========================= */
+
+  let horizontal=0;
 
 
   if(
@@ -3094,7 +3032,7 @@ function obbyPhysics(){
     keys["arrowleft"]
   ){
 
-    horizontalSpeed-=5;
+    horizontal-=OBBY_SPEED;
 
   }
 
@@ -3104,112 +3042,110 @@ function obbyPhysics(){
     keys["arrowright"]
   ){
 
-    horizontalSpeed+=5;
+    horizontal+=OBBY_SPEED;
 
   }
 
 
-  playerX+=horizontalSpeed;
+  obbyX+=horizontal;
 
 
   /*
-    Stop the player leaving
-    the sides of the screen.
+    Keep player inside screen.
   */
 
-  playerX=
-  Math.max(
-    0,
-    Math.min(
-      width-player.offsetWidth,
-      playerX
-    )
-  );
+  if(obbyX<0){
+
+    obbyX=0;
+
+  }
 
 
-  /* =================
+  if(
+    obbyX>
+    width-playerWidth
+  ){
+
+    obbyX=
+    width-playerWidth;
+
+  }
+
+
+  /* =========================
      GRAVITY
-  ================= */
+  ========================= */
 
   /*
-    THIS is what makes the
-    player fall instead of float.
+    THIS RUNS EVERY FRAME.
+
+    There is no code that moves
+    the player upward except
+    the Space jump.
   */
 
   obbyVelocityY+=
-  obbyGravity;
+  OBBY_GRAVITY;
 
 
-  playerY+=
+  obbyY+=
   obbyVelocityY;
 
 
   /*
-    Assume the player is
-    not standing on anything.
+    Start each frame assuming
+    player is in the air.
   */
 
   obbyOnGround=false;
 
 
-  /* =================
+  /* =========================
      PLATFORM COLLISION
-  ================= */
-
-  const playerWidth=
-  player.offsetWidth;
-
-  const playerHeight=
-  player.offsetHeight;
-
-
-  /*
-    Only check platforms
-    while falling.
-  */
+  ========================= */
 
   if(obbyVelocityY>=0){
+
+    const playerBottom=
+    obbyY+
+    playerHeight;
+
 
     for(
       const platform
       of obbyPlatforms
     ){
 
-      const playerBottom=
-      playerY+
-      playerHeight;
-
-
-      const horizontalHit=
-      playerX+
+      const horizontalCollision=
+      obbyX+
       playerWidth>
       platform.x &&
-      playerX<
+
+      obbyX<
       platform.x+
       platform.width;
 
 
-      const verticalHit=
+      const verticalCollision=
       playerBottom>=
       platform.y &&
 
       playerBottom<=
       platform.y+
       platform.height+
-      12;
+      8;
 
 
       if(
-        horizontalHit &&
-        verticalHit
+        horizontalCollision &&
+        verticalCollision
       ){
 
         /*
-          Put the player directly
-          on top of the platform.
+          Land ON TOP.
         */
 
-        playerY=
+        obbyY=
         platform.y-
         playerHeight;
 
@@ -3237,7 +3173,7 @@ function obbyPhysics(){
 
 
         /*
-          FINAL PLATFORM
+          LAST PLATFORM
         */
 
         if(platform.final){
@@ -3249,6 +3185,11 @@ function obbyPhysics(){
         }
 
 
+        /*
+          Stop checking once
+          we have landed.
+        */
+
         break;
 
       }
@@ -3258,14 +3199,18 @@ function obbyPhysics(){
   }
 
 
-  /* =================
-     FALLING OFF
-  ================= */
+  /* =========================
+     FALLING
+  ========================= */
 
   if(
-    playerY>
-    height+100
+    obbyY>
+    height+120
   ){
+
+    showMessage(
+      "You fell! Try again!"
+    );
 
     resetObbyPlayer();
 
@@ -3274,15 +3219,22 @@ function obbyPhysics(){
   }
 
 
-  /* =================
-     REACH THE TOP
-  ================= */
+  /* =========================
+     TOP OF SCREEN
+  ========================= */
 
-  if(playerY<=0){
+  /*
+    When the player reaches the
+    top, switch to the next
+    screen.
 
-    /*
-      There are five screens.
-    */
+    The player is then placed
+    back at the bottom.
+  */
+
+  if(
+    obbyY<=0
+  ){
 
     if(obbyScreen<5){
 
@@ -3297,32 +3249,29 @@ function obbyPhysics(){
   }
 
 
-  updatePlayerPixels();
+  updateObbyPlayer();
 
 }
 
 
-/* ================= RESET PLAYER ================= */
+/* ==================================================
+   RESET OBBY
+================================================== */
 
 function resetObbyPlayer(){
 
-  if(!obbyPlatforms.length){
-    return;
-  }
-
-
-  const bottom=
+  const startingPlatform=
   obbyPlatforms[0];
 
 
-  playerX=
-  bottom.x+
-  bottom.width/2-
+  obbyX=
+  startingPlatform.x+
+  startingPlatform.width/2-
   player.offsetWidth/2;
 
 
-  playerY=
-  bottom.y-
+  obbyY=
+  startingPlatform.y-
   player.offsetHeight;
 
 
@@ -3331,12 +3280,14 @@ function resetObbyPlayer(){
   obbyOnGround=true;
 
 
-  updatePlayerPixels();
+  updateObbyPlayer();
 
 }
 
 
-/* ================= WIN OBBY ================= */
+/* ==================================================
+   OBBY WIN
+================================================== */
 
 function winObby(){
 
@@ -3347,151 +3298,51 @@ function winObby(){
 
   obbyFinished=true;
 
+  gameRunning=false;
+
 
   /*
-    The reward is only given once
-    during this completion.
+    EXACTLY 50 COINS.
+    Saved immediately.
   */
 
-  if(!obbyRewardGiven){
-
-    obbyRewardGiven=true;
-
-    addCoins(50);
-
-  }
+  addCoins(50);
 
 
   showEnding(
-
     "🎉",
-
     "Good job! You beat this Obby!",
-
     "You completed all 5 screens and earned 50 coins!"
-
   );
 
 }
 
 
 /* ==================================================
-   NORMAL GAMES MOVEMENT
+   GAME LOOP
 ================================================== */
-
-function normalMovement(){
-
-  /*
-    IMPORTANT:
-
-    If this is the Obby, this function
-    does NOTHING.
-
-    That means W/S cannot move the
-    Obby player vertically.
-  */
-
-  if(
-    !gameRunning ||
-    currentGame==="obby"
-  ){
-
-    return;
-
-  }
-
-
-  if(
-    keys["a"] ||
-    keys["arrowleft"]
-  ){
-
-    playerX-=0.8;
-
-  }
-
-
-  if(
-    keys["d"] ||
-    keys["arrowright"]
-  ){
-
-    playerX+=0.8;
-
-  }
-
-
-  playerX=
-  Math.max(
-    2,
-    Math.min(
-      96,
-      playerX
-    )
-  );
-
-
-  /*
-    Normal games use the
-    old free movement system.
-
-    The Obby does NOT.
-  */
-
-  if(
-    keys["w"] ||
-    keys["arrowup"]
-  ){
-
-    playerY-=0.5;
-
-  }
-
-
-  if(
-    keys["s"] ||
-    keys["arrowdown"]
-  ){
-
-    playerY+=0.5;
-
-  }
-
-
-  playerY=
-  Math.max(
-    12,
-    Math.min(
-      80,
-      playerY
-    )
-  );
-
-
-  player.style.left=
-  playerX+"%";
-
-  player.style.top=
-  playerY+"%";
-
-}
-
-
-/* ================= GAME LOOP ================= */
 
 function gameLoop(){
 
   /*
-    Normal games:
-    A/D + W/S.
+    Normal games use their
+    normal movement.
 
-    Obby:
-    A/D + gravity + Space.
+    Obby uses ONLY its physics.
   */
 
-  normalMovement();
+  if(
+    currentGame==="obby"
+  ){
 
-  obbyPhysics();
+    obbyPhysics();
+
+  }else{
+
+    normalMovement();
+
+  }
+
 
   requestAnimationFrame(
     gameLoop
@@ -3499,14 +3350,16 @@ function gameLoop(){
 
 }
 
-
 gameLoop();
 
 
-/* ================= PLAY BUTTONS ================= */
+/* ==================================================
+   PLAY BUTTONS
+================================================== */
 
-document.querySelectorAll(".play")
-.forEach(button=>{
+document.querySelectorAll(
+  ".play"
+).forEach(button=>{
 
   button.addEventListener(
     "click",
@@ -3522,7 +3375,36 @@ document.querySelectorAll(".play")
 });
 
 
-/* ================= SESSION ================= */
+/* ==================================================
+   LEAVE GAME
+================================================== */
+
+function leaveGame(){
+
+  gameRunning=false;
+
+  endingOverlay.classList.add(
+    "hidden"
+  );
+
+  gameScreen.classList.add(
+    "hidden"
+  );
+
+  hubScreen.classList.remove(
+    "hidden"
+  );
+
+  updateCoins();
+
+}
+
+window.leaveGame=leaveGame;
+
+
+/* ==================================================
+   SUPABASE SESSION
+================================================== */
 
 supabase.auth.getSession()
 .then(({data})=>{
@@ -3537,32 +3419,22 @@ supabase.auth.getSession()
 
 
 /*
-  IMPORTANT:
-  We do NOT regenerate the Obby
-  when the browser is resized.
+  DO NOT REGENERATE THE OBBY
+  WHEN THE WINDOW RESIZES.
 
-  That prevents the player from
-  suddenly being put back onto
-  the starting platform.
+  This is important because
+  regenerating it would teleport
+  the player back to the starting
+  platform.
 */
 
 window.addEventListener(
   "resize",
   ()=>{
 
-    if(
-      currentGame==="obby" &&
-      gameRunning
-    ){
-
-      /*
-        Do nothing.
-
-        The current level stays
-        exactly where it is.
-      */
-
-    }
+    /*
+      Intentionally empty.
+    */
 
   }
 );
