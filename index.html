@@ -34,7 +34,7 @@ button:hover{
   transform:scale(1.04);
 }
 
-/* ACCOUNT */
+/* ================= ACCOUNT ================= */
 
 #accountScreen{
   min-height:100vh;
@@ -91,7 +91,7 @@ button:hover{
   margin-top:12px;
 }
 
-/* TOP BAR */
+/* ================= TOP BAR ================= */
 
 #hubScreen{
   min-height:100vh;
@@ -124,7 +124,7 @@ button:hover{
   color:white;
 }
 
-/* TABS */
+/* ================= TABS ================= */
 
 .tabs{
   display:flex;
@@ -142,7 +142,7 @@ button:hover{
   background:#2196f3;
 }
 
-/* GAMES */
+/* ================= GAMES ================= */
 
 #gamesTab{
   padding:0 25px 30px;
@@ -171,14 +171,37 @@ button:hover{
   font-size:65px;
 }
 
-.coinImage{background:linear-gradient(#50b8ff,#69d47a);}
-.brainImage{background:linear-gradient(#ff7a7a,#8d4dff);}
-.obbyImage{background:linear-gradient(#7ed7ff,#53a84e);}
-.spaceImage{background:linear-gradient(#07001f,#25135e);}
-.gemImage{background:linear-gradient(#092e49,#08a4d8);}
-.petImage{background:linear-gradient(#ffe49b,#74d3ff);}
-.forestImage{background:linear-gradient(#143c25,#69a84d);}
-.castleImage{background:linear-gradient(#3d2619,#a86b39);}
+.coinImage{
+  background:linear-gradient(#50b8ff,#69d47a);
+}
+
+.brainImage{
+  background:linear-gradient(#ff7a7a,#8d4dff);
+}
+
+.obbyImage{
+  background:linear-gradient(#7ed7ff,#53a84e);
+}
+
+.spaceImage{
+  background:linear-gradient(#07001f,#25135e);
+}
+
+.gemImage{
+  background:linear-gradient(#092e49,#08a4d8);
+}
+
+.petImage{
+  background:linear-gradient(#ffe49b,#74d3ff);
+}
+
+.forestImage{
+  background:linear-gradient(#143c25,#69a84d);
+}
+
+.castleImage{
+  background:linear-gradient(#3d2619,#a86b39);
+}
 
 .gameInfo{
   padding:15px;
@@ -199,7 +222,7 @@ button:hover{
   color:white;
 }
 
-/* FRIENDS */
+/* ================= FRIENDS ================= */
 
 #friendsTab,
 #marketplaceTab{
@@ -229,7 +252,7 @@ button:hover{
   font-size:25px;
 }
 
-/* MARKETPLACE */
+/* ================= MARKETPLACE ================= */
 
 .marketItem{
   background:#18233c;
@@ -258,7 +281,7 @@ button:hover{
   background:#555;
 }
 
-/* CHARACTER */
+/* ================= CHARACTER ================= */
 
 #characterScreen{
   min-height:100vh;
@@ -331,6 +354,10 @@ button:hover{
   top:-5px;
   left:10px;
   z-index:2;
+  font-size:30px;
+  text-align:center;
+  line-height:30px;
+  background-color:transparent;
 }
 
 .charEyes{
@@ -360,8 +387,13 @@ button:hover{
   border-radius:10px;
 }
 
-.leftArm{left:-20px;}
-.rightArm{right:-20px;}
+.leftArm{
+  left:-20px;
+}
+
+.rightArm{
+  right:-20px;
+}
 
 .charLeg{
   width:38px;
@@ -372,8 +404,13 @@ button:hover{
   border-radius:7px;
 }
 
-.leftLeg{left:8px;}
-.rightLeg{right:8px;}
+.leftLeg{
+  left:8px;
+}
+
+.rightLeg{
+  right:8px;
+}
 
 .charFoot{
   width:43px;
@@ -384,8 +421,13 @@ button:hover{
   border-radius:8px;
 }
 
-.leftFoot{left:2px;}
-.rightFoot{right:2px;}
+.leftFoot{
+  left:2px;
+}
+
+.rightFoot{
+  right:2px;
+}
 
 .accessories{
   background:#18233c;
@@ -401,7 +443,7 @@ button:hover{
   color:white;
 }
 
-/* GAME */
+/* ================= GAME ================= */
 
 #gameScreen{
   position:fixed;
@@ -441,7 +483,7 @@ button:hover{
   background:linear-gradient(#72c8ff 0%,#b8edff 65%,#69bb54 65%);
 }
 
-/* NORMAL WORLD */
+/* ================= NORMAL WORLD ================= */
 
 .ground{
   position:absolute;
@@ -479,8 +521,13 @@ button:hover{
   border-bottom:65px solid #9d3f35;
 }
 
-.house1{left:10%;}
-.house2{right:10%;}
+.house1{
+  left:10%;
+}
+
+.house2{
+  right:10%;
+}
 
 .tree{
   position:absolute;
@@ -501,17 +548,23 @@ button:hover{
   top:-55px;
 }
 
-.tree1{left:35%;}
-.tree2{right:35%;}
+.tree1{
+  left:35%;
+}
 
-/* PLAYER */
+.tree2{
+  right:35%;
+}
+
+/* ================= PLAYER ================= */
 
 #player{
   position:absolute;
   width:42px;
   height:78px;
   z-index:30;
-  transition:none;
+  left:50%;
+  top:60%;
 }
 
 .playerHead{
@@ -556,18 +609,23 @@ button:hover{
   border-radius:3px;
 }
 
-.playerLeg1{left:5px;}
-.playerLeg2{right:5px;}
+.playerLeg1{
+  left:5px;
+}
+
+.playerLeg2{
+  right:5px;
+}
 
 .playerAccessory{
   position:absolute;
-  top:-16px;
-  left:2px;
+  top:-20px;
+  left:0;
   z-index:10;
-  font-size:22px;
+  font-size:24px;
 }
 
-/* COLLECTIBLES */
+/* ================= COLLECTIBLES ================= */
 
 .collectible{
   position:absolute;
@@ -579,17 +637,16 @@ button:hover{
 }
 
 @keyframes bob{
-  from{transform:translateY(0);}
-  to{transform:translateY(-8px);}
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-8px);
+  }
 }
 
-.obstacle{
-  position:absolute;
-  background:#d83c3c;
-  border-radius:8px;
-}
-
-/* MESSAGES */
+/* ================= MESSAGES ================= */
 
 .gameMessage{
   position:absolute;
@@ -603,7 +660,7 @@ button:hover{
   font-weight:bold;
 }
 
-/* SPACE */
+/* ================= SPACE ================= */
 
 .spaceWorld{
   background:
@@ -642,7 +699,7 @@ button:hover{
   font-size:70px;
 }
 
-/* CASTLE */
+/* ================= CASTLE ================= */
 
 .castleWorld{
   background:linear-gradient(#24160f,#533422);
@@ -671,8 +728,13 @@ button:hover{
   top:20%;
 }
 
-.castleWindow1{left:15%;}
-.castleWindow2{right:15%;}
+.castleWindow1{
+  left:15%;
+}
+
+.castleWindow2{
+  right:15%;
+}
 
 .castleDoor{
   position:absolute;
@@ -686,22 +748,10 @@ button:hover{
   border-radius:70px 70px 0 0;
 }
 
-.treasure{
-  position:absolute;
-  font-size:60px;
-}
-
-/* OBBY */
+/* ================= OBBY ================= */
 
 .obbyWorld{
-  background:linear-gradient(#73d2ff,#d8f7ff);
-}
-
-.obbyWorld .ground,
-.obbyWorld .road,
-.obbyWorld .house,
-.obbyWorld .tree{
-  display:none;
+  background:#73d2ff;
 }
 
 .obbyPlatform{
@@ -733,6 +783,7 @@ button:hover{
   border-radius:15px;
   z-index:50;
   font-weight:bold;
+  white-space:nowrap;
 }
 
 .obbyHint{
@@ -744,9 +795,10 @@ button:hover{
   padding:8px 15px;
   border-radius:12px;
   z-index:50;
+  white-space:nowrap;
 }
 
-/* ENDING */
+/* ================= ENDING ================= */
 
 #endingOverlay{
   position:absolute;
@@ -786,9 +838,10 @@ button:hover{
   margin-top:10px;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:650px){
+
   .topbar{
     gap:7px;
     padding:0 8px;
@@ -806,53 +859,114 @@ button:hover{
     padding:20px;
     gap:20px;
   }
+
+  .obbyHint{
+    font-size:12px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- ACCOUNT -->
+
+<!-- ================= ACCOUNT ================= -->
 
 <div id="accountScreen">
 
   <div class="accountBox">
+
     <h1>🎮 Roblox Jr.</h1>
+
     <p>Game Hub</p>
 
-    <input id="email" type="email" placeholder="Email">
-    <input id="password" type="password" placeholder="Password">
+    <input
+      id="email"
+      type="email"
+      placeholder="Email"
+    >
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Password"
+    >
 
     <div class="accountButtons">
-      <button class="loginBtn" onclick="login()">Log In</button>
-      <button class="signupBtn" onclick="signup()">Sign Up</button>
+
+      <button
+        class="loginBtn"
+        onclick="login()"
+      >
+        Log In
+      </button>
+
+      <button
+        class="signupBtn"
+        onclick="signup()"
+      >
+        Sign Up
+      </button>
+
     </div>
 
     <div id="accountMessage"></div>
+
   </div>
 
 </div>
 
 
-<!-- HUB -->
+<!-- ================= HUB ================= -->
 
 <div id="hubScreen" class="hidden">
 
   <div class="topbar">
-    <div class="logo">🎮 Roblox Jr.</div>
+
+    <div class="logo">
+      🎮 Roblox Jr.
+    </div>
 
     <div class="coins">
       🪙 <span id="coinCount">100</span>
     </div>
 
-    <button onclick="openCharacter()">Character</button>
-    <button onclick="logout()">Log Out</button>
+    <button onclick="openCharacter()">
+      Character
+    </button>
+
+    <button onclick="logout()">
+      Log Out
+    </button>
+
   </div>
 
+
   <div class="tabs">
-    <button class="tab active" onclick="showTab('gamesTab',this)">Games</button>
-    <button class="tab" onclick="showTab('friendsTab',this)">Friends</button>
-    <button class="tab" onclick="showTab('marketplaceTab',this)">Marketplace</button>
+
+    <button
+      class="tab active"
+      onclick="showTab('gamesTab',this)"
+    >
+      Games
+    </button>
+
+    <button
+      class="tab"
+      onclick="showTab('friendsTab',this)"
+    >
+      Friends
+    </button>
+
+    <button
+      class="tab"
+      onclick="showTab('marketplaceTab',this)"
+    >
+      Marketplace
+    </button>
+
   </div>
 
 
@@ -862,77 +976,214 @@ button:hover{
 
     <div class="gamesGrid">
 
+
       <div class="gameCard">
-        <div class="gameImage coinImage">🪙</div>
+
+        <div class="gameImage coinImage">
+          🪙
+        </div>
+
         <div class="gameInfo">
+
           <h3>Coin Dash</h3>
-          <p>Collect every coin you can!</p>
-          <button class="play" data-game="coin">Play</button>
+
+          <p>
+            Collect every coin you can!
+          </p>
+
+          <button
+            class="play"
+            data-game="coin"
+          >
+            Play
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="gameCard">
-        <div class="gameImage brainImage">🧠</div>
+
+        <div class="gameImage brainImage">
+          🧠
+        </div>
+
         <div class="gameInfo">
+
           <h3>Brainrot Heist</h3>
-          <p>Grab the brainrot and escape!</p>
-          <button class="play" data-game="brain">Play</button>
+
+          <p>
+            Grab the brainrot and escape!
+          </p>
+
+          <button
+            class="play"
+            data-game="brain"
+          >
+            Play
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="gameCard">
-        <div class="gameImage obbyImage">🏃</div>
+
+        <div class="gameImage obbyImage">
+          🏃
+        </div>
+
         <div class="gameInfo">
+
           <h3>Obby Tower</h3>
-          <p>Jump through five different screens!</p>
-          <button class="play" data-game="obby">Play</button>
+
+          <p>
+            Jump through five different screens!
+          </p>
+
+          <button
+            class="play"
+            data-game="obby"
+          >
+            Play
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="gameCard">
-        <div class="gameImage spaceImage">🚀</div>
+
+        <div class="gameImage spaceImage">
+          🚀
+        </div>
+
         <div class="gameInfo">
+
           <h3>Space Escape</h3>
-          <p>Find the rocket and escape!</p>
-          <button class="play" data-game="space">Play</button>
+
+          <p>
+            Find the rocket and escape!
+          </p>
+
+          <button
+            class="play"
+            data-game="space"
+          >
+            Play
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="gameCard">
-        <div class="gameImage gemImage">💎</div>
+
+        <div class="gameImage gemImage">
+          💎
+        </div>
+
         <div class="gameInfo">
+
           <h3>Gem Hunt</h3>
-          <p>Find all the hidden gems!</p>
-          <button class="play" data-game="gem">Play</button>
+
+          <p>
+            Find all the hidden gems!
+          </p>
+
+          <button
+            class="play"
+            data-game="gem"
+          >
+            Play
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="gameCard">
-        <div class="gameImage petImage">🐶</div>
+
+        <div class="gameImage petImage">
+          🐶
+        </div>
+
         <div class="gameInfo">
+
           <h3>Pet Race</h3>
-          <p>Race your pet to the finish!</p>
-          <button class="play" data-game="pet">Play</button>
+
+          <p>
+            Race your pet to the finish!
+          </p>
+
+          <button
+            class="play"
+            data-game="pet"
+          >
+            Play
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="gameCard">
-        <div class="gameImage forestImage">🌲</div>
+
+        <div class="gameImage forestImage">
+          🌲
+        </div>
+
         <div class="gameInfo">
+
           <h3>Forest Adventure</h3>
-          <p>Explore the forest and find treasure!</p>
-          <button class="play" data-game="forest">Play</button>
+
+          <p>
+            Explore the forest and find treasure!
+          </p>
+
+          <button
+            class="play"
+            data-game="forest"
+          >
+            Play
+          </button>
+
         </div>
+
       </div>
 
+
       <div class="gameCard">
-        <div class="gameImage castleImage">🏰</div>
-        <div class="gameInfo">
-          <h3>Castle Quest</h3>
-          <p>Explore the castle and find its treasure!</p>
-          <button class="play" data-game="castle">Play</button>
+
+        <div class="gameImage castleImage">
+          🏰
         </div>
+
+        <div class="gameInfo">
+
+          <h3>Castle Quest</h3>
+
+          <p>
+            Explore the castle and find its treasure!
+          </p>
+
+          <button
+            class="play"
+            data-game="castle"
+          >
+            Play
+          </button>
+
+        </div>
+
       </div>
+
 
     </div>
 
@@ -946,27 +1197,44 @@ button:hover{
     <h2>👥 Friends</h2>
 
     <div class="friend">
-      <div class="friendAvatar">😀</div>
+
+      <div class="friendAvatar">
+        😀
+      </div>
+
       <div>
         <b>Alex</b>
         <div>Online</div>
       </div>
+
     </div>
 
+
     <div class="friend">
-      <div class="friendAvatar">😎</div>
+
+      <div class="friendAvatar">
+        😎
+      </div>
+
       <div>
         <b>Sam</b>
         <div>Playing Obby Tower</div>
       </div>
+
     </div>
 
+
     <div class="friend">
-      <div class="friendAvatar">🤓</div>
+
+      <div class="friendAvatar">
+        🤓
+      </div>
+
       <div>
         <b>Max</b>
         <div>Offline</div>
       </div>
+
     </div>
 
   </div>
@@ -978,40 +1246,88 @@ button:hover{
 
     <h2>🛍️ Marketplace</h2>
 
+
     <div class="marketItem">
-      <div class="marketIcon">🎩</div>
+
+      <div class="marketIcon">
+        🎩
+      </div>
+
       <div class="marketText">
         <b>Cool Hat</b>
         <div>25 coins</div>
       </div>
-      <button class="buy" onclick="buyItem(this,25,'hat')">Buy</button>
+
+      <button
+        class="buy"
+        onclick="buyItem(this,25,'hat')"
+      >
+        Buy
+      </button>
+
     </div>
 
+
     <div class="marketItem">
-      <div class="marketIcon">🕶️</div>
+
+      <div class="marketIcon">
+        🕶️
+      </div>
+
       <div class="marketText">
         <b>Cool Glasses</b>
         <div>30 coins</div>
       </div>
-      <button class="buy" onclick="buyItem(this,30,'glasses')">Buy</button>
+
+      <button
+        class="buy"
+        onclick="buyItem(this,30,'glasses')"
+      >
+        Buy
+      </button>
+
     </div>
 
+
     <div class="marketItem">
-      <div class="marketIcon">👑</div>
+
+      <div class="marketIcon">
+        👑
+      </div>
+
       <div class="marketText">
         <b>King Crown</b>
         <div>75 coins</div>
       </div>
-      <button class="buy" onclick="buyItem(this,75,'crown')">Buy</button>
+
+      <button
+        class="buy"
+        onclick="buyItem(this,75,'crown')"
+      >
+        Buy
+      </button>
+
     </div>
 
+
     <div class="marketItem">
-      <div class="marketIcon">🎒</div>
+
+      <div class="marketIcon">
+        🎒
+      </div>
+
       <div class="marketText">
         <b>Adventure Backpack</b>
         <div>50 coins</div>
       </div>
-      <button class="buy" onclick="buyItem(this,50,'backpack')">Buy</button>
+
+      <button
+        class="buy"
+        onclick="buyItem(this,50,'backpack')"
+      >
+        Buy
+      </button>
+
     </div>
 
   </div>
@@ -1019,14 +1335,20 @@ button:hover{
 </div>
 
 
-<!-- CHARACTER -->
+<!-- ================= CHARACTER ================= -->
 
 <div id="characterScreen" class="hidden">
 
   <div class="characterTop">
-    <button onclick="closeCharacter()">← Back</button>
+
+    <button onclick="closeCharacter()">
+      ← Back
+    </button>
+
     <h2>My Character</h2>
+
   </div>
+
 
   <div class="characterContent">
 
@@ -1034,21 +1356,32 @@ button:hover{
 
       <div class="fullCharacter">
 
-        <div id="charAccessory" class="charHair"></div>
+        <div
+          id="charAccessory"
+          class="charHair"
+        ></div>
 
         <div class="charHead">
-          <div class="charEyes">• •</div>
+          <div class="charEyes">
+            • •
+          </div>
         </div>
 
-        <div class="charBody" id="charBody"></div>
+        <div
+          class="charBody"
+          id="charBody"
+        ></div>
 
         <div class="charArm leftArm"></div>
+
         <div class="charArm rightArm"></div>
 
         <div class="charLeg leftLeg"></div>
+
         <div class="charLeg rightLeg"></div>
 
         <div class="charFoot leftFoot"></div>
+
         <div class="charFoot rightFoot"></div>
 
       </div>
@@ -1062,17 +1395,39 @@ button:hover{
 
       <h2>Customize</h2>
 
-      <button onclick="changeShirt('#2488e8')">Blue Shirt</button>
-      <button onclick="changeShirt('#e83d3d')">Red Shirt</button>
-      <button onclick="changeShirt('#35b85c')">Green Shirt</button>
-      <button onclick="changeShirt('#9c4de0')">Purple Shirt</button>
+      <button onclick="changeShirt('#2488e8')">
+        Blue Shirt
+      </button>
+
+      <button onclick="changeShirt('#e83d3d')">
+        Red Shirt
+      </button>
+
+      <button onclick="changeShirt('#35b85c')">
+        Green Shirt
+      </button>
+
+      <button onclick="changeShirt('#9c4de0')">
+        Purple Shirt
+      </button>
 
       <hr>
 
-      <button onclick="setAccessory('🎩')">🎩 Cool Hat</button>
-      <button onclick="setAccessory('🕶️')">🕶️ Glasses</button>
-      <button onclick="setAccessory('👑')">👑 Crown</button>
-      <button onclick="setAccessory('')">Remove Accessory</button>
+      <button onclick="setAccessory('🎩')">
+        🎩 Cool Hat
+      </button>
+
+      <button onclick="setAccessory('🕶️')">
+        🕶️ Glasses
+      </button>
+
+      <button onclick="setAccessory('👑')">
+        👑 Crown
+      </button>
+
+      <button onclick="setAccessory('')">
+        Remove Accessory
+      </button>
 
     </div>
 
@@ -1081,15 +1436,22 @@ button:hover{
 </div>
 
 
-<!-- GAME -->
+<!-- ================= GAME ================= -->
 
 <div id="gameScreen" class="hidden">
 
   <div class="gameHeader">
 
-    <button id="backToHub" onclick="leaveGame()">← Back</button>
+    <button
+      id="backToHub"
+      onclick="leaveGame()"
+    >
+      ← Back
+    </button>
 
-    <h2 id="gameTitle">Game</h2>
+    <h2 id="gameTitle">
+      Game
+    </h2>
 
     <div class="coins">
       🪙 <span id="gameCoinCount">100</span>
@@ -1097,32 +1459,62 @@ button:hover{
 
   </div>
 
+
   <div id="world">
 
-    <div id="gameMessage" class="gameMessage hidden"></div>
+    <div
+      id="gameMessage"
+      class="gameMessage hidden"
+    ></div>
+
 
     <div id="player">
-      <div class="playerAccessory" id="playerAccessory"></div>
+
+      <div
+        class="playerAccessory"
+        id="playerAccessory"
+      ></div>
+
       <div class="playerHair"></div>
+
       <div class="playerHead"></div>
+
       <div class="playerBody"></div>
+
       <div class="playerLeg1"></div>
+
       <div class="playerLeg2"></div>
+
     </div>
 
   </div>
 
-  <div id="endingOverlay" class="hidden">
+
+  <div
+    id="endingOverlay"
+    class="hidden"
+  >
 
     <div class="endingBox">
 
-      <div class="endingEmoji" id="endingEmoji">🎉</div>
+      <div
+        class="endingEmoji"
+        id="endingEmoji"
+      >
+        🎉
+      </div>
 
-      <h1 id="endingTitle">You Won!</h1>
+      <h1 id="endingTitle">
+        You Won!
+      </h1>
 
-      <p id="endingText">Great job!</p>
+      <p id="endingText">
+        Great job!
+      </p>
 
-      <button onclick="leaveGame()">Back to Game Hub</button>
+      <button onclick="leaveGame()">
+        Back to Game Hub
+      </button>
 
     </div>
 
@@ -1133,11 +1525,12 @@ button:hover{
 
 <script type="module">
 
-/* SUPABASE */
+/* ================= SUPABASE ================= */
 
-import{
+import {
   createClient
-}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+} from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
 
 const SUPABASE_URL =
 "https://rewbdyajylagepnrbixu.supabase.co";
@@ -1145,11 +1538,15 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
 "sb_publishable_77k0d-o6J210zPyWGtsqEA_yB71FFi6";
 
+
 const supabase =
-createClient(SUPABASE_URL,SUPABASE_KEY);
+createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
 
 
-/* ELEMENTS */
+/* ================= ELEMENTS ================= */
 
 const accountScreen =
 document.getElementById("accountScreen");
@@ -1191,31 +1588,38 @@ const endingEmoji =
 document.getElementById("endingEmoji");
 
 
-/* COINS */
+/* ================= COINS ================= */
 
 let coins =
-Number(localStorage.getItem("robloxJrCoins") || 100);
+Number(
+  localStorage.getItem("robloxJrCoins") || 100
+);
+
 
 function updateCoins(){
 
   coinCount.textContent=coins;
+
   gameCoinCount.textContent=coins;
 
   localStorage.setItem(
     "robloxJrCoins",
     coins
   );
+
 }
+
 
 function addCoins(amount){
 
   coins+=amount;
 
   updateCoins();
+
 }
 
 
-/* ACCOUNT */
+/* ================= ACCOUNT ================= */
 
 async function signup(){
 
@@ -1225,18 +1629,23 @@ async function signup(){
   const password =
   document.getElementById("password").value;
 
+
   if(!email || !password){
 
     accountMessage.textContent=
     "Enter an email and password.";
 
     return;
+
   }
 
-  const{error}=await supabase.auth.signUp({
+
+  const {error} =
+  await supabase.auth.signUp({
     email,
     password
   });
+
 
   if(error){
 
@@ -1252,6 +1661,7 @@ async function signup(){
 
 }
 
+
 window.signup=signup;
 
 
@@ -1263,18 +1673,23 @@ async function login(){
   const password =
   document.getElementById("password").value;
 
+
   if(!email || !password){
 
     accountMessage.textContent=
     "Enter an email and password.";
 
     return;
+
   }
 
-  const{error}=await supabase.auth.signInWithPassword({
+
+  const {error} =
+  await supabase.auth.signInWithPassword({
     email,
     password
   });
+
 
   if(error){
 
@@ -1289,6 +1704,7 @@ async function login(){
 
 }
 
+
 window.login=login;
 
 
@@ -1296,13 +1712,17 @@ async function logout(){
 
   await supabase.auth.signOut();
 
+
   hubScreen.classList.add("hidden");
+
   characterScreen.classList.add("hidden");
+
   gameScreen.classList.add("hidden");
 
   accountScreen.classList.remove("hidden");
 
 }
+
 
 window.logout=logout;
 
@@ -1310,8 +1730,11 @@ window.logout=logout;
 function showHub(){
 
   accountScreen.classList.add("hidden");
+
   characterScreen.classList.add("hidden");
+
   gameScreen.classList.add("hidden");
+
   hubScreen.classList.remove("hidden");
 
   updateCoins();
@@ -1319,7 +1742,7 @@ function showHub(){
 }
 
 
-/* TABS */
+/* ================= TABS ================= */
 
 function showTab(tab,button){
 
@@ -1332,27 +1755,35 @@ function showTab(tab,button){
   document.getElementById("marketplaceTab")
     .classList.add("hidden");
 
+
   document.getElementById(tab)
     .classList.remove("hidden");
 
+
   document.querySelectorAll(".tab")
-    .forEach(x=>x.classList.remove("active"));
+    .forEach(x=>{
+      x.classList.remove("active");
+    });
+
 
   button.classList.add("active");
 
 }
 
+
 window.showTab=showTab;
 
 
-/* CHARACTER */
+/* ================= CHARACTER ================= */
 
 function openCharacter(){
 
   hubScreen.classList.add("hidden");
+
   characterScreen.classList.remove("hidden");
 
 }
+
 
 window.openCharacter=openCharacter;
 
@@ -1360,9 +1791,11 @@ window.openCharacter=openCharacter;
 function closeCharacter(){
 
   characterScreen.classList.add("hidden");
+
   hubScreen.classList.remove("hidden");
 
 }
+
 
 window.closeCharacter=closeCharacter;
 
@@ -1373,6 +1806,7 @@ function changeShirt(color){
     .style.background=color;
 
 }
+
 
 window.changeShirt=changeShirt;
 
@@ -1387,10 +1821,11 @@ function setAccessory(item){
 
 }
 
+
 window.setAccessory=setAccessory;
 
 
-/* MARKET */
+/* ================= MARKETPLACE ================= */
 
 function buyItem(button,cost,item){
 
@@ -1398,104 +1833,182 @@ function buyItem(button,cost,item){
     return;
   }
 
+
   if(coins<cost){
 
-    alert("You don't have enough coins!");
+    alert(
+      "You don't have enough coins!"
+    );
 
     return;
+
   }
+
 
   coins-=cost;
 
   updateCoins();
 
+
   button.textContent="Owned";
+
   button.classList.add("owned");
 
 }
 
+
 window.buyItem=buyItem;
 
 
-/* GAME STATE */
+/* ================= GAME STATE ================= */
 
 let currentGame="";
+
 let gameRunning=false;
 
 
-/* PLAYER */
+/* ================= NORMAL PLAYER ================= */
 
 let playerX=50;
-let playerY=65;
+
+let playerY=60;
 
 
-/* MOVEMENT */
+/* ================= KEYBOARD ================= */
 
 const keys={};
 
-document.addEventListener("keydown",event=>{
 
-  keys[event.key.toLowerCase()]=true;
+document.addEventListener(
+  "keydown",
+  event=>{
 
-  if(
-    event.code==="Space" &&
-    currentGame==="obby"
-  ){
-    event.preventDefault();
+    const key=
+    event.key.toLowerCase();
 
-    if(obbyOnGround){
-      obbyVelocityY=obbyJumpPower;
-      obbyOnGround=false;
+    keys[key]=true;
+
+
+    /*
+      SPACE IS ONLY A JUMP BUTTON
+      IN THE OBBY.
+    */
+
+    if(
+      event.code==="Space" &&
+      currentGame==="obby"
+    ){
+
+      event.preventDefault();
+
+
+      if(
+        gameRunning &&
+        !obbyFinished &&
+        obbyOnGround
+      ){
+
+        obbyVelocityY=
+        obbyJumpPower;
+
+        obbyOnGround=false;
+
+      }
+
     }
+
   }
-
-});
-
-document.addEventListener("keyup",event=>{
-
-  keys[event.key.toLowerCase()]=false;
-
-});
+);
 
 
-/* START GAME */
+document.addEventListener(
+  "keyup",
+  event=>{
+
+    keys[
+      event.key.toLowerCase()
+    ]=false;
+
+  }
+);
+
+
+/* ================= START GAME ================= */
 
 function start(type){
 
   currentGame=type;
+
   gameRunning=true;
 
+
   hubScreen.classList.add("hidden");
+
   characterScreen.classList.add("hidden");
+
   gameScreen.classList.remove("hidden");
+
 
   endingOverlay.classList.add("hidden");
 
-  world.className="";
 
   clearWorld();
 
-  playerX=50;
-  playerY=65;
 
-  player.style.left="50%";
-  player.style.top="65%";
+  playerX=50;
+
+  playerY=60;
+
+
+  player.style.left=
+  "50%";
+
+  player.style.top=
+  "60%";
+
 
   document.getElementById("gameTitle")
-    .textContent=getGameTitle(type);
+    .textContent=
+    getGameTitle(type);
+
 
   updateCoins();
 
-  if(type==="coin") startCoinDash();
-  if(type==="brain") startBrainrot();
-  if(type==="obby") startObby();
-  if(type==="space") startSpace();
-  if(type==="gem") startGem();
-  if(type==="pet") startPet();
-  if(type==="forest") startForest();
-  if(type==="castle") startCastle();
+
+  if(type==="coin"){
+    startCoinDash();
+  }
+
+  if(type==="brain"){
+    startBrainrot();
+  }
+
+  if(type==="obby"){
+    startObby();
+  }
+
+  if(type==="space"){
+    startSpace();
+  }
+
+  if(type==="gem"){
+    startGem();
+  }
+
+  if(type==="pet"){
+    startPet();
+  }
+
+  if(type==="forest"){
+    startForest();
+  }
+
+  if(type==="castle"){
+    startCastle();
+  }
 
 }
+
 
 window.start=start;
 
@@ -1503,89 +2016,142 @@ window.start=start;
 function getGameTitle(type){
 
   const titles={
+
     coin:"Coin Dash",
+
     brain:"Brainrot Heist",
+
     obby:"Obby Tower",
+
     space:"Space Escape",
+
     gem:"Gem Hunt",
+
     pet:"Pet Race",
+
     forest:"Forest Adventure",
+
     castle:"Castle Quest"
+
   };
+
 
   return titles[type] || "Game";
 
 }
 
 
-/* CLEAR WORLD */
+/* ================= CLEAR WORLD ================= */
 
 function clearWorld(){
 
   world.className="";
 
+  world.style.background="";
+
+
   world.querySelectorAll(
-    ".collectible,.obstacle,.obbyPlatform,.obbyStage,.obbyHint,.ground,.road,.house,.tree,.planet,.planetRing,.castleWall,.castleWindow,.castleDoor"
+    ".collectible,"+
+    ".obbyPlatform,"+
+    ".obbyStage,"+
+    ".obbyHint,"+
+    ".ground,"+
+    ".road,"+
+    ".house,"+
+    ".tree,"+
+    ".planet,"+
+    ".planetRing,"+
+    ".castleWall,"+
+    ".castleWindow,"+
+    ".castleDoor"
   ).forEach(el=>el.remove());
 
 }
 
 
-/* MESSAGE */
+/* ================= MESSAGE ================= */
 
 function showMessage(text){
 
-  const message=
-  document.getElementById("gameMessage");
+  const message =
+  document.getElementById(
+    "gameMessage"
+  );
+
 
   message.textContent=text;
-  message.classList.remove("hidden");
+
+  message.classList.remove(
+    "hidden"
+  );
+
 
   setTimeout(()=>{
-    message.classList.add("hidden");
+
+    message.classList.add(
+      "hidden"
+    );
+
   },1800);
 
 }
 
 
-/* ENDING */
+/* ================= ENDING ================= */
 
-function showEnding(emoji,title,text){
+function showEnding(
+  emoji,
+  title,
+  text
+){
 
   endingEmoji.textContent=emoji;
+
   endingTitle.textContent=title;
+
   endingText.textContent=text;
 
-  endingOverlay.classList.remove("hidden");
+  endingOverlay.classList.remove(
+    "hidden"
+  );
+
 
   gameRunning=false;
 
 }
 
 
-/* LEAVE GAME */
+/* ================= LEAVE GAME ================= */
 
 function leaveGame(){
 
   gameRunning=false;
 
-  endingOverlay.classList.add("hidden");
+  endingOverlay.classList.add(
+    "hidden"
+  );
 
-  gameScreen.classList.add("hidden");
-  hubScreen.classList.remove("hidden");
+  gameScreen.classList.add(
+    "hidden"
+  );
+
+  hubScreen.classList.remove(
+    "hidden"
+  );
 
   updateCoins();
 
 }
 
+
 window.leaveGame=leaveGame;
 
 
-/* BASIC WORLD */
+/* ================= BASIC WORLD ================= */
 
 function createBasicWorld(){
 
-  const ground=
+  const ground =
   document.createElement("div");
 
   ground.className="ground";
@@ -1593,7 +2159,7 @@ function createBasicWorld(){
   world.appendChild(ground);
 
 
-  const road=
+  const road =
   document.createElement("div");
 
   road.className="road";
@@ -1601,69 +2167,90 @@ function createBasicWorld(){
   world.appendChild(road);
 
 
-  const house1=
+  const house1 =
   document.createElement("div");
 
-  house1.className="house house1";
+  house1.className=
+  "house house1";
 
   world.appendChild(house1);
 
 
-  const house2=
+  const house2 =
   document.createElement("div");
 
-  house2.className="house house2";
+  house2.className=
+  "house house2";
 
   world.appendChild(house2);
 
 
-  const tree1=
+  const tree1 =
   document.createElement("div");
 
-  tree1.className="tree tree1";
+  tree1.className=
+  "tree tree1";
 
   world.appendChild(tree1);
 
 
-  const tree2=
+  const tree2 =
   document.createElement("div");
 
-  tree2.className="tree tree2";
+  tree2.className=
+  "tree tree2";
 
   world.appendChild(tree2);
 
 }
 
 
-/* COLLECTIBLE */
+/* ================= COLLECTIBLE ================= */
 
-function createCollectible(emoji,x,y,reward,onCollect){
+function createCollectible(
+  emoji,
+  x,
+  y,
+  reward,
+  onCollect
+){
 
-  const item=
+  const item =
   document.createElement("div");
 
   item.className="collectible";
 
   item.textContent=emoji;
 
-  item.style.left=x+"%";
-  item.style.top=y+"%";
+  item.style.left=
+  x+"%";
+
+  item.style.top=
+  y+"%";
+
 
   item.onclick=()=>{
 
-    if(!gameRunning) return;
+    if(!gameRunning){
+      return;
+    }
+
 
     item.remove();
 
     addCoins(reward);
 
-    showMessage("+"+reward+" coins!");
+    showMessage(
+      "+"+reward+" coins!"
+    );
+
 
     if(onCollect){
       onCollect();
     }
 
   };
+
 
   world.appendChild(item);
 
@@ -1672,9 +2259,10 @@ function createCollectible(emoji,x,y,reward,onCollect){
 }
 
 
-/* COIN DASH */
+/* ================= COIN DASH ================= */
 
 let coinDashLeft=0;
+
 
 function startCoinDash(){
 
@@ -1682,15 +2270,23 @@ function startCoinDash(){
 
   coinDashLeft=10;
 
+
   for(let i=0;i<10;i++){
 
     createCollectible(
+
       "🪙",
+
       8+Math.random()*84,
+
       15+Math.random()*58,
+
       10,
+
       ()=>{
+
         coinDashLeft--;
+
 
         if(coinDashLeft<=0){
 
@@ -1703,20 +2299,25 @@ function startCoinDash(){
         }
 
       }
+
     );
 
   }
 
-  showMessage("Collect all 10 coins!");
+
+  showMessage(
+    "Collect all 10 coins!"
+  );
 
 }
 
 
-/* BRAINROT */
+/* ================= BRAINROT ================= */
 
 function startBrainrot(){
 
   createBasicWorld();
+
 
   createCollectible(
     "🧠",
@@ -1724,13 +2325,16 @@ function startBrainrot(){
     35,
     25,
     ()=>{
+
       showEnding(
         "🧠",
         "Heist Complete!",
         "You grabbed the brainrot and escaped!"
       );
+
     }
   );
+
 
   createCollectible(
     "💰",
@@ -1739,14 +2343,18 @@ function startBrainrot(){
     15
   );
 
-  showMessage("Grab the brainrot!");
+
+  showMessage(
+    "Grab the brainrot!"
+  );
 
 }
 
 
-/* GEM HUNT */
+/* ================= GEM HUNT ================= */
 
 let gemsLeft=0;
+
 
 function startGem(){
 
@@ -1754,15 +2362,23 @@ function startGem(){
 
   gemsLeft=8;
 
+
   for(let i=0;i<8;i++){
 
     createCollectible(
+
       "💎",
+
       5+Math.random()*88,
+
       15+Math.random()*60,
+
       15,
+
       ()=>{
+
         gemsLeft--;
+
 
         if(gemsLeft<=0){
 
@@ -1775,20 +2391,25 @@ function startGem(){
         }
 
       }
+
     );
 
   }
 
-  showMessage("Find all 8 gems!");
+
+  showMessage(
+    "Find all 8 gems!"
+  );
 
 }
 
 
-/* PET RACE */
+/* ================= PET RACE ================= */
 
 function startPet(){
 
   createBasicWorld();
+
 
   createCollectible(
     "🐶",
@@ -1796,36 +2417,43 @@ function startPet(){
     45,
     20,
     ()=>{
+
       showEnding(
         "🏆",
         "You Won!",
         "Your pet crossed the finish line first!"
       );
+
     }
   );
 
-  showMessage("Race to your pet!");
+
+  showMessage(
+    "Race to your pet!"
+  );
 
 }
 
 
-/* FOREST */
+/* ================= FOREST ================= */
 
 function startForest(){
 
   world.style.background=
   "linear-gradient(#8ed5ff 0%,#c9f2ff 55%,#397b39 55%)";
 
-  const ground=
+
+  const ground =
   document.createElement("div");
 
   ground.className="ground";
 
   world.appendChild(ground);
 
+
   for(let i=0;i<9;i++){
 
-    const tree=
+    const tree =
     document.createElement("div");
 
     tree.className="tree";
@@ -1840,32 +2468,41 @@ function startForest(){
 
   }
 
+
   createCollectible(
     "🎁",
     75,
     45,
     35,
     ()=>{
+
       showEnding(
         "🎁",
         "Forest Treasure!",
         "You discovered the hidden treasure!"
       );
+
     }
   );
 
-  showMessage("Find the treasure!");
+
+  showMessage(
+    "Find the treasure!"
+  );
 
 }
 
 
-/* CASTLE */
+/* ================= CASTLE ================= */
 
 function startCastle(){
 
-  world.classList.add("castleWorld");
+  world.classList.add(
+    "castleWorld"
+  );
 
-  const wall=
+
+  const wall =
   document.createElement("div");
 
   wall.className="castleWall";
@@ -1873,7 +2510,7 @@ function startCastle(){
   world.appendChild(wall);
 
 
-  const window1=
+  const window1 =
   document.createElement("div");
 
   window1.className=
@@ -1882,7 +2519,7 @@ function startCastle(){
   world.appendChild(window1);
 
 
-  const window2=
+  const window2 =
   document.createElement("div");
 
   window2.className=
@@ -1891,7 +2528,7 @@ function startCastle(){
   world.appendChild(window2);
 
 
-  const door=
+  const door =
   document.createElement("div");
 
   door.className="castleDoor";
@@ -1905,31 +2542,40 @@ function startCastle(){
     42,
     40,
     ()=>{
+
       showEnding(
         "🏰",
         "Quest Complete!",
         "You found the treasure hidden inside the castle!"
       );
+
     }
   );
 
-  showMessage("Find the castle treasure!");
+
+  showMessage(
+    "Find the castle treasure!"
+  );
 
 }
 
 
-/* SPACE */
+/* ================= SPACE ================= */
 
 function startSpace(){
 
-  world.classList.add("spaceWorld");
+  world.classList.add(
+    "spaceWorld"
+  );
 
-  const planet=
+
+  const planet =
   document.createElement("div");
 
   planet.className="planet";
 
-  const ring=
+
+  const ring =
   document.createElement("div");
 
   ring.className="planetRing";
@@ -1945,75 +2591,102 @@ function startSpace(){
     55,
     20,
     ()=>{
+
       showEnding(
         "🚀",
         "You Escaped!",
         "You launched the rocket and escaped into space!"
       );
+
     }
   );
 
+
   for(let i=0;i<25;i++){
 
-    const star=
+    const star =
     document.createElement("div");
 
     star.textContent="✦";
 
-    star.style.position="absolute";
-    star.style.left=Math.random()*100+"%";
-    star.style.top=Math.random()*100+"%";
-    star.style.fontSize=(8+Math.random()*12)+"px";
+    star.style.position=
+    "absolute";
+
+    star.style.left=
+    Math.random()*100+"%";
+
+    star.style.top=
+    Math.random()*100+"%";
+
+    star.style.fontSize=
+    (8+Math.random()*12)+"px";
+
     star.style.color="white";
 
     world.appendChild(star);
 
   }
 
-  showMessage("Find the rocket!");
+
+  showMessage(
+    "Find the rocket!"
+  );
 
 }
 
 
-/* =========================
+/* ==================================================
    OBBY
-========================= */
+================================================== */
 
 let obbyScreen=1;
+
 let obbyPlatforms=[];
+
 let obbyVelocityY=0;
+
 let obbyOnGround=false;
+
 let obbyFinished=false;
+
 let obbyRewardGiven=false;
 
+
+/*
+  REAL PLATFORMER PHYSICS
+*/
+
 const obbyGravity=0.75;
+
 const obbyJumpPower=-14;
 
 
-/* START OBBY */
+/* ================= START OBBY ================= */
 
 function startObby(){
 
-  world.classList.add("obbyWorld");
+  world.classList.add(
+    "obbyWorld"
+  );
+
 
   obbyScreen=1;
+
   obbyFinished=false;
+
   obbyRewardGiven=false;
 
   obbyVelocityY=0;
 
-  playerX=
-  window.innerWidth/2-21;
+  obbyOnGround=false;
 
-  playerY=
-  getWorldHeight()-110;
 
   generateObbyScreen();
 
 }
 
 
-/* WORLD HEIGHT */
+/* ================= WORLD HEIGHT ================= */
 
 function getWorldHeight(){
 
@@ -2022,7 +2695,7 @@ function getWorldHeight(){
 }
 
 
-/* SCREEN BACKGROUNDS */
+/* ================= OBBY BACKGROUND ================= */
 
 function setObbyBackground(){
 
@@ -2033,12 +2706,14 @@ function setObbyBackground(){
 
   }
 
+
   if(obbyScreen===2){
 
     world.style.background=
     "linear-gradient(#7c9bb3 0%,#dce9ef 55%,#4e5662 55%)";
 
   }
+
 
   if(obbyScreen===3){
 
@@ -2047,12 +2722,14 @@ function setObbyBackground(){
 
   }
 
+
   if(obbyScreen===4){
 
     world.style.background=
     "linear-gradient(#3c2a20,#765038 55%,#2b1b13 55%)";
 
   }
+
 
   if(obbyScreen===5){
 
@@ -2061,6 +2738,7 @@ function setObbyBackground(){
     "radial-gradient(circle at 70% 30%,white 0 2px,transparent 3px),"+
     "radial-gradient(circle at 45% 75%,white 0 2px,transparent 3px),"+
     "radial-gradient(circle at 85% 80%,white 0 2px,transparent 3px),"+
+    "radial-gradient(circle at 10% 80%,white 0 2px,transparent 3px),"+
     "linear-gradient(#030014,#17043a 60%,#05000f)";
 
   }
@@ -2068,151 +2746,235 @@ function setObbyBackground(){
 }
 
 
-/* GENERATE PLATFORM SCREEN */
+/* ================= GENERATE SCREEN ================= */
 
 function generateObbyScreen(){
 
   clearObby();
 
+
   setObbyBackground();
+
 
   obbyPlatforms=[];
 
 
-  const height=getWorldHeight();
+  const width=
+  world.clientWidth;
+
+  const height=
+  world.clientHeight;
+
 
   /*
-    Every screen has a bottom starting platform
-    followed by platforms leading toward the top.
+    PLATFORM POSITIONS
+
+    The first platform is at the bottom.
+    Every platform above it is reachable
+    with a normal jump.
   */
 
   const platformData=[
+
     {
-      x:35,
+      x:0.38,
       y:height-45,
       w:180
     },
+
     {
-      x:65,
+      x:0.68,
       y:height-135,
       w:150
     },
+
     {
-      x:30,
+      x:0.30,
       y:height-225,
       w:150
     },
+
     {
-      x:65,
+      x:0.67,
       y:height-315,
       w:145
     },
+
     {
-      x:35,
+      x:0.34,
       y:height-405,
       w:145
     },
+
     {
-      x:62,
+      x:0.62,
       y:height-495,
       w:150
     },
+
     {
-      x:28,
-      y:height-585,
+      x:0.25,
+      y:Math.max(
+        30,
+        height-585
+      ),
       w:170
     }
+
   ];
 
 
-  for(let i=0;i<platformData.length;i++){
+  for(
+    let i=0;
+    i<platformData.length;
+    i++
+  ){
 
-    const data=platformData[i];
+    const data=
+    platformData[i];
 
-    /*
-      Keep platforms inside the screen.
-    */
-
-    let x=data.x;
-
-    if(window.innerWidth<700){
-
-      x=
-      i%2===0
-      ? 8
-      : 52;
-
-    }
-
-    const platform=
-    document.createElement("div");
-
-    platform.className="obbyPlatform";
 
     /*
-      Screen 2 has some red platforms.
-      Screen 3 has a couple bouncy-looking platforms.
+      Use percentage positions
+      so the platforms work on
+      different screen sizes.
     */
 
-    if(obbyScreen===2 && (i===2 || i===5)){
-      platform.classList.add("bad");
-    }
+    let left=
+    data.x*width;
 
-    if(obbyScreen===3 && (i===1 || i===4)){
-      platform.classList.add("bouncy");
-    }
 
-    const width=
+    const platformWidth=
     Math.min(
       data.w,
-      window.innerWidth-30
+      width-30
     );
 
-    platform.style.left=x+"%";
-    platform.style.top=data.y+"px";
-    platform.style.width=width+"px";
+
+    left=
+    Math.max(
+      10,
+      Math.min(
+        width-platformWidth-10,
+        left
+      )
+    );
+
+
+    const platform =
+    document.createElement("div");
+
+    platform.className=
+    "obbyPlatform";
+
+
+    /*
+      Red platforms are hazards.
+    */
+
+    if(
+      obbyScreen===2 &&
+      (i===2 || i===5)
+    ){
+
+      platform.classList.add(
+        "bad"
+      );
+
+    }
+
+
+    /*
+      Purple platforms are special.
+    */
+
+    if(
+      obbyScreen===3 &&
+      (i===1 || i===4)
+    ){
+
+      platform.classList.add(
+        "bouncy"
+      );
+
+    }
+
+
+    platform.style.left=
+    left+"px";
+
+    platform.style.top=
+    data.y+"px";
+
+    platform.style.width=
+    platformWidth+"px";
+
 
     world.appendChild(platform);
 
+
     obbyPlatforms.push({
+
       el:platform,
-      x:x/100*world.clientWidth,
+
+      x:left,
+
       y:data.y,
-      width:width,
+
+      width:platformWidth,
+
       height:22,
-      bad:platform.classList.contains("bad"),
-      final:obbyScreen===5 && i===6
+
+      bad:
+      platform.classList.contains(
+        "bad"
+      ),
+
+      final:
+      obbyScreen===5 &&
+      i===platformData.length-1
+
     });
 
   }
 
 
   /*
-    Player starts on the bottom platform.
+    START ON THE BOTTOM PLATFORM
   */
 
   const bottom=
   obbyPlatforms[0];
+
 
   playerX=
   bottom.x+
   bottom.width/2-
   player.offsetWidth/2;
 
+
   playerY=
   bottom.y-
   player.offsetHeight;
 
+
   obbyVelocityY=0;
+
   obbyOnGround=true;
+
 
   updatePlayerPixels();
 
+
+  /*
+    SCREEN NUMBER
+  */
 
   const stage=
   document.createElement("div");
 
   stage.className="obbyStage";
+
 
   if(obbyScreen===5){
 
@@ -2222,12 +2984,19 @@ function generateObbyScreen(){
   }else{
 
     stage.textContent=
-    "OBBY SCREEN "+obbyScreen+" / 5";
+    "OBBY SCREEN "+
+    obbyScreen+
+    " / 5";
 
   }
 
+
   world.appendChild(stage);
 
+
+  /*
+    CONTROLS
+  */
 
   const hint=
   document.createElement("div");
@@ -2236,6 +3005,7 @@ function generateObbyScreen(){
 
   hint.textContent=
   "A / D or ← / → to move • SPACE to jump";
+
 
   world.appendChild(hint);
 
@@ -2249,7 +3019,7 @@ function generateObbyScreen(){
   }else{
 
     showMessage(
-      "Reach the top of the screen!"
+      "Jump to the top!"
     );
 
   }
@@ -2257,18 +3027,20 @@ function generateObbyScreen(){
 }
 
 
-/* CLEAR OBBY */
+/* ================= CLEAR OBBY ================= */
 
 function clearObby(){
 
   world.querySelectorAll(
     ".obbyPlatform,.obbyStage,.obbyHint"
-  ).forEach(el=>el.remove());
+  ).forEach(
+    el=>el.remove()
+  );
 
 }
 
 
-/* PLAYER PIXEL POSITION */
+/* ================= PLAYER POSITION ================= */
 
 function updatePlayerPixels(){
 
@@ -2281,16 +3053,25 @@ function updatePlayerPixels(){
 }
 
 
-/* OBBY PHYSICS */
+/* ==================================================
+   REAL OBBY PHYSICS
+================================================== */
 
 function obbyPhysics(){
+
+  /*
+    NEVER run Obby physics
+    unless the Obby is active.
+  */
 
   if(
     currentGame!=="obby" ||
     !gameRunning ||
     obbyFinished
   ){
+
     return;
+
   }
 
 
@@ -2301,25 +3082,39 @@ function obbyPhysics(){
   world.clientHeight;
 
 
-  /*
-    Horizontal movement
-  */
+  /* =================
+     HORIZONTAL MOVEMENT
+  ================= */
 
-  let move=0;
+  let horizontalSpeed=0;
 
-  if(keys["a"] || keys["arrowleft"]){
-    move-=5;
+
+  if(
+    keys["a"] ||
+    keys["arrowleft"]
+  ){
+
+    horizontalSpeed-=5;
+
   }
 
-  if(keys["d"] || keys["arrowright"]){
-    move+=5;
+
+  if(
+    keys["d"] ||
+    keys["arrowright"]
+  ){
+
+    horizontalSpeed+=5;
+
   }
 
-  playerX+=move;
+
+  playerX+=horizontalSpeed;
 
 
   /*
-    Keep player inside screen
+    Stop the player leaving
+    the sides of the screen.
   */
 
   playerX=
@@ -2332,20 +3127,34 @@ function obbyPhysics(){
   );
 
 
+  /* =================
+     GRAVITY
+  ================= */
+
   /*
-    Gravity
+    THIS is what makes the
+    player fall instead of float.
   */
 
-  obbyVelocityY+=obbyGravity;
+  obbyVelocityY+=
+  obbyGravity;
 
-  playerY+=obbyVelocityY;
+
+  playerY+=
+  obbyVelocityY;
+
+
+  /*
+    Assume the player is
+    not standing on anything.
+  */
 
   obbyOnGround=false;
 
 
-  /*
-    Platform collision
-  */
+  /* =================
+     PLATFORM COLLISION
+  ================= */
 
   const playerWidth=
   player.offsetWidth;
@@ -2354,43 +3163,70 @@ function obbyPhysics(){
   player.offsetHeight;
 
 
+  /*
+    Only check platforms
+    while falling.
+  */
+
   if(obbyVelocityY>=0){
 
-    for(const platform of obbyPlatforms){
+    for(
+      const platform
+      of obbyPlatforms
+    ){
 
       const playerBottom=
-      playerY+playerHeight;
+      playerY+
+      playerHeight;
 
-      const platformTop=
-      platform.y;
 
       const horizontalHit=
-      playerX+playerWidth>
+      playerX+
+      playerWidth>
       platform.x &&
       playerX<
-      platform.x+platform.width;
+      platform.x+
+      platform.width;
+
 
       const verticalHit=
-      playerBottom>=platformTop &&
-      playerBottom<=platformTop+25;
+      playerBottom>=
+      platform.y &&
 
-      if(horizontalHit && verticalHit){
+      playerBottom<=
+      platform.y+
+      platform.height+
+      12;
+
+
+      if(
+        horizontalHit &&
+        verticalHit
+      ){
+
+        /*
+          Put the player directly
+          on top of the platform.
+        */
 
         playerY=
-        platformTop-playerHeight;
+        platform.y-
+        playerHeight;
+
 
         obbyVelocityY=0;
+
         obbyOnGround=true;
 
 
         /*
-          Red platforms reset the player.
+          RED PLATFORM
         */
 
         if(platform.bad){
 
           showMessage(
-            "Watch out! Try again!"
+            "Oops! Try again!"
           );
 
           resetObbyPlayer();
@@ -2401,7 +3237,7 @@ function obbyPhysics(){
 
 
         /*
-          Last platform on screen 5 wins.
+          FINAL PLATFORM
         */
 
         if(platform.final){
@@ -2412,6 +3248,7 @@ function obbyPhysics(){
 
         }
 
+
         break;
 
       }
@@ -2421,11 +3258,14 @@ function obbyPhysics(){
   }
 
 
-  /*
-    Fell off screen
-  */
+  /* =================
+     FALLING OFF
+  ================= */
 
-  if(playerY>height+100){
+  if(
+    playerY>
+    height+100
+  ){
 
     resetObbyPlayer();
 
@@ -2434,11 +3274,15 @@ function obbyPhysics(){
   }
 
 
-  /*
-    Reaching the top changes screens.
-  */
+  /* =================
+     REACH THE TOP
+  ================= */
 
-  if(playerY<=5){
+  if(playerY<=0){
+
+    /*
+      There are five screens.
+    */
 
     if(obbyScreen<5){
 
@@ -2458,31 +3302,41 @@ function obbyPhysics(){
 }
 
 
-/* RESET PLAYER */
+/* ================= RESET PLAYER ================= */
 
 function resetObbyPlayer(){
 
+  if(!obbyPlatforms.length){
+    return;
+  }
+
+
   const bottom=
   obbyPlatforms[0];
+
 
   playerX=
   bottom.x+
   bottom.width/2-
   player.offsetWidth/2;
 
+
   playerY=
   bottom.y-
   player.offsetHeight;
 
+
   obbyVelocityY=0;
+
   obbyOnGround=true;
+
 
   updatePlayerPixels();
 
 }
 
 
-/* WIN OBBY */
+/* ================= WIN OBBY ================= */
 
 function winObby(){
 
@@ -2490,13 +3344,13 @@ function winObby(){
     return;
   }
 
+
   obbyFinished=true;
 
 
   /*
-    Give the 50 coins immediately and save them.
-    This means the reward is still there when the
-    player leaves the game.
+    The reward is only given once
+    during this completion.
   */
 
   if(!obbyRewardGiven){
@@ -2509,52 +3363,110 @@ function winObby(){
 
 
   showEnding(
+
     "🎉",
+
     "Good job! You beat this Obby!",
+
     "You completed all 5 screens and earned 50 coins!"
+
   );
 
 }
 
 
-/* GAME MOVEMENT */
+/* ==================================================
+   NORMAL GAMES MOVEMENT
+================================================== */
 
 function normalMovement(){
+
+  /*
+    IMPORTANT:
+
+    If this is the Obby, this function
+    does NOTHING.
+
+    That means W/S cannot move the
+    Obby player vertically.
+  */
 
   if(
     !gameRunning ||
     currentGame==="obby"
   ){
+
     return;
+
   }
 
-  if(keys["a"] || keys["arrowleft"]){
+
+  if(
+    keys["a"] ||
+    keys["arrowleft"]
+  ){
+
     playerX-=0.8;
+
   }
 
-  if(keys["d"] || keys["arrowright"]){
+
+  if(
+    keys["d"] ||
+    keys["arrowright"]
+  ){
+
     playerX+=0.8;
+
   }
 
-  if(keys["w"] || keys["arrowup"]){
-    playerY-=0.5;
-  }
-
-  if(keys["s"] || keys["arrowdown"]){
-    playerY+=0.5;
-  }
 
   playerX=
   Math.max(
     2,
-    Math.min(96,playerX)
+    Math.min(
+      96,
+      playerX
+    )
   );
+
+
+  /*
+    Normal games use the
+    old free movement system.
+
+    The Obby does NOT.
+  */
+
+  if(
+    keys["w"] ||
+    keys["arrowup"]
+  ){
+
+    playerY-=0.5;
+
+  }
+
+
+  if(
+    keys["s"] ||
+    keys["arrowdown"]
+  ){
+
+    playerY+=0.5;
+
+  }
+
 
   playerY=
   Math.max(
     12,
-    Math.min(80,playerY)
+    Math.min(
+      80,
+      playerY
+    )
   );
+
 
   player.style.left=
   playerX+"%";
@@ -2565,22 +3477,33 @@ function normalMovement(){
 }
 
 
-/* MAIN GAME LOOP */
+/* ================= GAME LOOP ================= */
 
 function gameLoop(){
+
+  /*
+    Normal games:
+    A/D + W/S.
+
+    Obby:
+    A/D + gravity + Space.
+  */
 
   normalMovement();
 
   obbyPhysics();
 
-  requestAnimationFrame(gameLoop);
+  requestAnimationFrame(
+    gameLoop
+  );
 
 }
+
 
 gameLoop();
 
 
-/* PLAY BUTTONS */
+/* ================= PLAY BUTTONS ================= */
 
 document.querySelectorAll(".play")
 .forEach(button=>{
@@ -2588,14 +3511,18 @@ document.querySelectorAll(".play")
   button.addEventListener(
     "click",
     ()=>{
-      start(button.dataset.game);
+
+      start(
+        button.dataset.game
+      );
+
     }
   );
 
 });
 
 
-/* CHECK EXISTING SESSION */
+/* ================= SESSION ================= */
 
 supabase.auth.getSession()
 .then(({data})=>{
@@ -2609,7 +3536,15 @@ supabase.auth.getSession()
 });
 
 
-/* RESIZE OBBY */
+/*
+  IMPORTANT:
+  We do NOT regenerate the Obby
+  when the browser is resized.
+
+  That prevents the player from
+  suddenly being put back onto
+  the starting platform.
+*/
 
 window.addEventListener(
   "resize",
@@ -2620,7 +3555,12 @@ window.addEventListener(
       gameRunning
     ){
 
-      generateObbyScreen();
+      /*
+        Do nothing.
+
+        The current level stays
+        exactly where it is.
+      */
 
     }
 
