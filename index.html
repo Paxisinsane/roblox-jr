@@ -1,199 +1,401 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Roblox Jr. Game Hub</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#10152b,#294b78);color:#fff;min-height:100vh}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#10152b,#294b78);
+  color:#fff;
+  min-height:100vh
+}
+
 button,input{font:inherit}
-button{cursor:pointer;border:0;border-radius:10px;padding:12px 16px;font-weight:bold}
-.top{background:#151d34;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
+button{
+  cursor:pointer;
+  border:0;
+  border-radius:10px;
+  padding:12px 16px;
+  font-weight:bold
+}
+
+.top{
+  background:#151d34;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap
+}
+
 .logo{font-size:25px;font-weight:bold}
-.coins{background:#2b3654;padding:10px 15px;border-radius:12px}
+
+.coins{
+  background:#2b3654;
+  padding:10px 15px;
+  border-radius:12px
+}
+
 .page{padding:25px}
-.tabs{display:flex;gap:10px;padding:18px 25px 0;flex-wrap:wrap}
+
+.tabs{
+  display:flex;
+  gap:10px;
+  padding:18px 25px 0;
+  flex-wrap:wrap
+}
+
 .tab{background:#263453;color:#fff}
-.tab.active,.primary{background:#4285f4;color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card,.panel{background:#202b45;padding:20px;border-radius:18px;box-shadow:0 8px 20px #0003}
+
+.tab.active,.primary{
+  background:#4285f4;
+  color:#fff
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px
+}
+
+.card,.panel{
+  background:#202b45;
+  padding:20px;
+  border-radius:18px;
+  box-shadow:0 8px 20px #0003
+}
+
 .icon{font-size:52px}
-.card p{color:#cbd3e8;min-height:42px}
-.play{width:100%;background:#4285f4;color:#fff}
+
+.card p{
+  color:#cbd3e8;
+  min-height:42px
+}
+
+.play{
+  width:100%;
+  background:#4285f4;
+  color:#fff
+}
+
 .hidden{display:none!important}
-#gameScreen{min-height:100vh;background:#10203a}
-.world{min-height:calc(100vh - 75px);position:relative;overflow:hidden;padding:25px}
-.forest{background:linear-gradient(#78c8ff 0 48%,#4d9c45 48%);min-height:calc(100vh - 75px)}
-.forest:before{content:"🌲 🌳 🌲 🌳 🌲 🌲 🌳 🌲";position:absolute;top:35px;left:2%;right:2%;font-size:85px;letter-spacing:18px;line-height:1.5}
-.forest:after{content:"🌿 🌿 🍄 🌿 🌼 🌿 🍄 🌿";position:absolute;bottom:35px;left:5%;right:5%;font-size:42px}
-.sceneText{position:relative;z-index:2;max-width:700px;margin:170px auto 0;background:#17233ddd;padding:28px;border-radius:20px;text-align:center}
-.emojiWorld{background:linear-gradient(135deg,#3b277a,#1c4f7a);min-height:calc(100vh - 75px);padding:25px}
-.emojiBox{max-width:760px;margin:auto;text-align:center;background:#ffffff18;padding:30px;border-radius:25px}
-.pair{font-size:85px;display:flex;justify-content:center;gap:25px;align-items:center;margin:30px}
-.answer{width:min(520px,95%);padding:15px;border-radius:12px;border:3px solid transparent;text-align:center;font-size:20px}
-.feedback{min-height:30px;margin:15px;font-weight:bold}
-.progress{height:16px;background:#0005;border-radius:20px;overflow:hidden}
-.bar{height:100%;width:0;background:#39d353}
-.ending{position:absolute;inset:0;background:#000b;display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}
-.endingBox{max-width:520px;width:100%;background:#202b45;padding:35px;border-radius:20px;text-align:center}
+
+#gameScreen{
+  min-height:100vh;
+  background:#10203a
+}
+
+.world{
+  min-height:calc(100vh - 75px);
+  position:relative;
+  overflow:hidden;
+  padding:25px
+}
+
+.forest{
+  background:linear-gradient(#78c8ff 0 48%,#4d9c45 48%);
+  min-height:calc(100vh - 75px)
+}
+
+.forest:before{
+  content:"🌲 🌳 🌲 🌳 🌲 🌲 🌳 🌲";
+  position:absolute;
+  top:35px;
+  left:2%;
+  right:2%;
+  font-size:85px;
+  letter-spacing:18px;
+  line-height:1.5
+}
+
+.forest:after{
+  content:"🌿 🌿 🍄 🌿 🌼 🌿 🍄 🌿";
+  position:absolute;
+  bottom:35px;
+  left:5%;
+  right:5%;
+  font-size:42px
+}
+
+.sceneText{
+  position:relative;
+  z-index:2;
+  max-width:700px;
+  margin:170px auto 0;
+  background:#17233ddd;
+  padding:28px;
+  border-radius:20px;
+  text-align:center
+}
+
+.emojiWorld{
+  background:linear-gradient(135deg,#3b277a,#1c4f7a);
+  min-height:calc(100vh - 75px);
+  padding:25px
+}
+
+.emojiBox{
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+  background:#ffffff18;
+  padding:30px;
+  border-radius:25px
+}
+
+.pair{
+  font-size:85px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  align-items:center;
+  margin:30px
+}
+
+.answer{
+  width:min(520px,95%);
+  padding:15px;
+  border-radius:12px;
+  border:3px solid transparent;
+  text-align:center;
+  font-size:20px
+}
+
+.feedback{
+  min-height:30px;
+  margin:15px;
+  font-weight:bold
+}
+
+.progress{
+  height:16px;
+  background:#0005;
+  border-radius:20px;
+  overflow:hidden
+}
+
+.bar{
+  height:100%;
+  width:0;
+  background:#39d353
+}
+
+.ending{
+  position:absolute;
+  inset:0;
+  background:#000b;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:10
+}
+
+.endingBox{
+  max-width:520px;
+  width:100%;
+  background:#202b45;
+  padding:35px;
+  border-radius:20px;
+  text-align:center
+}
+
 .endingBox h2{font-size:34px}
-.character{font-size:100px;text-align:center;padding:40px}
-.friend{display:flex;justify-content:space-between;background:#202b45;padding:15px;border-radius:12px;margin:10px 0;max-width:500px}
-@media(max-width:600px){.pair{font-size:58px;gap:12px}.sceneText{margin-top:130px}.page{padding:15px}}
+
+.character{
+  font-size:100px;
+  text-align:center;
+  padding:40px
+}
+
+.friend{
+  display:flex;
+  justify-content:space-between;
+  background:#202b45;
+  padding:15px;
+  border-radius:12px;
+  margin:10px 0;
+  max-width:500px
+}
+
+@media(max-width:600px){
+  .pair{font-size:58px;gap:12px}
+  .sceneText{margin-top:130px}
+  .page{padding:15px}
+}
 </style>
 </head>
 
 <body>
 
 <div id="hub">
+
 <header class="top">
-<div class="logo">🎮 Roblox Jr.</div>
-<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-<div class="coins">🪙 <span id="coinCount">0</span></div>
-<button id="characterBtn">Character</button>
-<button id="logoutBtn">Log Out</button>
-</div>
+  <div class="logo">🎮 Roblox Jr.</div>
+
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <div class="coins">🪙 <span id="coinCount">0</span></div>
+    <button id="characterBtn">Character</button>
+    <button id="logoutBtn">Log Out</button>
+  </div>
 </header>
 
 <nav class="tabs">
-<button class="tab active" data-page="games">🎮 Games</button>
-<button class="tab" data-page="friends">👥 Friends</button>
-<button class="tab" data-page="market">🛒 Marketplace</button>
+  <button class="tab active" data-page="games">🎮 Games</button>
+  <button class="tab" data-page="friends">👥 Friends</button>
+  <button class="tab" data-page="market">🛒 Marketplace</button>
 </nav>
 
 <section id="games" class="page">
-<h1>Games</h1>
-<div class="grid">
+  <h1>Games</h1>
 
-<div class="card">
-<div class="icon">🪙</div>
-<h2>Coin Dash</h2>
-<p>Collect coins and reach the finish.</p>
-<button class="play" data-game="coin">Play</button>
-</div>
+  <div class="grid">
 
-<div class="card">
-<div class="icon">🧠</div>
-<h2>Brainrot Heist</h2>
-<p>Complete the brainrot mission.</p>
-<button class="play" data-game="brainrot">Play</button>
-</div>
+    <div class="card">
+      <div class="icon">🪙</div>
+      <h2>Coin Dash</h2>
+      <p>Collect coins and reach the finish.</p>
+      <button class="play" data-game="coin">Play</button>
+    </div>
 
-<div class="card">
-<div class="icon">🧩</div>
-<h2>Emoji Combo</h2>
-<p>Combine two emojis and guess the answer.</p>
-<button class="play" data-game="emoji">Play</button>
-</div>
+    <div class="card">
+      <div class="icon">🧠</div>
+      <h2>Brainrot Heist</h2>
+      <p>Complete the brainrot mission.</p>
+      <button class="play" data-game="brainrot">Play</button>
+    </div>
 
-<div class="card">
-<div class="icon">🚀</div>
-<h2>Space Escape</h2>
-<p>Escape through outer space.</p>
-<button class="play" data-game="space">Play</button>
-</div>
+    <div class="card">
+      <div class="icon">🧩</div>
+      <h2>Emoji Combo</h2>
+      <p>Combine two emojis and guess the answer.</p>
+      <button class="play" data-game="emoji">Play</button>
+    </div>
 
-<div class="card">
-<div class="icon">💎</div>
-<h2>Gem Hunt</h2>
-<p>Find the hidden gems.</p>
-<button class="play" data-game="gem">Play</button>
-</div>
+    <div class="card">
+      <div class="icon">🚀</div>
+      <h2>Space Escape</h2>
+      <p>Escape through outer space.</p>
+      <button class="play" data-game="space">Play</button>
+    </div>
 
-<div class="card">
-<div class="icon">🐶</div>
-<h2>Pet Race</h2>
-<p>Move and physically touch the pet to win.</p>
-<button class="play" data-game="pet">Play</button>
-</div>
+    <div class="card">
+      <div class="icon">💎</div>
+      <h2>Gem Hunt</h2>
+      <p>Explore a cave and find hidden gems.</p>
+      <button class="play" data-game="gem">Play</button>
+    </div>
 
-<div class="card">
-<div class="icon">🌲</div>
-<h2>Forest Adventure</h2>
-<p>Explore a forest with trees and plants.</p>
-<button class="play" data-game="forest">Play</button>
-</div>
+    <div class="card">
+      <div class="icon">🐶</div>
+      <h2>Pet Race</h2>
+      <p>Move and physically touch the pet to win.</p>
+      <button class="play" data-game="pet">Play</button>
+    </div>
 
-<div class="card">
-<div class="icon">🏰</div>
-<h2>Castle Quest</h2>
-<p>Explore the inside of a giant castle.</p>
-<button class="play" data-game="castle">Play</button>
-</div>
+    <div class="card">
+      <div class="icon">🌲</div>
+      <h2>Forest Adventure</h2>
+      <p>Explore a forest with trees and plants.</p>
+      <button class="play" data-game="forest">Play</button>
+    </div>
 
-</div>
+    <div class="card">
+      <div class="icon">🏰</div>
+      <h2>Castle Quest</h2>
+      <p>Explore the inside of a giant castle.</p>
+      <button class="play" data-game="castle">Play</button>
+    </div>
+
+  </div>
 </section>
 
 <section id="friends" class="page hidden">
-<h1>Friends</h1>
-<div class="friend"><span>👤 Alex</span><span>🟢 Online</span></div>
-<div class="friend"><span>👤 Sam</span><span>🟢 Online</span></div>
-<div class="friend"><span>👤 Max</span><span>⚪ Offline</span></div>
+  <h1>Friends</h1>
+  <div class="friend"><span>👤 Alex</span><span>🟢 Online</span></div>
+  <div class="friend"><span>👤 Sam</span><span>🟢 Online</span></div>
+  <div class="friend"><span>👤 Max</span><span>⚪ Offline</span></div>
 </section>
 
 <section id="market" class="page hidden">
-<h1>Marketplace</h1>
-<div class="grid">
+  <h1>Marketplace</h1>
 
-<div class="card">
-<div class="icon">🧢</div>
-<h2>Cool Hat</h2>
-<p>25 coins</p>
-<button class="buy" data-price="25">Buy</button>
-</div>
+  <div class="grid">
 
-<div class="card">
-<div class="icon">😎</div>
-<h2>Cool Glasses</h2>
-<p>30 coins</p>
-<button class="buy" data-price="30">Buy</button>
-</div>
+    <div class="card">
+      <div class="icon">🧢</div>
+      <h2>Cool Hat</h2>
+      <p>25 coins</p>
+      <button class="buy" data-price="25">Buy</button>
+    </div>
 
-<div class="card">
-<div class="icon">👑</div>
-<h2>King Crown</h2>
-<p>75 coins</p>
-<button class="buy" data-price="75">Buy</button>
-</div>
+    <div class="card">
+      <div class="icon">😎</div>
+      <h2>Cool Glasses</h2>
+      <p>30 coins</p>
+      <button class="buy" data-price="30">Buy</button>
+    </div>
 
-</div>
+    <div class="card">
+      <div class="icon">👑</div>
+      <h2>King Crown</h2>
+      <p>75 coins</p>
+      <button class="buy" data-price="75">Buy</button>
+    </div>
+
+  </div>
 </section>
+
 </div>
 
 <section id="characterPage" class="hidden">
+
 <header class="top">
-<div class="logo">👤 Character</div>
-<button id="backCharacter">Back</button>
+  <div class="logo">👤 Character</div>
+  <button id="backCharacter">Back</button>
 </header>
+
 <div class="page panel">
-<h1>Character</h1>
-<div class="character" id="avatar">🧍</div>
-<button data-avatar="🧍">Normal</button>
-<button data-avatar="🧢🧍">Hat</button>
-<button data-avatar="👑🧍">Crown</button>
+  <h1>Character</h1>
+
+  <div class="character" id="avatar">🧍</div>
+
+  <button data-avatar="🧍">Normal</button>
+  <button data-avatar="🧢🧍">Hat</button>
+  <button data-avatar="👑🧍">Crown</button>
 </div>
+
 </section>
 
 <section id="gameScreen" class="hidden">
+
 <header class="top">
-<strong id="gameTitle">Game</strong>
-<button id="backGame">← Back</button>
+  <strong id="gameTitle">Game</strong>
+  <button id="backGame">← Back</button>
 </header>
 
 <div id="world" class="world">
-<div id="gameContent"></div>
 
-<div id="ending" class="ending hidden">
-<div class="endingBox">
-<h2 id="endingTitle"></h2>
-<p id="endingText"></p>
-<button id="endingBack" class="primary">Back to Games</button>
-</div>
-</div>
+  <div id="gameContent"></div>
+
+  <div id="ending" class="ending hidden">
+    <div class="endingBox">
+      <h2 id="endingTitle"></h2>
+      <p id="endingText"></p>
+      <button id="endingBack" class="primary">Back to Games</button>
+    </div>
+  </div>
 
 </div>
+
 </section>
 
 <script>
@@ -202,400 +404,636 @@ let currentGame="";
 let emojiIndex=0;
 let emojiLocked=false;
 let petMoveTimer=null;
+let petAnimationFrame=null;
 
 const $=id=>document.getElementById(id);
 
 function updateCoins(){
-$("coinCount").textContent=coins;
-localStorage.setItem("robloxJrCoins",coins);
+  $("coinCount").textContent=coins;
+  localStorage.setItem("robloxJrCoins",coins);
 }
 
 function addCoins(amount){
-coins+=amount;
-updateCoins();
+  coins+=amount;
+  updateCoins();
 }
 
 updateCoins();
 
 document.querySelectorAll(".tab").forEach(button=>{
-button.onclick=()=>{
-document.querySelectorAll(".tab").forEach(tab=>tab.classList.remove("active"));
-button.classList.add("active");
+  button.onclick=()=>{
+    document.querySelectorAll(".tab").forEach(tab=>{
+      tab.classList.remove("active");
+    });
 
-["games","friends","market"].forEach(id=>$(id).classList.add("hidden"));
-$(button.dataset.page).classList.remove("hidden");
-};
+    button.classList.add("active");
+
+    ["games","friends","market"].forEach(id=>{
+      $(id).classList.add("hidden");
+    });
+
+    $(button.dataset.page).classList.remove("hidden");
+  };
 });
 
 $("characterBtn").onclick=()=>{
-$("hub").classList.add("hidden");
-$("characterPage").classList.remove("hidden");
+  $("hub").classList.add("hidden");
+  $("characterPage").classList.remove("hidden");
 };
 
 $("backCharacter").onclick=()=>{
-$("characterPage").classList.add("hidden");
-$("hub").classList.remove("hidden");
+  $("characterPage").classList.add("hidden");
+  $("hub").classList.remove("hidden");
 };
 
 document.querySelectorAll("[data-avatar]").forEach(button=>{
-button.onclick=()=>{
-$("avatar").textContent=button.dataset.avatar;
-};
+  button.onclick=()=>{
+    $("avatar").textContent=button.dataset.avatar;
+  };
 });
 
 document.querySelectorAll(".buy").forEach(button=>{
-button.onclick=()=>{
-let price=Number(button.dataset.price);
+  button.onclick=()=>{
+    let price=Number(button.dataset.price);
 
-if(coins>=price){
-coins-=price;
-updateCoins();
-button.textContent="Owned";
-button.disabled=true;
-}else{
-alert("You need more coins!");
-}
-};
+    if(coins>=price){
+      coins-=price;
+      updateCoins();
+      button.textContent="Owned";
+      button.disabled=true;
+    }else{
+      alert("You need more coins!");
+    }
+  };
 });
 
 document.querySelectorAll(".play").forEach(button=>{
-button.onclick=()=>{
-startGame(button.dataset.game);
-};
+  button.onclick=()=>{
+    startGame(button.dataset.game);
+  };
 });
 
 const names={
-coin:"🪙 Coin Dash",
-brainrot:"🧠 Brainrot Heist",
-emoji:"🧩 Emoji Combo",
-space:"🚀 Space Escape",
-gem:"💎 Gem Hunt",
-pet:"🐶 Pet Race",
-forest:"🌲 Forest Adventure",
-castle:"🏰 Castle Quest"
+  coin:"🪙 Coin Dash",
+  brainrot:"🧠 Brainrot Heist",
+  emoji:"🧩 Emoji Combo",
+  space:"🚀 Space Escape",
+  gem:"💎 Gem Hunt",
+  pet:"🐶 Pet Race",
+  forest:"🌲 Forest Adventure",
+  castle:"🏰 Castle Quest"
 };
+
+function stopPetGame(){
+  if(petMoveTimer){
+    clearInterval(petMoveTimer);
+    petMoveTimer=null;
+  }
+
+  if(petAnimationFrame){
+    cancelAnimationFrame(petAnimationFrame);
+    petAnimationFrame=null;
+  }
+}
 
 function startGame(game){
-currentGame=game;
+  currentGame=game;
 
-if(petMoveTimer){
-clearInterval(petMoveTimer);
-petMoveTimer=null;
-}
+  stopPetGame();
 
-$("hub").classList.add("hidden");
-$("characterPage").classList.add("hidden");
-$("gameScreen").classList.remove("hidden");
-$("gameTitle").textContent=names[game];
-$("ending").classList.add("hidden");
-$("world").className="world";
-$("gameContent").innerHTML="";
+  $("hub").classList.add("hidden");
+  $("characterPage").classList.add("hidden");
+  $("gameScreen").classList.remove("hidden");
+  $("gameTitle").textContent=names[game];
+  $("ending").classList.add("hidden");
+  $("world").className="world";
+  $("world").style.background="";
+  $("gameContent").innerHTML="";
 
-if(game==="emoji"){
-startEmoji();
-return;
-}
+  if(game==="emoji"){
+    startEmoji();
+    return;
+  }
 
-if(game==="forest"){
-forestScene();
-return;
-}
+  if(game==="forest"){
+    forestScene();
+    return;
+  }
 
-if(game==="pet"){
-startPetRace();
-return;
-}
+  if(game==="gem"){
+    startGemHunt();
+    return;
+  }
 
-let scenes={
-coin:["🪙 Coin Dash Complete!","You collected the coins and reached the finish line!"],
-brainrot:["🧠 Heist Complete!","You escaped with the brainrot!"],
-space:["🚀 Space Escape Complete!","You safely escaped the space station!"],
-gem:["💎 Gem Hunt Complete!","You found the hidden treasure!"],
-castle:["🏰 Castle Quest Complete!","You discovered the castle's secret room!"]
-};
+  if(game==="pet"){
+    startPetRace();
+    return;
+  }
 
-let scene=scenes[game];
+  let scenes={
+    coin:[
+      "🪙 Coin Dash Complete!",
+      "You collected the coins and reached the finish line!"
+    ],
+    brainrot:[
+      "🧠 Heist Complete!",
+      "You escaped with the brainrot!"
+    ],
+    space:[
+      "🚀 Space Escape Complete!",
+      "You safely escaped the space station!"
+    ],
+    castle:[
+      "🏰 Castle Quest Complete!",
+      "You discovered the castle's secret room!"
+    ]
+  };
 
-$("gameContent").innerHTML=`
-<div class="sceneText">
-<h1>${names[game]}</h1>
-<p>⭐ Mission area</p>
-<p>Complete the mission to see the ending cutscene.</p>
-<button class="primary" id="finishMission">Finish Mission</button>
-</div>
-`;
+  let scene=scenes[game];
 
-$("finishMission").onclick=()=>{
-addCoins(10);
-showEnding(scene[0],scene[1]+" You earned 10 coins!");
-};
+  $("gameContent").innerHTML=`
+    <div class="sceneText">
+      <h1>${names[game]}</h1>
+      <p>⭐ Mission area</p>
+      <p>Complete the mission to see the ending cutscene.</p>
+      <button class="primary" id="finishMission">
+        Finish Mission
+      </button>
+    </div>
+  `;
+
+  $("finishMission").onclick=()=>{
+    addCoins(10);
+    showEnding(
+      scene[0],
+      scene[1]+" You earned 10 coins!"
+    );
+  };
 }
 
 function startPetRace(){
-let caught=false;
+  let caught=false;
 
-$("world").innerHTML=`
-<div style="max-width:900px;margin:auto;text-align:center">
-<h1>🐶 Pet Race</h1>
-<p>Use WASD or the arrow keys to move your character.</p>
-<p><strong>You must physically touch the moving pet to win!</strong></p>
+  $("gameContent").innerHTML=`
+    <div style="max-width:900px;margin:auto;text-align:center">
+      <h1>🐶 Pet Race</h1>
+      <p>Use WASD or the arrow keys to move your character.</p>
+      <p><strong>You must physically touch the moving pet to win!</strong></p>
 
-<div id="petArena" style="
-position:relative;
-height:400px;
-background:#65b85b;
-border:8px solid #315b32;
-border-radius:18px;
-overflow:hidden;
-">
+      <div id="petArena" tabindex="0" style="
+        position:relative;
+        height:400px;
+        background:#65b85b;
+        border:8px solid #315b32;
+        border-radius:18px;
+        overflow:hidden;
+        outline:none;
+      ">
 
-<div id="player" style="
-position:absolute;
-left:20px;
-top:170px;
-font-size:48px;
-width:55px;
-height:55px;
-">🧍</div>
+        <div id="player" style="
+          position:absolute;
+          left:20px;
+          top:170px;
+          font-size:48px;
+          width:55px;
+          height:55px;
+        ">🧍</div>
 
-<div id="movingPet" style="
-position:absolute;
-left:75%;
-top:35%;
-font-size:48px;
-width:55px;
-height:55px;
-">🐶</div>
+        <div id="movingPet" style="
+          position:absolute;
+          left:75%;
+          top:35%;
+          font-size:48px;
+          width:55px;
+          height:55px;
+        ">🐶</div>
 
-</div>
+      </div>
 
-<p id="petMessage">Catch the pet!</p>
-</div>
-`;
+      <p id="petMessage">
+        Click the green field, then use WASD or the arrow keys!
+      </p>
+    </div>
+  `;
 
-let player=$("player");
-let pet=$("movingPet");
-let arena=$("petArena");
-let keys={};
+  let player=$("player");
+  let pet=$("movingPet");
+  let arena=$("petArena");
+  let keys={};
 
-function checkTouch(){
-let a=player.getBoundingClientRect();
-let b=pet.getBoundingClientRect();
+  function checkTouch(){
+    let a=player.getBoundingClientRect();
+    let b=pet.getBoundingClientRect();
 
-let touching=
-a.left<b.right &&
-a.right>b.left &&
-a.top<b.bottom &&
-a.bottom>b.top;
+    let touching=
+      a.left<b.right &&
+      a.right>b.left &&
+      a.top<b.bottom &&
+      a.bottom>b.top;
 
-if(touching&&!caught){
-caught=true;
+    if(touching&&!caught){
+      caught=true;
+      stopPetGame();
+      addCoins(10);
 
-if(petMoveTimer){
-clearInterval(petMoveTimer);
-petMoveTimer=null;
+      showEnding(
+        "🐶 Pet Race Complete!",
+        "You physically touched the pet and won! You earned 10 coins!"
+      );
+    }
+  }
+
+  function gameLoop(){
+    if(!caught){
+      let x=player.offsetLeft;
+      let y=player.offsetTop;
+      let speed=4;
+
+      if(keys["arrowleft"]||keys["a"])x-=speed;
+      if(keys["arrowright"]||keys["d"])x+=speed;
+      if(keys["arrowup"]||keys["w"])y-=speed;
+      if(keys["arrowdown"]||keys["s"])y+=speed;
+
+      x=Math.max(
+        0,
+        Math.min(arena.clientWidth-player.offsetWidth,x)
+      );
+
+      y=Math.max(
+        0,
+        Math.min(arena.clientHeight-player.offsetHeight,y)
+      );
+
+      player.style.left=x+"px";
+      player.style.top=y+"px";
+
+      checkTouch();
+    }
+
+    petAnimationFrame=requestAnimationFrame(gameLoop);
+  }
+
+  arena.addEventListener("keydown",event=>{
+    let key=event.key.toLowerCase();
+
+    if([
+      "arrowleft",
+      "arrowright",
+      "arrowup",
+      "arrowdown",
+      "w",
+      "a",
+      "s",
+      "d"
+    ].includes(key)){
+      event.preventDefault();
+      keys[key]=true;
+    }
+  });
+
+  arena.addEventListener("keyup",event=>{
+    keys[event.key.toLowerCase()]=false;
+  });
+
+  arena.addEventListener("click",()=>{
+    arena.focus();
+  });
+
+  arena.focus();
+
+  petMoveTimer=setInterval(()=>{
+    if(caught)return;
+
+    pet.style.left=(Math.random()*78+5)+"%";
+    pet.style.top=(Math.random()*70+5)+"%";
+
+    checkTouch();
+  },900);
+
+  gameLoop();
 }
 
-addCoins(10);
+function startGemHunt(){
+  let found=0;
+  let total=5;
 
-showEnding(
-"🐶 Pet Race Complete!",
-"You physically touched the pet and won! You earned 10 coins!"
-);
-}
-}
+  let positions=[
+    [15,20],
+    [72,18],
+    [42,48],
+    [82,68],
+    [20,72]
+  ];
 
-function movePlayer(){
-if(caught)return;
+  $("world").style.background="linear-gradient(#171323,#302342)";
 
-let x=player.offsetLeft;
-let y=player.offsetTop;
-let speed=12;
+  $("gameContent").innerHTML=`
+    <div style="max-width:950px;margin:auto;text-align:center">
 
-if(keys["arrowleft"]||keys["a"])x-=speed;
-if(keys["arrowright"]||keys["d"])x+=speed;
-if(keys["arrowup"]||keys["w"])y-=speed;
-if(keys["arrowdown"]||keys["s"])y+=speed;
+      <h1>💎 Gem Hunt</h1>
 
-x=Math.max(0,Math.min(arena.clientWidth-player.offsetWidth,x));
-y=Math.max(0,Math.min(arena.clientHeight-player.offsetHeight,y));
+      <p>
+        Explore the cave and find all 5 hidden gems!
+      </p>
 
-player.style.left=x+"px";
-player.style.top=y+"px";
+      <div id="caveArea" style="
+        position:relative;
+        height:500px;
+        overflow:hidden;
+        border:10px solid #171323;
+        border-radius:25px;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            #65517d 0 3%,
+            transparent 4%
+          ),
+          radial-gradient(
+            circle at 80% 35%,
+            #514064 0 4%,
+            transparent 5%
+          ),
+          radial-gradient(
+            circle at 45% 75%,
+            #4c385f 0 5%,
+            transparent 6%
+          ),
+          linear-gradient(
+            145deg,
+            #21172e,
+            #493353 55%,
+            #171323
+          );
+      ">
 
-checkTouch();
-}
+        <div style="
+          position:absolute;
+          top:12px;
+          left:18px;
+          font-size:42px
+        ">🪨</div>
 
-document.onkeydown=event=>{
-keys[event.key.toLowerCase()]=true;
-movePlayer();
-};
+        <div style="
+          position:absolute;
+          top:25px;
+          right:20px;
+          font-size:48px
+        ">🪨</div>
 
-document.onkeyup=event=>{
-keys[event.key.toLowerCase()]=false;
-};
+        <div style="
+          position:absolute;
+          bottom:15px;
+          left:35px;
+          font-size:50px
+        ">🪨</div>
 
-petMoveTimer=setInterval(()=>{
-if(caught)return;
+        <div style="
+          position:absolute;
+          bottom:20px;
+          right:35px;
+          font-size:44px
+        ">🪨</div>
 
-pet.style.left=(Math.random()*78+5)+"%";
-pet.style.top=(Math.random()*70+5)+"%";
+        <div style="
+          position:absolute;
+          top:45%;
+          left:45%;
+          font-size:70px;
+          opacity:.35
+        ">🕳️</div>
 
-checkTouch();
-},900);
+        ${positions.map((pos,i)=>`
+          <button
+            class="caveGem"
+            data-gem="${i}"
+            style="
+              position:absolute;
+              left:${pos[0]}%;
+              top:${pos[1]}%;
+              font-size:38px;
+              background:transparent;
+              padding:4px;
+            "
+          >💎</button>
+        `).join("")}
+
+      </div>
+
+      <h2 id="gemCounter">Gems found: 0 / 5</h2>
+
+      <p id="gemMessage">
+        Click a gem to collect it!
+      </p>
+
+    </div>
+  `;
+
+  document.querySelectorAll(".caveGem").forEach(button=>{
+    button.onclick=()=>{
+      if(button.disabled)return;
+
+      button.disabled=true;
+      button.textContent="✨";
+
+      found++;
+      addCoins(2);
+
+      $("gemCounter").textContent=
+        `Gems found: ${found} / ${total}`;
+
+      $("gemMessage").textContent=
+        "💎 You found a gem! +2 coins";
+
+      if(found===total){
+        addCoins(10);
+
+        showEnding(
+          "💎 Gem Hunt Complete!",
+          "You found every gem hidden inside the cave! You earned 10 bonus coins!"
+        );
+      }
+    };
+  });
 }
 
 function forestScene(){
-$("world").classList.add("forest");
+  $("world").classList.add("forest");
 
-$("gameContent").innerHTML=`
-<div class="sceneText">
-<h1>🌲 Forest Adventure</h1>
-<p>You walk through tall trees, pass bushes and mushrooms, and discover a glowing trail.</p>
-<button class="primary" id="forestFinish">Reach the Forest Clearing</button>
-</div>
-`;
+  $("gameContent").innerHTML=`
+    <div class="sceneText">
+      <h1>🌲 Forest Adventure</h1>
+      <p>
+        You walk through tall trees, pass bushes and mushrooms,
+        and discover a glowing trail.
+      </p>
 
-$("forestFinish").onclick=()=>{
-addCoins(10);
-showEnding(
-"🌲 Forest Adventure Complete!",
-"You reached the peaceful forest clearing. You earned 10 coins!"
-);
-};
+      <button class="primary" id="forestFinish">
+        Reach the Forest Clearing
+      </button>
+    </div>
+  `;
+
+  $("forestFinish").onclick=()=>{
+    addCoins(10);
+
+    showEnding(
+      "🌲 Forest Adventure Complete!",
+      "You reached the peaceful forest clearing. You earned 10 coins!"
+    );
+  };
 }
 
 const rounds=[
-["🍔","👑",["burger king","burgerking"]],
-["🔥","🐶",["hot dog","hotdog"]],
-["🌙","🚶",["moonwalker","moon walker"]],
-["🌟","🐟",["starfish","star fish"]],
-["🦷","🧚",["tooth fairy","toothfairy"]],
-["🌧️","🧥",["raincoat","rain coat"]],
-["🧈","🪰",["butterfly","butter fly"]],
-["☀️","🌻",["sunflower","sun flower"]],
-["🎂","🎉",["birthday party","birthdayparty"]],
-["🐟","🍟",["fish and chips","fish chips","fish and chip"]]
+  ["🍔","👑",["burger king","burgerking"]],
+  ["🔥","🐶",["hot dog","hotdog"]],
+  ["🌙","🚶",["moonwalker","moon walker"]],
+  ["🌟","🐟",["starfish","star fish"]],
+  ["🦷","🧚",["tooth fairy","toothfairy"]],
+  ["🌧️","🧥",["raincoat","rain coat"]],
+  ["🧈","🪰",["butterfly","butter fly"]],
+  ["☀️","🌻",["sunflower","sun flower"]],
+  ["🎂","🎉",["birthday party","birthdayparty"]],
+  ["🐟","🍟",["fish and chips","fish chips","fish and chip"]]
 ];
 
 function clean(text){
-return text.toLowerCase().trim().replace(/[!?.,]/g,"").replace(/\s+/g," ");
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[!?.,]/g,"")
+    .replace(/\s+/g," ");
 }
 
 function startEmoji(){
-emojiIndex=0;
-emojiLocked=false;
-$("world").classList.add("emojiWorld");
-renderEmoji();
+  emojiIndex=0;
+  emojiLocked=false;
+  $("world").classList.add("emojiWorld");
+  renderEmoji();
 }
 
 function renderEmoji(){
-let round=rounds[emojiIndex];
+  let round=rounds[emojiIndex];
 
-$("gameContent").innerHTML=`
-<div class="emojiBox">
-<h1>🧩 Emoji Combo</h1>
-<p>Get the answer correct to unlock the next round.</p>
-<p>🪙 5 coins per correct answer</p>
+  $("gameContent").innerHTML=`
+    <div class="emojiBox">
 
-<div class="progress">
-<div id="bar" class="bar"></div>
-</div>
+      <h1>🧩 Emoji Combo</h1>
 
-<h2>Round ${emojiIndex+1} of ${rounds.length}</h2>
+      <p>
+        Get the answer correct to unlock the next round.
+      </p>
 
-<div class="pair">
-<span>${round[0]}</span>
-<b>+</b>
-<span>${round[1]}</span>
-</div>
+      <p>🪙 5 coins per correct answer</p>
 
-<input id="answer" class="answer" placeholder="What do they make?" autocomplete="off">
+      <div class="progress">
+        <div id="bar" class="bar"></div>
+      </div>
 
-<br>
+      <h2>Round ${emojiIndex+1} of ${rounds.length}</h2>
 
-<button id="guess" class="primary" style="margin-top:12px">Guess</button>
+      <div class="pair">
+        <span>${round[0]}</span>
+        <b>+</b>
+        <span>${round[1]}</span>
+      </div>
 
-<div id="feedback" class="feedback" aria-live="polite"></div>
-</div>
-`;
+      <input
+        id="answer"
+        class="answer"
+        placeholder="What do they make?"
+        autocomplete="off"
+      >
 
-$("bar").style.width=(emojiIndex/rounds.length*100)+"%";
+      <br>
 
-$("guess").onclick=checkEmoji;
+      <button
+        id="guess"
+        class="primary"
+        style="margin-top:12px"
+      >
+        Guess
+      </button>
 
-$("answer").onkeydown=event=>{
-if(event.key==="Enter")checkEmoji();
-};
+      <div id="feedback" class="feedback" aria-live="polite"></div>
 
-$("answer").focus();
+    </div>
+  `;
+
+  $("bar").style.width=
+    (emojiIndex/rounds.length*100)+"%";
+
+  $("guess").onclick=checkEmoji;
+
+  $("answer").onkeydown=event=>{
+    if(event.key==="Enter")checkEmoji();
+  };
+
+  $("answer").focus();
 }
 
 function checkEmoji(){
-if(emojiLocked)return;
+  if(emojiLocked)return;
 
-let input=$("answer");
-let feedback=$("feedback");
-let answer=clean(input.value);
+  let input=$("answer");
+  let feedback=$("feedback");
+  let answer=clean(input.value);
 
-if(!answer){
-feedback.textContent="Type an answer first!";
-return;
-}
+  if(!answer){
+    feedback.textContent="Type an answer first!";
+    return;
+  }
 
-let correctAnswers=rounds[emojiIndex][2].map(clean);
+  let correctAnswers=rounds[emojiIndex][2].map(clean);
 
-if(correctAnswers.includes(answer)){
-emojiLocked=true;
-addCoins(5);
+  if(correctAnswers.includes(answer)){
+    emojiLocked=true;
+    addCoins(5);
 
-feedback.textContent="✅ Correct! +5 coins!";
-input.disabled=true;
-$("guess").disabled=true;
+    feedback.textContent="✅ Correct! +5 coins!";
 
-setTimeout(()=>{
-emojiIndex++;
+    input.disabled=true;
+    $("guess").disabled=true;
 
-if(emojiIndex===rounds.length){
-showEnding(
-"🎉 Emoji Master!",
-"You completed all 10 rounds!"
-);
-}else{
-emojiLocked=false;
-renderEmoji();
-}
-},700);
+    setTimeout(()=>{
+      emojiIndex++;
 
-}else{
-feedback.textContent="❌ Not correct yet. Try again!";
-input.select();
-}
+      if(emojiIndex===rounds.length){
+        showEnding(
+          "🎉 Emoji Master!",
+          "You completed all 10 rounds!"
+        );
+      }else{
+        emojiLocked=false;
+        renderEmoji();
+      }
+    },700);
+
+  }else{
+    feedback.textContent="❌ Not correct yet. Try again!";
+    input.select();
+  }
 }
 
 function showEnding(title,text){
-$("endingTitle").textContent=title;
-$("endingText").textContent=text;
-$("ending").classList.remove("hidden");
+  $("endingTitle").textContent=title;
+  $("endingText").textContent=text;
+  $("ending").classList.remove("hidden");
 }
 
 function backToHub(){
-if(petMoveTimer){
-clearInterval(petMoveTimer);
-petMoveTimer=null;
-}
+  stopPetGame();
 
-$("gameScreen").classList.add("hidden");
-$("hub").classList.remove("hidden");
-$("ending").classList.add("hidden");
+  $("gameScreen").classList.add("hidden");
+  $("hub").classList.remove("hidden");
+  $("ending").classList.add("hidden");
 }
 
 $("backGame").onclick=backToHub;
 $("endingBack").onclick=backToHub;
 
 $("logoutBtn").onclick=()=>{
-alert("You have been logged out of this demo.");
-backToHub();
+  alert("You have been logged out of this demo.");
+  backToHub();
 };
 </script>
 
