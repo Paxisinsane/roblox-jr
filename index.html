@@ -18,870 +18,792 @@ body{
   min-height:100vh;
 }
 
-button{
-  border:0;
-  cursor:pointer;
-  font-weight:bold;
-}
-
 .hidden{
-  display:none !important;
+  display:none!important;
 }
 
-/* =========================
-   ACCOUNT SCREEN
-========================= */
+button{
+  border:none;
+  border-radius:10px;
+  padding:10px 16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  transform:scale(1.04);
+}
+
+/* ACCOUNT */
 
 #accountScreen{
   min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:20px;
 }
 
-.account-box{
-  width:380px;
-  max-width:100%;
-  background:#18213b;
+.accountBox{
+  background:#17213b;
+  padding:35px;
+  width:360px;
   border-radius:20px;
-  padding:30px;
-  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  box-shadow:0 10px 40px #0008;
   text-align:center;
 }
 
-.account-box h1{
+.accountBox h1{
+  font-size:38px;
   margin-top:0;
-  font-size:32px;
 }
 
-.account-box input{
+.accountBox input{
   width:100%;
-  padding:14px;
-  margin:8px 0;
-  border-radius:10px;
-  border:0;
+  padding:13px;
+  margin:7px 0;
+  border-radius:9px;
+  border:none;
   font-size:16px;
 }
 
-.account-btn{
-  width:100%;
-  padding:14px;
+.accountButtons{
+  display:flex;
+  gap:10px;
   margin-top:10px;
-  border-radius:10px;
-  background:#4d8cff;
-  color:white;
-  font-size:16px;
 }
 
-.account-btn:hover{
-  background:#6ba0ff;
+.accountButtons button{
+  flex:1;
+}
+
+.loginBtn{
+  background:#28a9ff;
+  color:white;
+}
+
+.signupBtn{
+  background:#35d07f;
+  color:white;
 }
 
 #accountMessage{
-  min-height:22px;
+  min-height:20px;
   margin-top:12px;
 }
 
-/* =========================
-   HUB
-========================= */
+/* TOP BAR */
 
 #hubScreen{
   min-height:100vh;
 }
 
 .topbar{
-  height:70px;
-  background:#11182c;
+  height:65px;
+  background:#111827;
   display:flex;
   align-items:center;
-  padding:0 22px;
+  padding:0 20px;
   gap:20px;
-  box-shadow:0 5px 20px rgba(0,0,0,.3);
+  box-shadow:0 4px 15px #0006;
 }
 
 .logo{
-  font-size:24px;
+  font-size:25px;
   font-weight:bold;
-  white-space:nowrap;
+  margin-right:auto;
 }
 
 .coins{
-  background:#252f4d;
-  padding:10px 15px;
-  border-radius:12px;
-  margin-left:auto;
+  background:#262f46;
+  padding:9px 15px;
+  border-radius:20px;
 }
 
-.top-btn{
-  background:#273451;
+.topbar button{
+  background:#2c3853;
   color:white;
-  padding:10px 14px;
-  border-radius:10px;
 }
 
-.top-btn:hover{
-  background:#3a4b72;
-}
+/* TABS */
 
 .tabs{
   display:flex;
+  justify-content:center;
   gap:10px;
   padding:20px;
-  background:#151d34;
 }
 
 .tab{
-  padding:12px 20px;
-  border-radius:10px;
-  background:#263250;
+  background:#293651;
   color:white;
 }
 
 .tab.active{
-  background:#4d8cff;
+  background:#2196f3;
 }
 
-.content{
-  padding:25px;
-  max-width:1400px;
+/* GAMES */
+
+#gamesTab{
+  padding:0 25px 30px;
+}
+
+.gamesGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  max-width:1200px;
   margin:auto;
 }
 
-.section-title{
-  font-size:30px;
-  margin-top:0;
-}
-
-/* =========================
-   GAMES
-========================= */
-
-.games-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:20px;
-}
-
-.game-card{
-  background:#19233e;
+.gameCard{
+  background:#18233c;
   border-radius:18px;
-  padding:15px;
   overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,.25);
+  box-shadow:0 8px 25px #0005;
 }
 
-.game-image{
+.gameImage{
   height:150px;
-  border-radius:14px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   font-size:65px;
-  margin-bottom:14px;
 }
 
-.coin-bg{
-  background:linear-gradient(135deg,#f7c948,#ff8c00);
+.coinImage{background:linear-gradient(#50b8ff,#69d47a);}
+.brainImage{background:linear-gradient(#ff7a7a,#8d4dff);}
+.obbyImage{background:linear-gradient(#7ed7ff,#53a84e);}
+.spaceImage{background:linear-gradient(#07001f,#25135e);}
+.gemImage{background:linear-gradient(#092e49,#08a4d8);}
+.petImage{background:linear-gradient(#ffe49b,#74d3ff);}
+.forestImage{background:linear-gradient(#143c25,#69a84d);}
+.castleImage{background:linear-gradient(#3d2619,#a86b39);}
+
+.gameInfo{
+  padding:15px;
 }
 
-.brainrot-bg{
-  background:linear-gradient(135deg,#ff4f81,#7c4dff);
+.gameInfo h3{
+  margin:0 0 7px;
 }
 
-.obby-bg{
-  background:linear-gradient(135deg,#27c2ff,#6c5ce7);
-}
-
-.space-bg{
-  background:linear-gradient(135deg,#03051c,#17106b);
-}
-
-.gem-bg{
-  background:linear-gradient(135deg,#27e1ff,#0072ff);
-}
-
-.pet-bg{
-  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-}
-
-.forest-bg{
-  background:linear-gradient(135deg,#1c8c4c,#064d2c);
-}
-
-.castle-bg{
-  background:linear-gradient(135deg,#765331,#2e1b0f);
-}
-
-.game-card h3{
-  margin:8px 0;
-}
-
-.game-card p{
-  color:#b9c4df;
-  min-height:42px;
+.gameInfo p{
+  color:#c8d0df;
+  min-height:38px;
 }
 
 .play{
   width:100%;
-  padding:12px;
-  border-radius:10px;
-  background:#4d8cff;
+  background:#21a4ff;
   color:white;
-  font-size:16px;
 }
 
-.play:hover{
-  background:#6da1ff;
-}
+/* FRIENDS */
 
-/* =========================
-   FRIENDS
-========================= */
-
-.friends-list{
-  display:grid;
-  gap:12px;
+#friendsTab,
+#marketplaceTab{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
 }
 
 .friend{
-  background:#19233e;
-  border-radius:14px;
+  background:#18233c;
   padding:15px;
+  border-radius:14px;
+  margin:10px 0;
   display:flex;
   align-items:center;
   gap:15px;
 }
 
-.friend-avatar{
+.friendAvatar{
   width:50px;
   height:50px;
-  border-radius:12px;
-  background:#4d8cff;
+  background:#ffca75;
+  border-radius:10px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   font-size:25px;
 }
 
-/* =========================
-   MARKETPLACE
-========================= */
+/* MARKETPLACE */
 
-.market-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+.marketItem{
+  background:#18233c;
+  padding:18px;
+  border-radius:15px;
+  margin:12px 0;
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-.market-card{
-  background:#19233e;
-  border-radius:16px;
-  padding:20px;
-  text-align:center;
+.marketIcon{
+  font-size:40px;
 }
 
-.market-icon{
-  font-size:60px;
-  margin:15px;
-}
-
-.price{
-  color:#ffd54a;
-  margin:10px;
+.marketText{
+  flex:1;
 }
 
 .buy{
-  padding:11px 20px;
-  border-radius:10px;
-  background:#42d67d;
+  background:#36c879;
   color:white;
 }
 
-/* =========================
-   CHARACTER
-========================= */
-
-.character-panel{
-  background:#19233e;
-  border-radius:18px;
-  padding:25px;
-  display:flex;
-  gap:40px;
-  flex-wrap:wrap;
+.buy.owned{
+  background:#555;
 }
 
-.character-preview{
-  width:260px;
-  min-height:420px;
-  background:#11182c;
-  border-radius:20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-}
+/* CHARACTER */
 
-.character{
-  width:120px;
-  height:300px;
-  position:relative;
-}
-
-/* Full body character */
-
-.char-head{
-  width:90px;
-  height:90px;
-  background:#f1bd8d;
-  border-radius:22px;
-  position:absolute;
-  top:0;
-  left:15px;
-  border:4px solid #222;
-}
-
-.char-hair{
-  width:90px;
-  height:35px;
-  background:#e9d29b;
-  position:absolute;
-  top:0;
-  left:15px;
-  border-radius:25px 25px 8px 8px;
-}
-
-.char-body{
-  width:100px;
-  height:115px;
-  background:#4d8cff;
-  position:absolute;
-  top:92px;
-  left:10px;
-  border-radius:10px;
-  border:4px solid #222;
-}
-
-.char-arm{
-  width:30px;
-  height:105px;
-  background:#f1bd8d;
-  position:absolute;
-  top:96px;
-  border:4px solid #222;
-  border-radius:10px;
-}
-
-.char-arm.left{
-  left:-22px;
-}
-
-.char-arm.right{
-  right:-22px;
-}
-
-.char-leg{
-  width:38px;
-  height:105px;
-  background:#263451;
-  position:absolute;
-  top:205px;
-  border:4px solid #222;
-  border-radius:8px;
-}
-
-.char-leg.left{
-  left:15px;
-}
-
-.char-leg.right{
-  right:15px;
-}
-
-.custom-options{
-  flex:1;
-  min-width:250px;
-}
-
-.custom-options button{
-  padding:12px;
-  margin:5px;
-  border-radius:10px;
-  background:#2d3b5e;
-  color:white;
-}
-
-.custom-options button:hover{
-  background:#4d8cff;
-}
-
-/* =========================
-   GAME SCREEN
-========================= */
-
-#gameScreen{
+#characterScreen{
   min-height:100vh;
-  background:#76c7ff;
-  position:relative;
-  overflow:hidden;
+  background:#10192d;
 }
 
-.game-topbar{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
+.characterTop{
   height:65px;
-  background:rgba(12,20,40,.9);
+  background:#111827;
   display:flex;
   align-items:center;
   padding:0 20px;
-  z-index:50;
 }
 
-.back-game{
-  padding:11px 17px;
-  background:#334362;
-  color:white;
-  border-radius:10px;
-}
-
-.game-title{
+.characterTop h2{
   margin-left:20px;
-  font-size:21px;
 }
 
-#world{
-  min-height:100vh;
-  padding-top:65px;
+.characterContent{
+  display:flex;
+  justify-content:center;
+  gap:70px;
+  padding:40px;
+  flex-wrap:wrap;
+}
+
+.characterPreview{
+  width:300px;
+  height:500px;
+  background:linear-gradient(#63bdf8,#dff6ff);
+  border-radius:25px;
   position:relative;
   overflow:hidden;
 }
 
-/* Normal world */
-
-.sky{
+.characterFloor{
   position:absolute;
-  top:65px;
+  bottom:0;
   left:0;
   right:0;
-  height:55%;
-  background:linear-gradient(#69c8ff,#b7e8ff);
+  height:110px;
+  background:#70bb5d;
 }
+
+.fullCharacter{
+  position:absolute;
+  left:50%;
+  bottom:80px;
+  transform:translateX(-50%);
+  width:100px;
+  height:290px;
+}
+
+.charHead{
+  width:75px;
+  height:75px;
+  background:#f2bd91;
+  border-radius:12px;
+  position:absolute;
+  top:0;
+  left:12px;
+}
+
+.charHair{
+  position:absolute;
+  width:80px;
+  height:30px;
+  background:#6b4024;
+  border-radius:40px 40px 5px 5px;
+  top:-5px;
+  left:10px;
+  z-index:2;
+}
+
+.charEyes{
+  position:absolute;
+  top:35px;
+  left:25px;
+  font-size:12px;
+  z-index:3;
+}
+
+.charBody{
+  width:90px;
+  height:105px;
+  background:#2488e8;
+  position:absolute;
+  top:80px;
+  left:5px;
+  border-radius:8px;
+}
+
+.charArm{
+  width:25px;
+  height:95px;
+  background:#f2bd91;
+  position:absolute;
+  top:85px;
+  border-radius:10px;
+}
+
+.leftArm{left:-20px;}
+.rightArm{right:-20px;}
+
+.charLeg{
+  width:38px;
+  height:105px;
+  background:#333b50;
+  position:absolute;
+  top:180px;
+  border-radius:7px;
+}
+
+.leftLeg{left:8px;}
+.rightLeg{right:8px;}
+
+.charFoot{
+  width:43px;
+  height:22px;
+  background:#20242b;
+  position:absolute;
+  top:280px;
+  border-radius:8px;
+}
+
+.leftFoot{left:2px;}
+.rightFoot{right:2px;}
+
+.accessories{
+  background:#18233c;
+  padding:25px;
+  border-radius:20px;
+  width:320px;
+}
+
+.accessories button{
+  width:100%;
+  margin:6px 0;
+  background:#2c9bf0;
+  color:white;
+}
+
+/* GAME */
+
+#gameScreen{
+  position:fixed;
+  inset:0;
+  background:#111;
+  z-index:20;
+}
+
+.gameHeader{
+  height:60px;
+  background:#111827;
+  display:flex;
+  align-items:center;
+  padding:0 15px;
+  position:relative;
+  z-index:100;
+}
+
+.gameHeader h2{
+  flex:1;
+  text-align:center;
+  margin:0;
+}
+
+#backToHub{
+  background:#39465e;
+  color:white;
+}
+
+#world{
+  position:absolute;
+  top:60px;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+  background:linear-gradient(#72c8ff 0%,#b8edff 65%,#69bb54 65%);
+}
+
+/* NORMAL WORLD */
 
 .ground{
   position:absolute;
-  top:55%;
-  left:0;
-  right:0;
   bottom:0;
-  background:#4caf50;
+  height:35%;
+  width:100%;
+  background:#65ad4c;
 }
 
 .road{
   position:absolute;
-  top:66%;
+  bottom:8%;
   left:0;
-  right:0;
-  height:110px;
+  width:100%;
+  height:70px;
   background:#555;
-}
-
-.road:after{
-  content:"";
-  position:absolute;
-  top:48px;
-  left:0;
-  right:0;
-  height:8px;
-  background:repeating-linear-gradient(
-    90deg,
-    #fff 0,
-    #fff 60px,
-    transparent 60px,
-    transparent 110px
-  );
 }
 
 .house{
   position:absolute;
-  width:150px;
+  bottom:35%;
+  width:130px;
   height:120px;
-  background:#d8a66a;
-  bottom:34%;
-  border:5px solid #8b5a2b;
+  background:#e7b57c;
+  border:5px solid #9b6540;
 }
 
 .house:before{
   content:"";
   position:absolute;
-  left:-20px;
-  top:-70px;
-  border-left:95px solid transparent;
-  border-right:95px solid transparent;
-  border-bottom:75px solid #9d3d35;
+  left:-15px;
+  top:-60px;
+  border-left:80px solid transparent;
+  border-right:80px solid transparent;
+  border-bottom:65px solid #9d3f35;
 }
 
-.house.one{
-  left:10%;
-}
-
-.house.two{
-  right:10%;
-}
+.house1{left:10%;}
+.house2{right:10%;}
 
 .tree{
   position:absolute;
-  width:45px;
+  bottom:35%;
+  width:35px;
   height:100px;
-  background:#70452a;
-  bottom:32%;
+  background:#70452c;
 }
 
 .tree:before{
   content:"";
   position:absolute;
-  width:120px;
-  height:120px;
-  background:#1d7e3e;
+  width:100px;
+  height:100px;
   border-radius:50%;
-  left:-38px;
-  top:-75px;
+  background:#32934d;
+  left:-32px;
+  top:-55px;
 }
 
-.tree.one{
-  left:35%;
-}
+.tree1{left:35%;}
+.tree2{right:35%;}
 
-.tree.two{
-  right:32%;
-}
-
-/* =========================
-   PLAYER
-========================= */
+/* PLAYER */
 
 #player{
   position:absolute;
-  left:50%;
-  top:65%;
-  width:60px;
-  height:120px;
-  transform:translate(-50%,-100%);
-  z-index:20;
+  width:42px;
+  height:78px;
+  z-index:30;
+  transition:none;
 }
 
-.player-head{
-  width:46px;
-  height:46px;
-  background:#f1bd8d;
-  border-radius:12px;
-  border:3px solid #222;
+.playerHead{
   position:absolute;
   top:0;
   left:7px;
-}
-
-.player-hair{
-  width:46px;
-  height:18px;
-  background:#e9d29b;
-  border-radius:15px 15px 5px 5px;
-  position:absolute;
-  top:0;
-  left:7px;
-}
-
-.player-body{
-  width:52px;
-  height:55px;
-  background:#4d8cff;
-  border:3px solid #222;
+  width:28px;
+  height:28px;
+  background:#f2bd91;
   border-radius:6px;
+  z-index:3;
+}
+
+.playerHair{
   position:absolute;
-  top:46px;
-  left:4px;
+  top:-3px;
+  left:5px;
+  width:32px;
+  height:12px;
+  background:#6b4024;
+  border-radius:10px 10px 2px 2px;
+  z-index:4;
 }
 
-.player-leg{
-  width:20px;
-  height:45px;
-  background:#263451;
-  border:3px solid #222;
+.playerBody{
   position:absolute;
-  top:98px;
+  top:27px;
+  left:3px;
+  width:36px;
+  height:34px;
+  background:#2488e8;
+  border-radius:5px;
 }
 
-.player-leg.left{
-  left:8px;
+.playerLeg1,
+.playerLeg2{
+  position:absolute;
+  top:58px;
+  width:15px;
+  height:20px;
+  background:#333b50;
+  border-radius:3px;
 }
 
-.player-leg.right{
-  right:8px;
+.playerLeg1{left:5px;}
+.playerLeg2{right:5px;}
+
+.playerAccessory{
+  position:absolute;
+  top:-16px;
+  left:2px;
+  z-index:10;
+  font-size:22px;
 }
 
-/* =========================
-   ITEMS
-========================= */
+/* COLLECTIBLES */
 
 .collectible{
   position:absolute;
-  font-size:45px;
+  font-size:35px;
+  cursor:pointer;
   z-index:15;
-  animation:float 1.5s infinite ease-in-out;
+  user-select:none;
+  animation:bob 1s infinite alternate;
 }
 
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
+@keyframes bob{
+  from{transform:translateY(0);}
+  to{transform:translateY(-8px);}
 }
 
 .obstacle{
   position:absolute;
-  z-index:10;
-  background:#8d5524;
+  background:#d83c3c;
   border-radius:8px;
 }
 
-/* =========================
-   SPACE WORLD
-========================= */
+/* MESSAGES */
 
-#world.space{
-  background:
-    radial-gradient(circle at 20% 30%,white 0 2px,transparent 3px),
-    radial-gradient(circle at 70% 20%,white 0 2px,transparent 3px),
-    radial-gradient(circle at 50% 70%,white 0 2px,transparent 3px),
-    radial-gradient(circle at 90% 80%,white 0 2px,transparent 3px),
-    linear-gradient(180deg,#020414,#080b38,#03051b);
-  background-size:auto;
-}
-
-#world.space .sky{
-  background:transparent;
-}
-
-#world.space .ground,
-#world.space .road,
-#world.space .house,
-#world.space .tree{
-  display:none;
-}
-
-.space-planet{
+.gameMessage{
   position:absolute;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  background:#6936b8;
-  right:12%;
-  top:20%;
-  box-shadow:0 0 40px #8d62e8;
-}
-
-.space-planet:after{
-  content:"";
-  position:absolute;
-  width:250px;
-  height:50px;
-  border:8px solid #b9a1ff;
-  border-radius:50%;
-  top:60px;
-  left:-35px;
-  transform:rotate(-20deg);
-}
-
-.space-star{
-  position:absolute;
-  color:white;
-  font-size:25px;
-}
-
-/* =========================
-   CASTLE WORLD
-========================= */
-
-#world.castle{
-  background:
-    linear-gradient(
-      90deg,
-      #21160f 0 12%,
-      transparent 12% 88%,
-      #21160f 88%
-    ),
-    linear-gradient(#6c4a2d,#24170e);
-}
-
-#world.castle .sky{
-  display:none;
-}
-
-#world.castle .ground{
-  top:65px;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #765333 0 80px,
-      #624326 80px 160px
-    );
-}
-
-#world.castle .road{
-  top:auto;
-  bottom:0;
-  height:100%;
-  width:180px;
-  left:50%;
-  right:auto;
-  transform:translateX(-50%);
-  background:#94704b;
-  border-left:8px solid #4b321e;
-  border-right:8px solid #4b321e;
-}
-
-#world.castle .road:after{
-  display:none;
-}
-
-.castle-wall{
-  position:absolute;
-  top:100px;
-  width:100%;
-  height:300px;
-  pointer-events:none;
-}
-
-.castle-window{
-  position:absolute;
-  width:50px;
-  height:90px;
-  background:#21152f;
-  border:7px solid #b18a58;
-  border-radius:30px 30px 0 0;
-  top:70px;
-}
-
-.castle-window.one{
-  left:20%;
-}
-
-.castle-window.two{
-  right:20%;
-}
-
-.castle-door{
-  position:absolute;
-  bottom:0;
+  top:15px;
   left:50%;
   transform:translateX(-50%);
-  width:150px;
-  height:230px;
-  background:#321d12;
-  border:10px solid #8b6840;
-  border-radius:75px 75px 0 0;
-}
-
-/* =========================
-   OBBY
-========================= */
-
-#world.obby{
-  background:linear-gradient(#5c8dff,#c6e7ff);
-}
-
-#world.obby .sky{
-  display:none;
-}
-
-#world.obby .ground,
-#world.obby .road,
-#world.obby .house,
-#world.obby .tree{
-  display:none;
-}
-
-.obby-stage{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  top:65px;
-}
-
-.obby-platform{
-  position:absolute;
-  width:120px;
-  height:25px;
-  background:#ff5c5c;
-  border:4px solid #b72828;
-  border-radius:8px;
-}
-
-.obby-platform:nth-of-type(even){
-  background:#5c9cff;
-  border-color:#2760ad;
-}
-
-.obby-finish{
-  position:absolute;
-  top:100px;
-  right:100px;
-  font-size:70px;
-}
-
-.obby-stage-text{
-  position:absolute;
-  top:90px;
-  left:30px;
-  background:rgba(0,0,0,.45);
-  padding:15px 20px;
-  border-radius:12px;
-}
-
-/* =========================
-   GAME MESSAGE
-========================= */
-
-.game-message{
-  position:absolute;
-  left:50%;
-  top:90px;
-  transform:translateX(-50%);
-  background:rgba(0,0,0,.65);
+  background:#111c;
   padding:12px 20px;
-  border-radius:12px;
-  z-index:100;
+  border-radius:15px;
+  z-index:90;
   font-weight:bold;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* SPACE */
 
-@media(max-width:700px){
+.spaceWorld{
+  background:
+    radial-gradient(circle at 20% 20%,white 0 2px,transparent 3px),
+    radial-gradient(circle at 70% 30%,white 0 2px,transparent 3px),
+    radial-gradient(circle at 45% 75%,white 0 2px,transparent 3px),
+    radial-gradient(circle at 85% 80%,white 0 2px,transparent 3px),
+    radial-gradient(circle at 10% 80%,white 0 2px,transparent 3px),
+    linear-gradient(#030014,#13052e 55%,#080016);
+}
+
+.planet{
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#7139c8,#a55bf2);
+  right:10%;
+  top:20%;
+  box-shadow:0 0 40px #8b54ff;
+}
+
+.planetRing{
+  position:absolute;
+  width:320px;
+  height:80px;
+  border:12px solid #d2a8ff;
+  border-radius:50%;
+  transform:rotate(-15deg);
+  left:-50px;
+  top:70px;
+}
+
+.rocket{
+  position:absolute;
+  font-size:70px;
+}
+
+/* CASTLE */
+
+.castleWorld{
+  background:linear-gradient(#24160f,#533422);
+}
+
+.castleWall{
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #70492f 0,
+      #70492f 45px,
+      #4d301f 46px,
+      #4d301f 50px
+    );
+}
+
+.castleWindow{
+  position:absolute;
+  width:70px;
+  height:110px;
+  border-radius:50px 50px 5px 5px;
+  background:#72cfff;
+  border:10px solid #302017;
+  top:20%;
+}
+
+.castleWindow1{left:15%;}
+.castleWindow2{right:15%;}
+
+.castleDoor{
+  position:absolute;
+  width:130px;
+  height:210px;
+  background:#24170f;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  border:8px solid #a36b3d;
+  border-radius:70px 70px 0 0;
+}
+
+.treasure{
+  position:absolute;
+  font-size:60px;
+}
+
+/* OBBY */
+
+.obbyWorld{
+  background:linear-gradient(#73d2ff,#d8f7ff);
+}
+
+.obbyWorld .ground,
+.obbyWorld .road,
+.obbyWorld .house,
+.obbyWorld .tree{
+  display:none;
+}
+
+.obbyPlatform{
+  position:absolute;
+  height:22px;
+  background:#38b85a;
+  border:4px solid #197437;
+  border-radius:7px;
+  z-index:12;
+}
+
+.obbyPlatform.bad{
+  background:#e74c3c;
+  border-color:#8d241b;
+}
+
+.obbyPlatform.bouncy{
+  background:#b55cff;
+  border-color:#702bb3;
+}
+
+.obbyStage{
+  position:absolute;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#111c;
+  padding:8px 18px;
+  border-radius:15px;
+  z-index:50;
+  font-weight:bold;
+}
+
+.obbyHint{
+  position:absolute;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#111c;
+  padding:8px 15px;
+  border-radius:12px;
+  z-index:50;
+}
+
+/* ENDING */
+
+#endingOverlay{
+  position:absolute;
+  inset:0;
+  background:#000b;
+  z-index:200;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.endingBox{
+  width:min(520px,90%);
+  background:#18233c;
+  padding:35px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 10px 50px #000;
+}
+
+.endingBox .endingEmoji{
+  font-size:65px;
+}
+
+.endingBox h1{
+  margin:10px 0;
+}
+
+.endingBox p{
+  color:#d8dfeb;
+  font-size:18px;
+}
+
+.endingBox button{
+  background:#249df2;
+  color:white;
+  margin-top:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
   .topbar{
-    gap:8px;
-    padding:0 10px;
+    gap:7px;
+    padding:0 8px;
   }
 
   .logo{
     font-size:18px;
   }
 
-  .coins{
-    padding:8px;
+  .topbar button{
+    padding:7px;
   }
 
-  .top-btn{
-    padding:8px;
-  }
-
-  .content{
-    padding:15px;
-  }
-
-  .character-panel{
+  .characterContent{
+    padding:20px;
     gap:20px;
   }
 }
@@ -890,151 +812,126 @@ button{
 
 <body>
 
-<!-- =========================
-     ACCOUNT
-========================= -->
+<!-- ACCOUNT -->
 
-<section id="accountScreen">
+<div id="accountScreen">
 
-  <div class="account-box">
-
+  <div class="accountBox">
     <h1>🎮 Roblox Jr.</h1>
-
-    <p>Welcome to Roblox Jr. Game Hub!</p>
+    <p>Game Hub</p>
 
     <input id="email" type="email" placeholder="Email">
     <input id="password" type="password" placeholder="Password">
 
-    <button class="account-btn" id="signupBtn">
-      Create Account
-    </button>
+    <div class="accountButtons">
+      <button class="loginBtn" onclick="login()">Log In</button>
+      <button class="signupBtn" onclick="signup()">Sign Up</button>
+    </div>
 
-    <button class="account-btn" id="loginBtn">
-      Log In
-    </button>
-
-    <p id="accountMessage"></p>
-
+    <div id="accountMessage"></div>
   </div>
 
-</section>
+</div>
 
 
-<!-- =========================
-     HUB
-========================= -->
+<!-- HUB -->
 
-<section id="hubScreen" class="hidden">
+<div id="hubScreen" class="hidden">
 
   <div class="topbar">
-
-    <div class="logo">
-      🎮 Roblox Jr.
-    </div>
+    <div class="logo">🎮 Roblox Jr.</div>
 
     <div class="coins">
       🪙 <span id="coinCount">100</span>
     </div>
 
-    <button class="top-btn" id="avatarBtn">
-      Character
-    </button>
-
-    <button class="top-btn" id="logoutBtn">
-      Log Out
-    </button>
-
+    <button onclick="openCharacter()">Character</button>
+    <button onclick="logout()">Log Out</button>
   </div>
 
-
   <div class="tabs">
-
-    <button class="tab active" data-tab="games">
-      🎮 Games
-    </button>
-
-    <button class="tab" data-tab="friends">
-      👥 Friends
-    </button>
-
-    <button class="tab" data-tab="marketplace">
-      🛒 Marketplace
-    </button>
-
+    <button class="tab active" onclick="showTab('gamesTab',this)">Games</button>
+    <button class="tab" onclick="showTab('friendsTab',this)">Friends</button>
+    <button class="tab" onclick="showTab('marketplaceTab',this)">Marketplace</button>
   </div>
 
 
   <!-- GAMES -->
 
-  <div class="content tab-content" id="games">
+  <div id="gamesTab">
 
-    <h1 class="section-title">
-      Games
-    </h1>
+    <div class="gamesGrid">
 
-    <div class="games-grid">
-
-      <div class="game-card">
-        <div class="game-image coin-bg">🪙</div>
-        <h3>Coin Dash</h3>
-        <p>Collect as many coins as you can!</p>
-        <button class="play" data-game="coin">Play</button>
+      <div class="gameCard">
+        <div class="gameImage coinImage">🪙</div>
+        <div class="gameInfo">
+          <h3>Coin Dash</h3>
+          <p>Collect every coin you can!</p>
+          <button class="play" data-game="coin">Play</button>
+        </div>
       </div>
 
-
-      <div class="game-card">
-        <div class="game-image brainrot-bg">🧠</div>
-        <h3>Brainrot Heist</h3>
-        <p>Find the brainrot and escape!</p>
-        <button class="play" data-game="brainrot">Play</button>
+      <div class="gameCard">
+        <div class="gameImage brainImage">🧠</div>
+        <div class="gameInfo">
+          <h3>Brainrot Heist</h3>
+          <p>Grab the brainrot and escape!</p>
+          <button class="play" data-game="brain">Play</button>
+        </div>
       </div>
 
-
-      <div class="game-card">
-        <div class="game-image obby-bg">🏃</div>
-        <h3>Obby Tower</h3>
-        <p>Jump across the platforms and reach the top.</p>
-        <button class="play" data-game="obby">Play</button>
+      <div class="gameCard">
+        <div class="gameImage obbyImage">🏃</div>
+        <div class="gameInfo">
+          <h3>Obby Tower</h3>
+          <p>Jump through five different screens!</p>
+          <button class="play" data-game="obby">Play</button>
+        </div>
       </div>
 
-
-      <div class="game-card">
-        <div class="game-image space-bg">🚀</div>
-        <h3>Space Escape</h3>
-        <p>Explore a giant space world.</p>
-        <button class="play" data-game="space">Play</button>
+      <div class="gameCard">
+        <div class="gameImage spaceImage">🚀</div>
+        <div class="gameInfo">
+          <h3>Space Escape</h3>
+          <p>Find the rocket and escape!</p>
+          <button class="play" data-game="space">Play</button>
+        </div>
       </div>
 
-
-      <div class="game-card">
-        <div class="game-image gem-bg">💎</div>
-        <h3>Gem Hunt</h3>
-        <p>Search the world for valuable gems.</p>
-        <button class="play" data-game="gem">Play</button>
+      <div class="gameCard">
+        <div class="gameImage gemImage">💎</div>
+        <div class="gameInfo">
+          <h3>Gem Hunt</h3>
+          <p>Find all the hidden gems!</p>
+          <button class="play" data-game="gem">Play</button>
+        </div>
       </div>
 
-
-      <div class="game-card">
-        <div class="game-image pet-bg">🐶</div>
-        <h3>Pet Race</h3>
-        <p>Race with your pet!</p>
-        <button class="play" data-game="pet">Play</button>
+      <div class="gameCard">
+        <div class="gameImage petImage">🐶</div>
+        <div class="gameInfo">
+          <h3>Pet Race</h3>
+          <p>Race your pet to the finish!</p>
+          <button class="play" data-game="pet">Play</button>
+        </div>
       </div>
 
-
-      <div class="game-card">
-        <div class="game-image forest-bg">🌲</div>
-        <h3>Forest Adventure</h3>
-        <p>Explore the mysterious forest.</p>
-        <button class="play" data-game="forest">Play</button>
+      <div class="gameCard">
+        <div class="gameImage forestImage">🌲</div>
+        <div class="gameInfo">
+          <h3>Forest Adventure</h3>
+          <p>Explore the forest and find treasure!</p>
+          <button class="play" data-game="forest">Play</button>
+        </div>
       </div>
 
-
-      <div class="game-card">
-        <div class="game-image castle-bg">🏰</div>
-        <h3>Castle Quest</h3>
-        <p>Explore the inside of an enormous castle.</p>
-        <button class="play" data-game="castle">Play</button>
+      <div class="gameCard">
+        <div class="gameImage castleImage">🏰</div>
+        <div class="gameInfo">
+          <h3>Castle Quest</h3>
+          <p>Explore the castle and find its treasure!</p>
+          <button class="play" data-game="castle">Play</button>
+        </div>
       </div>
 
     </div>
@@ -1044,38 +941,32 @@ button{
 
   <!-- FRIENDS -->
 
-  <div class="content tab-content hidden" id="friends">
+  <div id="friendsTab" class="hidden">
 
-    <h1 class="section-title">
-      Friends
-    </h1>
+    <h2>👥 Friends</h2>
 
-    <div class="friends-list">
-
-      <div class="friend">
-        <div class="friend-avatar">😀</div>
-        <div>
-          <strong>Alex</strong>
-          <div>Online</div>
-        </div>
+    <div class="friend">
+      <div class="friendAvatar">😀</div>
+      <div>
+        <b>Alex</b>
+        <div>Online</div>
       </div>
+    </div>
 
-      <div class="friend">
-        <div class="friend-avatar">😎</div>
-        <div>
-          <strong>Sam</strong>
-          <div>Playing Coin Dash</div>
-        </div>
+    <div class="friend">
+      <div class="friendAvatar">😎</div>
+      <div>
+        <b>Sam</b>
+        <div>Playing Obby Tower</div>
       </div>
+    </div>
 
-      <div class="friend">
-        <div class="friend-avatar">🤖</div>
-        <div>
-          <strong>Max</strong>
-          <div>Offline</div>
-        </div>
+    <div class="friend">
+      <div class="friendAvatar">🤓</div>
+      <div>
+        <b>Max</b>
+        <div>Offline</div>
       </div>
-
     </div>
 
   </div>
@@ -1083,288 +974,232 @@ button{
 
   <!-- MARKETPLACE -->
 
-  <div class="content tab-content hidden" id="marketplace">
+  <div id="marketplaceTab" class="hidden">
 
-    <h1 class="section-title">
-      Marketplace
-    </h1>
+    <h2>🛍️ Marketplace</h2>
 
-    <div class="market-grid">
-
-      <div class="market-card">
-        <div class="market-icon">🧢</div>
-        <h3>Cool Hat</h3>
-        <div class="price">🪙 25</div>
-        <button class="buy" data-price="25">Buy</button>
+    <div class="marketItem">
+      <div class="marketIcon">🎩</div>
+      <div class="marketText">
+        <b>Cool Hat</b>
+        <div>25 coins</div>
       </div>
+      <button class="buy" onclick="buyItem(this,25,'hat')">Buy</button>
+    </div>
 
-      <div class="market-card">
-        <div class="market-icon">🕶️</div>
-        <h3>Cool Glasses</h3>
-        <div class="price">🪙 30</div>
-        <button class="buy" data-price="30">Buy</button>
+    <div class="marketItem">
+      <div class="marketIcon">🕶️</div>
+      <div class="marketText">
+        <b>Cool Glasses</b>
+        <div>30 coins</div>
       </div>
+      <button class="buy" onclick="buyItem(this,30,'glasses')">Buy</button>
+    </div>
 
-      <div class="market-card">
-        <div class="market-icon">👑</div>
-        <h3>King Crown</h3>
-        <div class="price">🪙 75</div>
-        <button class="buy" data-price="75">Buy</button>
+    <div class="marketItem">
+      <div class="marketIcon">👑</div>
+      <div class="marketText">
+        <b>King Crown</b>
+        <div>75 coins</div>
       </div>
+      <button class="buy" onclick="buyItem(this,75,'crown')">Buy</button>
+    </div>
 
-      <div class="market-card">
-        <div class="market-icon">🎒</div>
-        <h3>Adventure Backpack</h3>
-        <div class="price">🪙 50</div>
-        <button class="buy" data-price="50">Buy</button>
+    <div class="marketItem">
+      <div class="marketIcon">🎒</div>
+      <div class="marketText">
+        <b>Adventure Backpack</b>
+        <div>50 coins</div>
       </div>
-
+      <button class="buy" onclick="buyItem(this,50,'backpack')">Buy</button>
     </div>
 
   </div>
 
-</section>
+</div>
 
 
-<!-- =========================
-     CHARACTER SCREEN
-========================= -->
+<!-- CHARACTER -->
 
-<section id="characterScreen" class="hidden">
+<div id="characterScreen" class="hidden">
 
-  <div class="topbar">
-
-    <div class="logo">
-      👤 Character
-    </div>
-
-    <button class="top-btn" id="backFromCharacter">
-      Back
-    </button>
-
+  <div class="characterTop">
+    <button onclick="closeCharacter()">← Back</button>
+    <h2>My Character</h2>
   </div>
 
-  <div class="content">
+  <div class="characterContent">
 
-    <div class="character-panel">
+    <div class="characterPreview">
 
-      <div class="character-preview">
+      <div class="fullCharacter">
 
-        <div class="character">
+        <div id="charAccessory" class="charHair"></div>
 
-          <div class="char-head"></div>
-          <div class="char-hair"></div>
-
-          <div class="char-arm left"></div>
-          <div class="char-arm right"></div>
-
-          <div class="char-body"></div>
-
-          <div class="char-leg left"></div>
-          <div class="char-leg right"></div>
-
+        <div class="charHead">
+          <div class="charEyes">• •</div>
         </div>
 
-      </div>
+        <div class="charBody" id="charBody"></div>
 
+        <div class="charArm leftArm"></div>
+        <div class="charArm rightArm"></div>
 
-      <div class="custom-options">
+        <div class="charLeg leftLeg"></div>
+        <div class="charLeg rightLeg"></div>
 
-        <h2>Customize Character</h2>
-
-        <p>Choose your character style:</p>
-
-        <button data-color="#4d8cff">Blue Shirt</button>
-        <button data-color="#ff5252">Red Shirt</button>
-        <button data-color="#42d67d">Green Shirt</button>
-        <button data-color="#a855f7">Purple Shirt</button>
-
-        <h3>Accessories</h3>
-
-        <button id="hatBtn">🧢 Hat</button>
-        <button id="glassesBtn">🕶️ Glasses</button>
-        <button id="crownBtn">👑 Crown</button>
+        <div class="charFoot leftFoot"></div>
+        <div class="charFoot rightFoot"></div>
 
       </div>
+
+      <div class="characterFloor"></div>
+
+    </div>
+
+
+    <div class="accessories">
+
+      <h2>Customize</h2>
+
+      <button onclick="changeShirt('#2488e8')">Blue Shirt</button>
+      <button onclick="changeShirt('#e83d3d')">Red Shirt</button>
+      <button onclick="changeShirt('#35b85c')">Green Shirt</button>
+      <button onclick="changeShirt('#9c4de0')">Purple Shirt</button>
+
+      <hr>
+
+      <button onclick="setAccessory('🎩')">🎩 Cool Hat</button>
+      <button onclick="setAccessory('🕶️')">🕶️ Glasses</button>
+      <button onclick="setAccessory('👑')">👑 Crown</button>
+      <button onclick="setAccessory('')">Remove Accessory</button>
 
     </div>
 
   </div>
 
-</section>
+</div>
 
 
-<!-- =========================
-     GAME SCREEN
-========================= -->
+<!-- GAME -->
 
-<section id="gameScreen" class="hidden">
+<div id="gameScreen" class="hidden">
 
-  <div class="game-topbar">
+  <div class="gameHeader">
 
-    <button class="back-game" id="backToHub">
-      ← Back
-    </button>
+    <button id="backToHub" onclick="leaveGame()">← Back</button>
 
-    <div class="game-title" id="gameTitle">
-      Game
+    <h2 id="gameTitle">Game</h2>
+
+    <div class="coins">
+      🪙 <span id="gameCoinCount">100</span>
     </div>
 
   </div>
-
 
   <div id="world">
 
-    <div class="sky"></div>
-    <div class="ground"></div>
-    <div class="road"></div>
-
-    <div class="house one"></div>
-    <div class="house two"></div>
-
-    <div class="tree one"></div>
-    <div class="tree two"></div>
+    <div id="gameMessage" class="gameMessage hidden"></div>
 
     <div id="player">
+      <div class="playerAccessory" id="playerAccessory"></div>
+      <div class="playerHair"></div>
+      <div class="playerHead"></div>
+      <div class="playerBody"></div>
+      <div class="playerLeg1"></div>
+      <div class="playerLeg2"></div>
+    </div>
 
-      <div class="player-head"></div>
-      <div class="player-hair"></div>
-      <div class="player-body"></div>
-      <div class="player-leg left"></div>
-      <div class="player-leg right"></div>
+  </div>
+
+  <div id="endingOverlay" class="hidden">
+
+    <div class="endingBox">
+
+      <div class="endingEmoji" id="endingEmoji">🎉</div>
+
+      <h1 id="endingTitle">You Won!</h1>
+
+      <p id="endingText">Great job!</p>
+
+      <button onclick="leaveGame()">Back to Game Hub</button>
 
     </div>
 
   </div>
 
-</section>
+</div>
 
 
 <script type="module">
 
-/* =========================
-   SUPABASE
-========================= */
+/* SUPABASE */
 
-import {
+import{
   createClient
-} from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
+}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 const SUPABASE_URL =
-  "https://rewbdyajylagepnrbixu.supabase.co";
+"https://rewbdyajylagepnrbixu.supabase.co";
 
 const SUPABASE_KEY =
-  "sb_publishable_77k0d-o6J210zPyWGtsqEA_yB71FFi6";
-
+"sb_publishable_77k0d-o6J210zPyWGtsqEA_yB71FFi6";
 
 const supabase =
-  createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
+createClient(SUPABASE_URL,SUPABASE_KEY);
 
 
-/* =========================
-   ELEMENTS
-========================= */
+/* ELEMENTS */
 
 const accountScreen =
-  document.getElementById("accountScreen");
+document.getElementById("accountScreen");
 
 const hubScreen =
-  document.getElementById("hubScreen");
-
-const gameScreen =
-  document.getElementById("gameScreen");
+document.getElementById("hubScreen");
 
 const characterScreen =
-  document.getElementById("characterScreen");
+document.getElementById("characterScreen");
 
-const accountMessage =
-  document.getElementById("accountMessage");
-
-const coinCount =
-  document.getElementById("coinCount");
+const gameScreen =
+document.getElementById("gameScreen");
 
 const world =
-  document.getElementById("world");
+document.getElementById("world");
 
 const player =
-  document.getElementById("player");
+document.getElementById("player");
 
-const gameTitle =
-  document.getElementById("gameTitle");
+const coinCount =
+document.getElementById("coinCount");
 
+const gameCoinCount =
+document.getElementById("gameCoinCount");
 
-/* =========================
-   GAME DATA
-========================= */
+const accountMessage =
+document.getElementById("accountMessage");
 
-const gameNames = {
+const endingOverlay =
+document.getElementById("endingOverlay");
 
-  coin:"Coin Dash",
+const endingTitle =
+document.getElementById("endingTitle");
 
-  brainrot:"Brainrot Heist",
+const endingText =
+document.getElementById("endingText");
 
-  obby:"Obby Tower",
-
-  space:"Space Escape",
-
-  gem:"Gem Hunt",
-
-  pet:"Pet Race",
-
-  forest:"Forest Adventure",
-
-  castle:"Castle Quest"
-
-};
+const endingEmoji =
+document.getElementById("endingEmoji");
 
 
-let currentGame = null;
+/* COINS */
 
-let coins = 100;
-
-let keys = {};
-
-let playerX = 50;
-
-let playerY = 65;
-
-
-/* =========================
-   SHOW SCREEN
-========================= */
-
-function show(screen){
-
-  accountScreen.classList.add("hidden");
-  hubScreen.classList.add("hidden");
-  gameScreen.classList.add("hidden");
-  characterScreen.classList.add("hidden");
-
-  if(screen === "account")
-    accountScreen.classList.remove("hidden");
-
-  if(screen === "hub")
-    hubScreen.classList.remove("hidden");
-
-  if(screen === "game")
-    gameScreen.classList.remove("hidden");
-
-  if(screen === "character")
-    characterScreen.classList.remove("hidden");
-}
-
-
-/* =========================
-   COINS
-========================= */
+let coins =
+Number(localStorage.getItem("robloxJrCoins") || 100);
 
 function updateCoins(){
 
-  coinCount.textContent = coins;
+  coinCount.textContent=coins;
+  gameCoinCount.textContent=coins;
 
   localStorage.setItem(
     "robloxJrCoins",
@@ -1372,376 +1207,770 @@ function updateCoins(){
   );
 }
 
+function addCoins(amount){
 
-const savedCoins =
-  localStorage.getItem("robloxJrCoins");
+  coins+=amount;
 
-if(savedCoins !== null){
-
-  coins =
-    Number(savedCoins);
-
+  updateCoins();
 }
 
-updateCoins();
 
+/* ACCOUNT */
 
-/* =========================
-   ACCOUNT SIGN UP
-========================= */
+async function signup(){
 
-document
-  .getElementById("signupBtn")
-  .addEventListener("click", async ()=>{
+  const email =
+  document.getElementById("email").value;
 
-    const email =
-      document.getElementById("email").value.trim();
+  const password =
+  document.getElementById("password").value;
 
-    const password =
-      document.getElementById("password").value;
+  if(!email || !password){
 
-    if(!email || !password){
+    accountMessage.textContent=
+    "Enter an email and password.";
 
-      accountMessage.textContent =
-        "Please enter an email and password.";
-
-      return;
-    }
-
-    accountMessage.textContent =
-      "Creating account...";
-
-    const {error} =
-      await supabase.auth.signUp({
-        email,
-        password
-      });
-
-    if(error){
-
-      accountMessage.textContent =
-        error.message;
-
-      return;
-    }
-
-    accountMessage.textContent =
-      "Account created! You may need to confirm your email.";
-});
-
-
-/* =========================
-   LOGIN
-========================= */
-
-document
-  .getElementById("loginBtn")
-  .addEventListener("click", async ()=>{
-
-    const email =
-      document.getElementById("email").value.trim();
-
-    const password =
-      document.getElementById("password").value;
-
-    if(!email || !password){
-
-      accountMessage.textContent =
-        "Please enter an email and password.";
-
-      return;
-    }
-
-    accountMessage.textContent =
-      "Logging in...";
-
-    const {data,error} =
-      await supabase.auth.signInWithPassword({
-        email,
-        password
-      });
-
-    if(error){
-
-      accountMessage.textContent =
-        error.message;
-
-      return;
-    }
-
-    accountMessage.textContent =
-      "";
-
-    show("hub");
-
-});
-
-
-/* =========================
-   LOGOUT
-========================= */
-
-document
-  .getElementById("logoutBtn")
-  .addEventListener("click", async ()=>{
-
-    await supabase.auth.signOut();
-
-    show("account");
-
-});
-
-
-/* =========================
-   CHECK EXISTING SESSION
-========================= */
-
-const {
-  data:{
-    session
+    return;
   }
-} = await supabase.auth.getSession();
+
+  const{error}=await supabase.auth.signUp({
+    email,
+    password
+  });
+
+  if(error){
+
+    accountMessage.textContent=
+    error.message;
+
+  }else{
+
+    accountMessage.textContent=
+    "Account created! You can log in.";
+
+  }
+
+}
+
+window.signup=signup;
 
 
-if(session){
+async function login(){
 
-  show("hub");
+  const email =
+  document.getElementById("email").value;
 
-}else{
+  const password =
+  document.getElementById("password").value;
 
-  show("account");
+  if(!email || !password){
+
+    accountMessage.textContent=
+    "Enter an email and password.";
+
+    return;
+  }
+
+  const{error}=await supabase.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if(error){
+
+    accountMessage.textContent=
+    error.message;
+
+  }else{
+
+    showHub();
+
+  }
+
+}
+
+window.login=login;
+
+
+async function logout(){
+
+  await supabase.auth.signOut();
+
+  hubScreen.classList.add("hidden");
+  characterScreen.classList.add("hidden");
+  gameScreen.classList.add("hidden");
+
+  accountScreen.classList.remove("hidden");
+
+}
+
+window.logout=logout;
+
+
+function showHub(){
+
+  accountScreen.classList.add("hidden");
+  characterScreen.classList.add("hidden");
+  gameScreen.classList.add("hidden");
+  hubScreen.classList.remove("hidden");
+
+  updateCoins();
 
 }
 
 
-/* =========================
-   TABS
-========================= */
+/* TABS */
 
-document
-  .querySelectorAll(".tab")
-  .forEach(tab=>{
+function showTab(tab,button){
 
-    tab.addEventListener("click",()=>{
+  document.getElementById("gamesTab")
+    .classList.add("hidden");
 
-      document
-        .querySelectorAll(".tab")
-        .forEach(t=>
-          t.classList.remove("active")
-        );
+  document.getElementById("friendsTab")
+    .classList.add("hidden");
 
-      tab.classList.add("active");
+  document.getElementById("marketplaceTab")
+    .classList.add("hidden");
 
-      document
-        .querySelectorAll(".tab-content")
-        .forEach(content=>
-          content.classList.add("hidden")
-        );
+  document.getElementById(tab)
+    .classList.remove("hidden");
 
-      const target =
-        document.getElementById(
-          tab.dataset.tab
-        );
+  document.querySelectorAll(".tab")
+    .forEach(x=>x.classList.remove("active"));
 
-      target.classList.remove("hidden");
+  button.classList.add("active");
 
-    });
+}
+
+window.showTab=showTab;
+
+
+/* CHARACTER */
+
+function openCharacter(){
+
+  hubScreen.classList.add("hidden");
+  characterScreen.classList.remove("hidden");
+
+}
+
+window.openCharacter=openCharacter;
+
+
+function closeCharacter(){
+
+  characterScreen.classList.add("hidden");
+  hubScreen.classList.remove("hidden");
+
+}
+
+window.closeCharacter=closeCharacter;
+
+
+function changeShirt(color){
+
+  document.getElementById("charBody")
+    .style.background=color;
+
+}
+
+window.changeShirt=changeShirt;
+
+
+function setAccessory(item){
+
+  document.getElementById("charAccessory")
+    .textContent=item;
+
+  document.getElementById("playerAccessory")
+    .textContent=item;
+
+}
+
+window.setAccessory=setAccessory;
+
+
+/* MARKET */
+
+function buyItem(button,cost,item){
+
+  if(button.classList.contains("owned")){
+    return;
+  }
+
+  if(coins<cost){
+
+    alert("You don't have enough coins!");
+
+    return;
+  }
+
+  coins-=cost;
+
+  updateCoins();
+
+  button.textContent="Owned";
+  button.classList.add("owned");
+
+}
+
+window.buyItem=buyItem;
+
+
+/* GAME STATE */
+
+let currentGame="";
+let gameRunning=false;
+
+
+/* PLAYER */
+
+let playerX=50;
+let playerY=65;
+
+
+/* MOVEMENT */
+
+const keys={};
+
+document.addEventListener("keydown",event=>{
+
+  keys[event.key.toLowerCase()]=true;
+
+  if(
+    event.code==="Space" &&
+    currentGame==="obby"
+  ){
+    event.preventDefault();
+
+    if(obbyOnGround){
+      obbyVelocityY=obbyJumpPower;
+      obbyOnGround=false;
+    }
+  }
+
+});
+
+document.addEventListener("keyup",event=>{
+
+  keys[event.key.toLowerCase()]=false;
 
 });
 
 
-/* =========================
-   PLAY BUTTONS
-========================= */
-
-document
-  .querySelectorAll(".play")
-  .forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-      const game =
-        button.dataset.game;
-
-      start(game);
-
-    });
-
-});
-
-
-/* =========================
-   START GAME
-========================= */
+/* START GAME */
 
 function start(type){
 
-  currentGame = type;
+  currentGame=type;
+  gameRunning=true;
 
-  gameTitle.textContent =
-    gameNames[type] || "Game";
+  hubScreen.classList.add("hidden");
+  characterScreen.classList.add("hidden");
+  gameScreen.classList.remove("hidden");
 
-  world.className = "";
+  endingOverlay.classList.add("hidden");
 
-  world.classList.add(type);
+  world.className="";
 
   clearWorld();
 
-  playerX = 50;
-  playerY = 65;
+  playerX=50;
+  playerY=65;
 
-  updatePlayer();
+  player.style.left="50%";
+  player.style.top="65%";
 
-  if(type === "coin")
-    startCoinDash();
+  document.getElementById("gameTitle")
+    .textContent=getGameTitle(type);
 
-  if(type === "brainrot")
-    startBrainrot();
+  updateCoins();
 
-  if(type === "obby")
-    startObby();
+  if(type==="coin") startCoinDash();
+  if(type==="brain") startBrainrot();
+  if(type==="obby") startObby();
+  if(type==="space") startSpace();
+  if(type==="gem") startGem();
+  if(type==="pet") startPet();
+  if(type==="forest") startForest();
+  if(type==="castle") startCastle();
 
-  if(type === "space")
-    startSpace();
+}
 
-  if(type === "gem")
-    startGem();
+window.start=start;
 
-  if(type === "pet")
-    startPet();
 
-  if(type === "forest")
-    startForest();
+function getGameTitle(type){
 
-  if(type === "castle")
-    startCastle();
+  const titles={
+    coin:"Coin Dash",
+    brain:"Brainrot Heist",
+    obby:"Obby Tower",
+    space:"Space Escape",
+    gem:"Gem Hunt",
+    pet:"Pet Race",
+    forest:"Forest Adventure",
+    castle:"Castle Quest"
+  };
 
-  show("game");
+  return titles[type] || "Game";
 
 }
 
 
-/* =========================
-   CLEAR WORLD
-========================= */
+/* CLEAR WORLD */
 
 function clearWorld(){
 
-  document
-    .querySelectorAll(
-      ".collectible,.obstacle,.game-message," +
-      ".space-planet,.space-star,.obby-platform," +
-      ".obby-finish,.obby-stage-text," +
-      ".castle-wall,.castle-window,.castle-door"
-    )
-    .forEach(el=>el.remove());
+  world.className="";
+
+  world.querySelectorAll(
+    ".collectible,.obstacle,.obbyPlatform,.obbyStage,.obbyHint,.ground,.road,.house,.tree,.planet,.planetRing,.castleWall,.castleWindow,.castleDoor"
+  ).forEach(el=>el.remove());
 
 }
 
 
-/* =========================
-   GAME MESSAGE
-========================= */
+/* MESSAGE */
 
-function message(text){
+function showMessage(text){
 
-  const old =
-    document.querySelector(".game-message");
+  const message=
+  document.getElementById("gameMessage");
 
-  if(old) old.remove();
+  message.textContent=text;
+  message.classList.remove("hidden");
 
-  const msg =
-    document.createElement("div");
-
-  msg.className =
-    "game-message";
-
-  msg.textContent =
-    text;
-
-  world.appendChild(msg);
+  setTimeout(()=>{
+    message.classList.add("hidden");
+  },1800);
 
 }
 
 
-/* =========================
-   COIN DASH
-========================= */
+/* ENDING */
 
-function startCoinDash(){
+function showEnding(emoji,title,text){
 
-  message("🪙 Collect the coins!");
+  endingEmoji.textContent=emoji;
+  endingTitle.textContent=title;
+  endingText.textContent=text;
 
-  for(let i=0;i<10;i++){
+  endingOverlay.classList.remove("hidden");
 
-    const coin =
-      document.createElement("div");
-
-    coin.className =
-      "collectible";
-
-    coin.textContent =
-      "🪙";
-
-    coin.style.left =
-      (10 + Math.random()*80) + "%";
-
-    coin.style.top =
-      (20 + Math.random()*55) + "%";
-
-    coin.addEventListener("click",()=>{
-
-      coin.remove();
-
-      coins += 10;
-
-      updateCoins();
-
-    });
-
-    world.appendChild(coin);
-
-  }
+  gameRunning=false;
 
 }
 
 
-/* =========================
-   BRAINROT
-========================= */
+/* LEAVE GAME */
 
-function startBrainrot(){
+function leaveGame(){
 
-  message("🧠 Find the brainrot!");
+  gameRunning=false;
 
-  const item =
-    document.createElement("div");
+  endingOverlay.classList.add("hidden");
 
-  item.className =
-    "collectible";
+  gameScreen.classList.add("hidden");
+  hubScreen.classList.remove("hidden");
 
-  item.textContent =
-    "🧠";
+  updateCoins();
 
-  item.style.left =
-    "75%";
+}
 
-  item.style.top =
-    "35%";
+window.leaveGame=leaveGame;
 
-  item.addEventListener("click",()=>{
+
+/* BASIC WORLD */
+
+function createBasicWorld(){
+
+  const ground=
+  document.createElement("div");
+
+  ground.className="ground";
+
+  world.appendChild(ground);
+
+
+  const road=
+  document.createElement("div");
+
+  road.className="road";
+
+  world.appendChild(road);
+
+
+  const house1=
+  document.createElement("div");
+
+  house1.className="house house1";
+
+  world.appendChild(house1);
+
+
+  const house2=
+  document.createElement("div");
+
+  house2.className="house house2";
+
+  world.appendChild(house2);
+
+
+  const tree1=
+  document.createElement("div");
+
+  tree1.className="tree tree1";
+
+  world.appendChild(tree1);
+
+
+  const tree2=
+  document.createElement("div");
+
+  tree2.className="tree tree2";
+
+  world.appendChild(tree2);
+
+}
+
+
+/* COLLECTIBLE */
+
+function createCollectible(emoji,x,y,reward,onCollect){
+
+  const item=
+  document.createElement("div");
+
+  item.className="collectible";
+
+  item.textContent=emoji;
+
+  item.style.left=x+"%";
+  item.style.top=y+"%";
+
+  item.onclick=()=>{
+
+    if(!gameRunning) return;
 
     item.remove();
 
-    coins += 25;
+    addCoins(reward);
 
-    updateCoins();
+    showMessage("+"+reward+" coins!");
 
-    message("🎉 You found it!");
+    if(onCollect){
+      onCollect();
+    }
 
-  });
+  };
 
   world.appendChild(item);
+
+  return item;
+
+}
+
+
+/* COIN DASH */
+
+let coinDashLeft=0;
+
+function startCoinDash(){
+
+  createBasicWorld();
+
+  coinDashLeft=10;
+
+  for(let i=0;i<10;i++){
+
+    createCollectible(
+      "🪙",
+      8+Math.random()*84,
+      15+Math.random()*58,
+      10,
+      ()=>{
+        coinDashLeft--;
+
+        if(coinDashLeft<=0){
+
+          showEnding(
+            "🪙",
+            "Amazing!",
+            "You collected every coin in Coin Dash!"
+          );
+
+        }
+
+      }
+    );
+
+  }
+
+  showMessage("Collect all 10 coins!");
+
+}
+
+
+/* BRAINROT */
+
+function startBrainrot(){
+
+  createBasicWorld();
+
+  createCollectible(
+    "🧠",
+    72,
+    35,
+    25,
+    ()=>{
+      showEnding(
+        "🧠",
+        "Heist Complete!",
+        "You grabbed the brainrot and escaped!"
+      );
+    }
+  );
+
+  createCollectible(
+    "💰",
+    25,
+    50,
+    15
+  );
+
+  showMessage("Grab the brainrot!");
+
+}
+
+
+/* GEM HUNT */
+
+let gemsLeft=0;
+
+function startGem(){
+
+  createBasicWorld();
+
+  gemsLeft=8;
+
+  for(let i=0;i<8;i++){
+
+    createCollectible(
+      "💎",
+      5+Math.random()*88,
+      15+Math.random()*60,
+      15,
+      ()=>{
+        gemsLeft--;
+
+        if(gemsLeft<=0){
+
+          showEnding(
+            "💎",
+            "Treasure Found!",
+            "You found every gem in the hunt!"
+          );
+
+        }
+
+      }
+    );
+
+  }
+
+  showMessage("Find all 8 gems!");
+
+}
+
+
+/* PET RACE */
+
+function startPet(){
+
+  createBasicWorld();
+
+  createCollectible(
+    "🐶",
+    80,
+    45,
+    20,
+    ()=>{
+      showEnding(
+        "🏆",
+        "You Won!",
+        "Your pet crossed the finish line first!"
+      );
+    }
+  );
+
+  showMessage("Race to your pet!");
+
+}
+
+
+/* FOREST */
+
+function startForest(){
+
+  world.style.background=
+  "linear-gradient(#8ed5ff 0%,#c9f2ff 55%,#397b39 55%)";
+
+  const ground=
+  document.createElement("div");
+
+  ground.className="ground";
+
+  world.appendChild(ground);
+
+  for(let i=0;i<9;i++){
+
+    const tree=
+    document.createElement("div");
+
+    tree.className="tree";
+
+    tree.style.left=
+    (5+i*11)+"%";
+
+    tree.style.bottom=
+    "35%";
+
+    world.appendChild(tree);
+
+  }
+
+  createCollectible(
+    "🎁",
+    75,
+    45,
+    35,
+    ()=>{
+      showEnding(
+        "🎁",
+        "Forest Treasure!",
+        "You discovered the hidden treasure!"
+      );
+    }
+  );
+
+  showMessage("Find the treasure!");
+
+}
+
+
+/* CASTLE */
+
+function startCastle(){
+
+  world.classList.add("castleWorld");
+
+  const wall=
+  document.createElement("div");
+
+  wall.className="castleWall";
+
+  world.appendChild(wall);
+
+
+  const window1=
+  document.createElement("div");
+
+  window1.className=
+  "castleWindow castleWindow1";
+
+  world.appendChild(window1);
+
+
+  const window2=
+  document.createElement("div");
+
+  window2.className=
+  "castleWindow castleWindow2";
+
+  world.appendChild(window2);
+
+
+  const door=
+  document.createElement("div");
+
+  door.className="castleDoor";
+
+  world.appendChild(door);
+
+
+  createCollectible(
+    "💰",
+    45,
+    42,
+    40,
+    ()=>{
+      showEnding(
+        "🏰",
+        "Quest Complete!",
+        "You found the treasure hidden inside the castle!"
+      );
+    }
+  );
+
+  showMessage("Find the castle treasure!");
+
+}
+
+
+/* SPACE */
+
+function startSpace(){
+
+  world.classList.add("spaceWorld");
+
+  const planet=
+  document.createElement("div");
+
+  planet.className="planet";
+
+  const ring=
+  document.createElement("div");
+
+  ring.className="planetRing";
+
+  planet.appendChild(ring);
+
+  world.appendChild(planet);
+
+
+  createCollectible(
+    "🚀",
+    20,
+    55,
+    20,
+    ()=>{
+      showEnding(
+        "🚀",
+        "You Escaped!",
+        "You launched the rocket and escaped into space!"
+      );
+    }
+  );
+
+  for(let i=0;i<25;i++){
+
+    const star=
+    document.createElement("div");
+
+    star.textContent="✦";
+
+    star.style.position="absolute";
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+    star.style.fontSize=(8+Math.random()*12)+"px";
+    star.style.color="white";
+
+    world.appendChild(star);
+
+  }
+
+  showMessage("Find the rocket!");
 
 }
 
@@ -1750,670 +1979,653 @@ function startBrainrot(){
    OBBY
 ========================= */
 
+let obbyScreen=1;
+let obbyPlatforms=[];
+let obbyVelocityY=0;
+let obbyOnGround=false;
+let obbyFinished=false;
+let obbyRewardGiven=false;
+
+const obbyGravity=0.75;
+const obbyJumpPower=-14;
+
+
+/* START OBBY */
+
 function startObby(){
 
-  message("🏃 Reach the finish!");
+  world.classList.add("obbyWorld");
 
-  const positions = [
+  obbyScreen=1;
+  obbyFinished=false;
+  obbyRewardGiven=false;
 
-    [10,65],
-    [25,55],
-    [40,45],
-    [55,55],
-    [70,40],
-    [82,30]
+  obbyVelocityY=0;
 
+  playerX=
+  window.innerWidth/2-21;
+
+  playerY=
+  getWorldHeight()-110;
+
+  generateObbyScreen();
+
+}
+
+
+/* WORLD HEIGHT */
+
+function getWorldHeight(){
+
+  return world.clientHeight;
+
+}
+
+
+/* SCREEN BACKGROUNDS */
+
+function setObbyBackground(){
+
+  if(obbyScreen===1){
+
+    world.style.background=
+    "linear-gradient(#71d1ff 0%,#d8f7ff 58%,#72bd55 58%)";
+
+  }
+
+  if(obbyScreen===2){
+
+    world.style.background=
+    "linear-gradient(#7c9bb3 0%,#dce9ef 55%,#4e5662 55%)";
+
+  }
+
+  if(obbyScreen===3){
+
+    world.style.background=
+    "linear-gradient(#72d8ff 0%,#d8ffd7 52%,#39833f 52%)";
+
+  }
+
+  if(obbyScreen===4){
+
+    world.style.background=
+    "linear-gradient(#3c2a20,#765038 55%,#2b1b13 55%)";
+
+  }
+
+  if(obbyScreen===5){
+
+    world.style.background=
+    "radial-gradient(circle at 20% 20%,white 0 2px,transparent 3px),"+
+    "radial-gradient(circle at 70% 30%,white 0 2px,transparent 3px),"+
+    "radial-gradient(circle at 45% 75%,white 0 2px,transparent 3px),"+
+    "radial-gradient(circle at 85% 80%,white 0 2px,transparent 3px),"+
+    "linear-gradient(#030014,#17043a 60%,#05000f)";
+
+  }
+
+}
+
+
+/* GENERATE PLATFORM SCREEN */
+
+function generateObbyScreen(){
+
+  clearObby();
+
+  setObbyBackground();
+
+  obbyPlatforms=[];
+
+
+  const height=getWorldHeight();
+
+  /*
+    Every screen has a bottom starting platform
+    followed by platforms leading toward the top.
+  */
+
+  const platformData=[
+    {
+      x:35,
+      y:height-45,
+      w:180
+    },
+    {
+      x:65,
+      y:height-135,
+      w:150
+    },
+    {
+      x:30,
+      y:height-225,
+      w:150
+    },
+    {
+      x:65,
+      y:height-315,
+      w:145
+    },
+    {
+      x:35,
+      y:height-405,
+      w:145
+    },
+    {
+      x:62,
+      y:height-495,
+      w:150
+    },
+    {
+      x:28,
+      y:height-585,
+      w:170
+    }
   ];
 
-  positions.forEach((pos,i)=>{
 
-    const platform =
-      document.createElement("div");
+  for(let i=0;i<platformData.length;i++){
 
-    platform.className =
-      "obby-platform";
+    const data=platformData[i];
 
-    platform.style.left =
-      pos[0] + "%";
+    /*
+      Keep platforms inside the screen.
+    */
 
-    platform.style.top =
-      pos[1] + "%";
+    let x=data.x;
+
+    if(window.innerWidth<700){
+
+      x=
+      i%2===0
+      ? 8
+      : 52;
+
+    }
+
+    const platform=
+    document.createElement("div");
+
+    platform.className="obbyPlatform";
+
+    /*
+      Screen 2 has some red platforms.
+      Screen 3 has a couple bouncy-looking platforms.
+    */
+
+    if(obbyScreen===2 && (i===2 || i===5)){
+      platform.classList.add("bad");
+    }
+
+    if(obbyScreen===3 && (i===1 || i===4)){
+      platform.classList.add("bouncy");
+    }
+
+    const width=
+    Math.min(
+      data.w,
+      window.innerWidth-30
+    );
+
+    platform.style.left=x+"%";
+    platform.style.top=data.y+"px";
+    platform.style.width=width+"px";
 
     world.appendChild(platform);
 
-  });
-
-  const finish =
-    document.createElement("div");
-
-  finish.className =
-    "obby-finish";
-
-  finish.textContent =
-    "🏆";
-
-  finish.style.right =
-    "8%";
-
-  finish.style.top =
-    "20%";
-
-  finish.addEventListener("click",()=>{
-
-    coins += 30;
-
-    updateCoins();
-
-    message("🏆 You finished the Obby!");
-
-  });
-
-  world.appendChild(finish);
-
-}
-
-
-/* =========================
-   SPACE ESCAPE
-========================= */
-
-function startSpace(){
-
-  message("🚀 Explore space!");
-
-  const planet =
-    document.createElement("div");
-
-  planet.className =
-    "space-planet";
-
-  world.appendChild(planet);
-
-
-  for(let i=0;i<30;i++){
-
-    const star =
-      document.createElement("div");
-
-    star.className =
-      "space-star";
-
-    star.textContent =
-      "✦";
-
-    star.style.left =
-      Math.random()*100 + "%";
-
-    star.style.top =
-      80 + Math.random()*15 + "%";
-
-    world.appendChild(star);
-
-  }
-
-
-  const rocket =
-    document.createElement("div");
-
-  rocket.className =
-    "collectible";
-
-  rocket.textContent =
-    "🚀";
-
-  rocket.style.left =
-    "25%";
-
-  rocket.style.top =
-    "35%";
-
-  rocket.addEventListener("click",()=>{
-
-    rocket.remove();
-
-    coins += 20;
-
-    updateCoins();
-
-    message("🚀 You found the rocket!");
-
-  });
-
-  world.appendChild(rocket);
-
-}
-
-
-/* =========================
-   GEM HUNT
-========================= */
-
-function startGem(){
-
-  message("💎 Find the gems!");
-
-  for(let i=0;i<8;i++){
-
-    const gem =
-      document.createElement("div");
-
-    gem.className =
-      "collectible";
-
-    gem.textContent =
-      "💎";
-
-    gem.style.left =
-      5 + Math.random()*85 + "%";
-
-    gem.style.top =
-      20 + Math.random()*60 + "%";
-
-    gem.addEventListener("click",()=>{
-
-      gem.remove();
-
-      coins += 15;
-
-      updateCoins();
-
+    obbyPlatforms.push({
+      el:platform,
+      x:x/100*world.clientWidth,
+      y:data.y,
+      width:width,
+      height:22,
+      bad:platform.classList.contains("bad"),
+      final:obbyScreen===5 && i===6
     });
 
-    world.appendChild(gem);
+  }
+
+
+  /*
+    Player starts on the bottom platform.
+  */
+
+  const bottom=
+  obbyPlatforms[0];
+
+  playerX=
+  bottom.x+
+  bottom.width/2-
+  player.offsetWidth/2;
+
+  playerY=
+  bottom.y-
+  player.offsetHeight;
+
+  obbyVelocityY=0;
+  obbyOnGround=true;
+
+  updatePlayerPixels();
+
+
+  const stage=
+  document.createElement("div");
+
+  stage.className="obbyStage";
+
+  if(obbyScreen===5){
+
+    stage.textContent=
+    "🚀 SPACE — SCREEN 5 / 5";
+
+  }else{
+
+    stage.textContent=
+    "OBBY SCREEN "+obbyScreen+" / 5";
+
+  }
+
+  world.appendChild(stage);
+
+
+  const hint=
+  document.createElement("div");
+
+  hint.className="obbyHint";
+
+  hint.textContent=
+  "A / D or ← / → to move • SPACE to jump";
+
+  world.appendChild(hint);
+
+
+  if(obbyScreen===5){
+
+    showMessage(
+      "Final screen! Reach the last platform!"
+    );
+
+  }else{
+
+    showMessage(
+      "Reach the top of the screen!"
+    );
 
   }
 
 }
 
 
-/* =========================
-   PET RACE
-========================= */
+/* CLEAR OBBY */
 
-function startPet(){
+function clearObby(){
 
-  message("🐶 Race your pet!");
-
-  const pet =
-    document.createElement("div");
-
-  pet.className =
-    "collectible";
-
-  pet.textContent =
-    "🐶";
-
-  pet.style.left =
-    "70%";
-
-  pet.style.top =
-    "60%";
-
-  pet.addEventListener("click",()=>{
-
-    pet.remove();
-
-    coins += 20;
-
-    updateCoins();
-
-    message("🏁 You won the race!");
-
-  });
-
-  world.appendChild(pet);
+  world.querySelectorAll(
+    ".obbyPlatform,.obbyStage,.obbyHint"
+  ).forEach(el=>el.remove());
 
 }
 
 
-/* =========================
-   FOREST
-========================= */
+/* PLAYER PIXEL POSITION */
 
-function startForest(){
+function updatePlayerPixels(){
 
-  message("🌲 Explore the forest!");
+  player.style.left=
+  playerX+"px";
 
-  for(let i=0;i<8;i++){
-
-    const tree =
-      document.createElement("div");
-
-    tree.className =
-      "tree";
-
-    tree.style.left =
-      Math.random()*90 + "%";
-
-    tree.style.bottom =
-      20 + Math.random()*30 + "%";
-
-    world.appendChild(tree);
-
-  }
-
-
-  const treasure =
-    document.createElement("div");
-
-  treasure.className =
-    "collectible";
-
-  treasure.textContent =
-    "🎁";
-
-  treasure.style.left =
-    "70%";
-
-  treasure.style.top =
-    "45%";
-
-  treasure.addEventListener("click",()=>{
-
-    treasure.remove();
-
-    coins += 35;
-
-    updateCoins();
-
-    message("🎁 You found the treasure!");
-
-  });
-
-  world.appendChild(treasure);
+  player.style.top=
+  playerY+"px";
 
 }
 
 
-/* =========================
-   CASTLE
-========================= */
+/* OBBY PHYSICS */
 
-function startCastle(){
-
-  message("🏰 Explore the castle!");
-
-  const wall =
-    document.createElement("div");
-
-  wall.className =
-    "castle-wall";
-
-  world.appendChild(wall);
-
-
-  const window1 =
-    document.createElement("div");
-
-  window1.className =
-    "castle-window one";
-
-  wall.appendChild(window1);
-
-
-  const window2 =
-    document.createElement("div");
-
-  window2.className =
-    "castle-window two";
-
-  wall.appendChild(window2);
-
-
-  const door =
-    document.createElement("div");
-
-  door.className =
-    "castle-door";
-
-  wall.appendChild(door);
-
-
-  const treasure =
-    document.createElement("div");
-
-  treasure.className =
-    "collectible";
-
-  treasure.textContent =
-    "💰";
-
-  treasure.style.left =
-    "72%";
-
-  treasure.style.top =
-    "55%";
-
-  treasure.addEventListener("click",()=>{
-
-    treasure.remove();
-
-    coins += 40;
-
-    updateCoins();
-
-    message("👑 You found the castle treasure!");
-
-  });
-
-  world.appendChild(treasure);
-
-}
-
-
-/* =========================
-   MOVEMENT
-========================= */
-
-document.addEventListener("keydown",event=>{
-
-  keys[event.key.toLowerCase()] =
-    true;
-
-});
-
-
-document.addEventListener("keyup",event=>{
-
-  keys[event.key.toLowerCase()] =
-    false;
-
-});
-
-
-function movement(){
+function obbyPhysics(){
 
   if(
-    gameScreen.classList.contains("hidden")
+    currentGame!=="obby" ||
+    !gameRunning ||
+    obbyFinished
   ){
+    return;
+  }
 
-    requestAnimationFrame(movement);
+
+  const width=
+  world.clientWidth;
+
+  const height=
+  world.clientHeight;
+
+
+  /*
+    Horizontal movement
+  */
+
+  let move=0;
+
+  if(keys["a"] || keys["arrowleft"]){
+    move-=5;
+  }
+
+  if(keys["d"] || keys["arrowright"]){
+    move+=5;
+  }
+
+  playerX+=move;
+
+
+  /*
+    Keep player inside screen
+  */
+
+  playerX=
+  Math.max(
+    0,
+    Math.min(
+      width-player.offsetWidth,
+      playerX
+    )
+  );
+
+
+  /*
+    Gravity
+  */
+
+  obbyVelocityY+=obbyGravity;
+
+  playerY+=obbyVelocityY;
+
+  obbyOnGround=false;
+
+
+  /*
+    Platform collision
+  */
+
+  const playerWidth=
+  player.offsetWidth;
+
+  const playerHeight=
+  player.offsetHeight;
+
+
+  if(obbyVelocityY>=0){
+
+    for(const platform of obbyPlatforms){
+
+      const playerBottom=
+      playerY+playerHeight;
+
+      const platformTop=
+      platform.y;
+
+      const horizontalHit=
+      playerX+playerWidth>
+      platform.x &&
+      playerX<
+      platform.x+platform.width;
+
+      const verticalHit=
+      playerBottom>=platformTop &&
+      playerBottom<=platformTop+25;
+
+      if(horizontalHit && verticalHit){
+
+        playerY=
+        platformTop-playerHeight;
+
+        obbyVelocityY=0;
+        obbyOnGround=true;
+
+
+        /*
+          Red platforms reset the player.
+        */
+
+        if(platform.bad){
+
+          showMessage(
+            "Watch out! Try again!"
+          );
+
+          resetObbyPlayer();
+
+          return;
+
+        }
+
+
+        /*
+          Last platform on screen 5 wins.
+        */
+
+        if(platform.final){
+
+          winObby();
+
+          return;
+
+        }
+
+        break;
+
+      }
+
+    }
+
+  }
+
+
+  /*
+    Fell off screen
+  */
+
+  if(playerY>height+100){
+
+    resetObbyPlayer();
 
     return;
 
   }
 
 
+  /*
+    Reaching the top changes screens.
+  */
+
+  if(playerY<=5){
+
+    if(obbyScreen<5){
+
+      obbyScreen++;
+
+      generateObbyScreen();
+
+      return;
+
+    }
+
+  }
+
+
+  updatePlayerPixels();
+
+}
+
+
+/* RESET PLAYER */
+
+function resetObbyPlayer(){
+
+  const bottom=
+  obbyPlatforms[0];
+
+  playerX=
+  bottom.x+
+  bottom.width/2-
+  player.offsetWidth/2;
+
+  playerY=
+  bottom.y-
+  player.offsetHeight;
+
+  obbyVelocityY=0;
+  obbyOnGround=true;
+
+  updatePlayerPixels();
+
+}
+
+
+/* WIN OBBY */
+
+function winObby(){
+
+  if(obbyFinished){
+    return;
+  }
+
+  obbyFinished=true;
+
+
+  /*
+    Give the 50 coins immediately and save them.
+    This means the reward is still there when the
+    player leaves the game.
+  */
+
+  if(!obbyRewardGiven){
+
+    obbyRewardGiven=true;
+
+    addCoins(50);
+
+  }
+
+
+  showEnding(
+    "🎉",
+    "Good job! You beat this Obby!",
+    "You completed all 5 screens and earned 50 coins!"
+  );
+
+}
+
+
+/* GAME MOVEMENT */
+
+function normalMovement(){
+
+  if(
+    !gameRunning ||
+    currentGame==="obby"
+  ){
+    return;
+  }
+
   if(keys["a"] || keys["arrowleft"]){
-
-    playerX -= .7;
-
+    playerX-=0.8;
   }
 
   if(keys["d"] || keys["arrowright"]){
-
-    playerX += .7;
-
+    playerX+=0.8;
   }
 
   if(keys["w"] || keys["arrowup"]){
-
-    playerY -= .5;
-
+    playerY-=0.5;
   }
 
   if(keys["s"] || keys["arrowdown"]){
+    playerY+=0.5;
+  }
 
-    playerY += .5;
+  playerX=
+  Math.max(
+    2,
+    Math.min(96,playerX)
+  );
+
+  playerY=
+  Math.max(
+    12,
+    Math.min(80,playerY)
+  );
+
+  player.style.left=
+  playerX+"%";
+
+  player.style.top=
+  playerY+"%";
+
+}
+
+
+/* MAIN GAME LOOP */
+
+function gameLoop(){
+
+  normalMovement();
+
+  obbyPhysics();
+
+  requestAnimationFrame(gameLoop);
+
+}
+
+gameLoop();
+
+
+/* PLAY BUTTONS */
+
+document.querySelectorAll(".play")
+.forEach(button=>{
+
+  button.addEventListener(
+    "click",
+    ()=>{
+      start(button.dataset.game);
+    }
+  );
+
+});
+
+
+/* CHECK EXISTING SESSION */
+
+supabase.auth.getSession()
+.then(({data})=>{
+
+  if(data.session){
+
+    showHub();
 
   }
 
-
-  playerX =
-    Math.max(3,Math.min(97,playerX));
-
-  playerY =
-    Math.max(15,Math.min(80,playerY));
-
-
-  updatePlayer();
-
-  requestAnimationFrame(movement);
-
-}
-
-
-function updatePlayer(){
-
-  player.style.left =
-    playerX + "%";
-
-  player.style.top =
-    playerY + "%";
-
-}
-
-
-movement();
-
-
-/* =========================
-   BACK TO HUB
-========================= */
-
-document
-  .getElementById("backToHub")
-  .addEventListener("click",()=>{
-
-    clearWorld();
-
-    show("hub");
-
 });
 
 
-/* =========================
-   CHARACTER SCREEN
-========================= */
+/* RESIZE OBBY */
 
-document
-  .getElementById("avatarBtn")
-  .addEventListener("click",()=>{
+window.addEventListener(
+  "resize",
+  ()=>{
 
-    show("character");
+    if(
+      currentGame==="obby" &&
+      gameRunning
+    ){
 
-});
+      generateObbyScreen();
 
-
-document
-  .getElementById("backFromCharacter")
-  .addEventListener("click",()=>{
-
-    show("hub");
-
-});
-
-
-/* =========================
-   SHIRT COLORS
-========================= */
-
-document
-  .querySelectorAll("[data-color]")
-  .forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-      const color =
-        button.dataset.color;
-
-      document
-        .querySelector(".char-body")
-        .style.background =
-        color;
-
-      document
-        .querySelector(".player-body")
-        .style.background =
-        color;
-
-    });
-
-});
-
-
-/* =========================
-   ACCESSORIES
-========================= */
-
-let accessory = null;
-
-
-document
-  .getElementById("hatBtn")
-  .addEventListener("click",()=>{
-
-    removeAccessory();
-
-    accessory =
-      document.createElement("div");
-
-    accessory.textContent =
-      "🧢";
-
-    accessory.style.position =
-      "absolute";
-
-    accessory.style.top =
-      "-20px";
-
-    accessory.style.left =
-      "35px";
-
-    accessory.style.fontSize =
-      "45px";
-
-    accessory.style.zIndex =
-      "10";
-
-    document
-      .querySelector(".character")
-      .appendChild(accessory);
-
-});
-
-
-document
-  .getElementById("glassesBtn")
-  .addEventListener("click",()=>{
-
-    removeAccessory();
-
-    accessory =
-      document.createElement("div");
-
-    accessory.textContent =
-      "🕶️";
-
-    accessory.style.position =
-      "absolute";
-
-    accessory.style.top =
-      "20px";
-
-    accessory.style.left =
-      "31px";
-
-    accessory.style.fontSize =
-      "30px";
-
-    accessory.style.zIndex =
-      "10";
-
-    document
-      .querySelector(".character")
-      .appendChild(accessory);
-
-});
-
-
-document
-  .getElementById("crownBtn")
-  .addEventListener("click",()=>{
-
-    removeAccessory();
-
-    accessory =
-      document.createElement("div");
-
-    accessory.textContent =
-      "👑";
-
-    accessory.style.position =
-      "absolute";
-
-    accessory.style.top =
-      "-35px";
-
-    accessory.style.left =
-      "28px";
-
-    accessory.style.fontSize =
-      "45px";
-
-    accessory.style.zIndex =
-      "10";
-
-    document
-      .querySelector(".character")
-      .appendChild(accessory);
-
-});
-
-
-function removeAccessory(){
-
-  if(accessory){
-
-    accessory.remove();
-
-    accessory = null;
+    }
 
   }
-
-}
-
-
-/* =========================
-   MARKETPLACE
-========================= */
-
-document
-  .querySelectorAll(".buy")
-  .forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-      const price =
-        Number(button.dataset.price);
-
-      if(coins < price){
-
-        alert(
-          "You don't have enough coins!"
-        );
-
-        return;
-
-      }
-
-      coins -= price;
-
-      updateCoins();
-
-      button.textContent =
-        "Owned ✓";
-
-      button.disabled =
-        true;
-
-      button.style.opacity =
-        ".6";
-
-    });
-
-});
-
+);
 
 </script>
 
