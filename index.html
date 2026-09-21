@@ -12,8 +12,22 @@
 <body>
 <section id="accountScreen" class="screen"><div class="panel form">
 <h1><span class="brand">Roblox Jr.</span></h1><h2>Create your account</h2>
+  <button type="button" id="showLogin" class="secondary">
+  Log In Instead
+</button>
+
+<div id="loginBox" class="hidden">
+  <h2>Log In</h2>
+  <input id="loginEmail" type="email" placeholder="Email">
+  <input id="loginPassword" type="password" placeholder="Password">
+  <button type="button" id="loginButton" class="primary">Log In</button>
+  <button type="button" id="showSignup" class="secondary">
+    Create Account Instead
+  </button>
+  <p id="loginMessage" class="notice"></p>
+</div>
 <p class="muted">Create a real Roblox Jr. account powered by Supabase.</p>
-<form id="accountForm"><label>Username</label><input id="username" required minlength="3" maxlength="20" maxlength="20" autocomplete="off"><label>Email</label><input id="email" type="email" required autocomplete="email" placeholder="you@example.com"><label>Password</label><input id="password" type="password" required minlength="4"><label>Confirm password</label><input id="confirmPassword" type="password" required minlength="4"><button class="primary" type="submit" style="width:100%;margin-top:15px">Create Account</button></form><p id="accountMessage" class="notice"></p>
+<form id="accountForm"><label>Username</label><input id="username" required minlength="3" maxlength="20" autocomplete="off"><label>Email</label><input id="email" type="email" required autocomplete="email" placeholder="you@example.com"><label>Password</label><input id="password" type="password" required minlength="4"><label>Confirm password</label><input id="confirmPassword" type="password" required minlength="4"><button class="primary" type="submit" style="width:100%;margin-top:15px">Create Account</button></form><p id="accountMessage" class="notice"></p>
 </div></section>
 
 <section id="hubScreen" class="screen hidden"><div class="panel">
@@ -146,7 +160,43 @@ supabaseClient.auth.getSession().then(({data})=>{if(data.session){let saved=loca
 
 
 
+$("showLogin").onclick=()=>{
+  $("accountForm").classList.add("hidden");
+  $("loginBox").classList.remove("hidden");
+};
 
+$("showSignup").onclick=()=>{
+  $("accountForm").classList.remove("hidden");
+  $("loginBox").classList.add("hidden");
+};
+
+$("loginButton").onclick=async()=>{
+  const email=$("loginEmail").value.trim();
+  const password=$("loginPassword").value;
+
+  $("loginMessage").textContent="Logging in...";
+
+  const {data,error}=await supabaseClient.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if(error){
+    $("loginMessage").textContent=error.message;
+    return;
+  }
+
+  user={
+    id:data.user.id,
+    username:data.user.user_metadata?.username||email.split("@")[0],
+    coins:100,
+    friends:[],
+    color:avatarColor
+  };
+
+  localStorage.setItem("robloxJrUser",JSON.stringify(user));
+  enterHub();
+};
 </script>
 </body>
 </html>
