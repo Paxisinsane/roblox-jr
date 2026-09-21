@@ -1,3444 +1,630 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Roblox Jr. Game Hub</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
-
-html,body{
-  margin:0;
-  width:100%;
-  min-height:100%;
-  font-family:Arial,sans-serif;
-  background:#10152b;
-  color:white;
-}
-
+*{box-sizing:border-box}
 body{
-  overflow-x:hidden;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#10152b,#294b78);
+  color:white;
+  min-height:100vh
 }
-
-.hidden{
-  display:none!important;
-}
-
+button,input{font:inherit}
 button{
+  cursor:pointer;
   border:0;
   border-radius:10px;
-  padding:10px 16px;
-  font-weight:bold;
-  cursor:pointer;
+  padding:12px 16px;
+  font-weight:bold
 }
-
-button:hover{
-  transform:scale(1.03);
-}
-
-/* ================= ACCOUNT ================= */
-
-#accountScreen{
-  min-height:100vh;
+.top{
+  background:#151d34;
+  padding:18px 24px;
   display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#10152b,#294b78);
-}
-
-.accountBox{
-  width:360px;
-  max-width:90%;
-  padding:35px;
-  background:#18233c;
-  border-radius:22px;
-  text-align:center;
-  box-shadow:0 15px 50px #0008;
-}
-
-.accountBox h1{
-  margin-top:0;
-  font-size:36px;
-}
-
-.accountBox input{
-  width:100%;
-  padding:13px;
-  margin:7px 0;
-  border:0;
-  border-radius:9px;
-  font-size:16px;
-}
-
-.accountButtons{
-  display:flex;
-  gap:10px;
-  margin-top:10px;
-}
-
-.accountButtons button{
-  flex:1;
-  color:white;
-}
-
-.loginBtn{
-  background:#2196f3;
-}
-
-.signupBtn{
-  background:#35bd6b;
-}
-
-#accountMessage{
-  margin-top:12px;
-  min-height:20px;
-}
-
-/* ================= HUB ================= */
-
-#hubScreen{
-  min-height:100vh;
-  background:linear-gradient(135deg,#10152b,#294b78);
-}
-
-.topbar{
-  height:65px;
-  display:flex;
+  justify-content:space-between;
   align-items:center;
   gap:12px;
-  padding:0 18px;
-  background:#111827;
-  box-shadow:0 4px 15px #0007;
+  flex-wrap:wrap
 }
-
-.logo{
-  margin-right:auto;
-  font-size:24px;
-  font-weight:bold;
-}
-
-.coins{
-  background:#29344c;
-  padding:9px 15px;
-  border-radius:20px;
-  white-space:nowrap;
-}
-
-.topbar button{
-  background:#35435e;
-  color:white;
-}
-
-.tabs{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  padding:20px;
-}
-
-.tab{
-  background:#293651;
-  color:white;
-}
-
-.tab.active{
-  background:#2196f3;
-}
-
-/* ================= GAMES ================= */
-
-#gamesTab{
-  padding:0 25px 35px;
-}
-
-.gamesGrid{
-  max-width:1200px;
-  margin:auto;
+.logo{font-size:25px;font-weight:bold}
+.coins{background:#2b3654;padding:10px 15px;border-radius:12px}
+.page{padding:25px}
+.tabs{display:flex;gap:10px;padding:18px 25px 0;flex-wrap:wrap}
+.tab{background:#263453;color:white}
+.tab.active,.primary{background:#4285f4;color:white}
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  gap:18px
 }
-
-.gameCard{
-  overflow:hidden;
-  background:#18233c;
-  border-radius:18px;
-  box-shadow:0 8px 25px #0005;
-}
-
-.gameImage{
-  height:150px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:65px;
-}
-
-.coinImage{
-  background:linear-gradient(#55bdff,#65c85d);
-}
-
-.brainImage{
-  background:linear-gradient(#ff7777,#8c4cff);
-}
-
-.obbyImage{
-  background:linear-gradient(#7edcff,#55a94d);
-}
-
-.spaceImage{
-  background:linear-gradient(#050014,#281060);
-}
-
-.gemImage{
-  background:linear-gradient(#07334d,#09a9db);
-}
-
-.petImage{
-  background:linear-gradient(#ffe5a0,#71d4ff);
-}
-
-.forestImage{
-  background:linear-gradient(#174126,#6bad4e);
-}
-
-.castleImage{
-  background:linear-gradient(#3b2518,#a66b3a);
-}
-
-.gameInfo{
-  padding:15px;
-}
-
-.gameInfo h3{
-  margin:0 0 7px;
-}
-
-.gameInfo p{
-  color:#cbd4e2;
-  min-height:38px;
-}
-
-.play{
-  width:100%;
-  background:#2196f3;
-  color:white;
-}
-
-/* ================= FRIENDS ================= */
-
-#friendsTab,
-#marketplaceTab{
-  max-width:900px;
-  margin:auto;
+.card,.panel{
+  background:#202b45;
   padding:20px;
+  border-radius:18px;
+  box-shadow:0 8px 20px #0003
 }
-
-.friend{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  padding:15px;
-  margin:10px 0;
-  background:#18233c;
-  border-radius:14px;
-}
-
-.friendAvatar{
-  width:50px;
-  height:50px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:10px;
-  background:#ffca75;
-  font-size:25px;
-}
-
-/* ================= MARKET ================= */
-
-.marketItem{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  margin:12px 0;
-  padding:18px;
-  background:#18233c;
-  border-radius:15px;
-}
-
-.marketIcon{
-  font-size:40px;
-}
-
-.marketText{
-  flex:1;
-}
-
-.buy{
-  background:#36c879;
-  color:white;
-}
-
-.buy.owned{
-  background:#555;
-}
-
-/* ================= CHARACTER ================= */
-
-#characterScreen{
-  min-height:100vh;
-  background:#10192d;
-}
-
-.characterTop{
-  height:65px;
-  display:flex;
-  align-items:center;
-  padding:0 20px;
-  background:#111827;
-}
-
-.characterTop h2{
-  margin-left:20px;
-}
-
-.characterTop button{
-  background:#39465e;
-  color:white;
-}
-
-.characterContent{
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  gap:60px;
-  padding:40px;
-  flex-wrap:wrap;
-}
-
-.characterPreview{
-  width:300px;
-  height:500px;
+.icon{font-size:52px}
+.card p{color:#cbd3e8;min-height:42px}
+.play{width:100%;background:#4285f4;color:white}
+.hidden{display:none!important}
+#gameScreen{min-height:100vh;background:#10203a}
+.world{
+  min-height:calc(100vh - 75px);
   position:relative;
   overflow:hidden;
-  border-radius:25px;
-  background:linear-gradient(#63bdf8,#e0f7ff);
+  padding:25px
 }
-
-.characterFloor{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:110px;
-  background:#70bb5d;
+.forest{
+  background:linear-gradient(#78c8ff 0 48%,#4d9c45 48%);
+  min-height:calc(100vh - 75px)
 }
-
-.fullCharacter{
-  position:absolute;
-  left:50%;
-  bottom:80px;
-  width:100px;
-  height:290px;
-  transform:translateX(-50%);
-}
-
-.charHead{
-  position:absolute;
-  top:0;
-  left:12px;
-  width:75px;
-  height:75px;
-  border-radius:12px;
-  background:#f2bd91;
-}
-
-.charEyes{
+.forest:before{
+  content:"🌲 🌳 🌲 🌳 🌲 🌲 🌳 🌲";
   position:absolute;
   top:35px;
-  left:25px;
-  font-size:12px;
+  left:2%;
+  right:2%;
+  font-size:85px;
+  letter-spacing:18px;
+  line-height:1.5
 }
-
-.charHair{
+.forest:after{
+  content:"🌿 🌿 🍄 🌿 🌼 🌿 🍄 🌿";
   position:absolute;
-  top:-5px;
-  left:10px;
-  width:80px;
-  height:30px;
-  z-index:3;
-  font-size:30px;
-  text-align:center;
+  bottom:35px;
+  left:5%;
+  right:5%;
+  font-size:42px
 }
-
-.charBody{
-  position:absolute;
-  top:80px;
-  left:5px;
-  width:90px;
-  height:105px;
-  border-radius:8px;
-  background:#2488e8;
-}
-
-.charArm{
-  position:absolute;
-  top:85px;
-  width:25px;
-  height:95px;
-  border-radius:10px;
-  background:#f2bd91;
-}
-
-.leftArm{
-  left:-20px;
-}
-
-.rightArm{
-  right:-20px;
-}
-
-.charLeg{
-  position:absolute;
-  top:180px;
-  width:38px;
-  height:105px;
-  border-radius:7px;
-  background:#333b50;
-}
-
-.leftLeg{
-  left:8px;
-}
-
-.rightLeg{
-  right:8px;
-}
-
-.charFoot{
-  position:absolute;
-  top:280px;
-  width:43px;
-  height:22px;
-  border-radius:8px;
-  background:#20242b;
-}
-
-.leftFoot{
-  left:2px;
-}
-
-.rightFoot{
-  right:2px;
-}
-
-.accessories{
-  width:320px;
-  padding:25px;
-  border-radius:20px;
-  background:#18233c;
-}
-
-.accessories button{
-  width:100%;
-  margin:6px 0;
-  color:white;
-  background:#2c9bf0;
-}
-
-/* ================= GAME SCREEN ================= */
-
-#gameScreen{
-  position:fixed;
-  inset:0;
-  z-index:50;
-  background:#111;
-}
-
-.gameHeader{
+.sceneText{
   position:relative;
-  z-index:100;
-  height:60px;
-  display:flex;
-  align-items:center;
-  padding:0 15px;
-  background:#111827;
-}
-
-.gameHeader h2{
-  flex:1;
-  text-align:center;
-  margin:0;
-}
-
-#backToHub{
-  color:white;
-  background:#39465e;
-}
-
-#world{
-  position:absolute;
-  top:60px;
-  left:0;
-  right:0;
-  bottom:0;
-  overflow:hidden;
-}
-
-/* ================= PLAYER ================= */
-
-#player{
-  position:absolute;
-  width:42px;
-  height:78px;
-  z-index:80;
-  left:50px;
-  top:50px;
-  pointer-events:none;
-}
-
-.playerHead{
-  position:absolute;
-  top:0;
-  left:7px;
-  width:28px;
-  height:28px;
-  border-radius:6px;
-  background:#f2bd91;
-}
-
-.playerHair{
-  position:absolute;
-  top:-3px;
-  left:5px;
-  width:32px;
-  height:12px;
-  border-radius:10px 10px 2px 2px;
-  background:#6b4024;
   z-index:2;
+  max-width:700px;
+  margin:170px auto 0;
+  background:#17233ddd;
+  padding:28px;
+  border-radius:20px;
+  text-align:center
 }
-
-.playerBody{
-  position:absolute;
-  top:27px;
-  left:3px;
-  width:36px;
-  height:34px;
-  border-radius:5px;
-  background:#2488e8;
+.emojiWorld{
+  background:linear-gradient(135deg,#3b277a,#1c4f7a);
+  min-height:calc(100vh - 75px);
+  padding:25px
 }
-
-.playerLeg1,
-.playerLeg2{
-  position:absolute;
-  top:58px;
-  width:15px;
-  height:20px;
-  border-radius:3px;
-  background:#333b50;
+.emojiBox{
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+  background:#ffffff18;
+  padding:30px;
+  border-radius:25px
 }
-
-.playerLeg1{
-  left:5px;
+.pair{
+  font-size:85px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  align-items:center;
+  margin:30px
 }
-
-.playerLeg2{
-  right:5px;
-}
-
-.playerAccessory{
-  position:absolute;
-  top:-23px;
-  left:0;
-  z-index:5;
-  font-size:24px;
-}
-
-/* ================= NORMAL WORLD ================= */
-
-.normalWorld{
-  background:linear-gradient(#72c8ff 0%,#b8edff 65%,#69bb54 65%);
-}
-
-.ground{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:35%;
-  background:#65ad4c;
-}
-
-.road{
-  position:absolute;
-  left:0;
-  bottom:8%;
-  width:100%;
-  height:70px;
-  background:#555;
-}
-
-.house{
-  position:absolute;
-  bottom:35%;
-  width:130px;
-  height:120px;
-  background:#e7b57c;
-  border:5px solid #9b6540;
-}
-
-.house:before{
-  content:"";
-  position:absolute;
-  left:-15px;
-  top:-60px;
-  border-left:80px solid transparent;
-  border-right:80px solid transparent;
-  border-bottom:65px solid #9d3f35;
-}
-
-.house1{
-  left:10%;
-}
-
-.house2{
-  right:10%;
-}
-
-.tree{
-  position:absolute;
-  bottom:35%;
-  width:35px;
-  height:100px;
-  background:#70452c;
-}
-
-.tree:before{
-  content:"";
-  position:absolute;
-  left:-32px;
-  top:-55px;
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  background:#32934d;
-}
-
-/* ================= COLLECTIBLES ================= */
-
-.collectible{
-  position:absolute;
-  z-index:70;
-  font-size:35px;
-  cursor:pointer;
-  user-select:none;
-  animation:bob 1s infinite alternate;
-}
-
-@keyframes bob{
-  from{
-    transform:translateY(0);
-  }
-  to{
-    transform:translateY(-8px);
-  }
-}
-
-/* ================= MESSAGE ================= */
-
-.gameMessage{
-  position:absolute;
-  top:15px;
-  left:50%;
-  z-index:150;
-  padding:12px 20px;
-  border-radius:15px;
-  background:#111c;
-  transform:translateX(-50%);
-  font-weight:bold;
-  white-space:nowrap;
-}
-
-/* ================= SPACE ================= */
-
-.spaceWorld{
-  background:
-    radial-gradient(circle at 20% 20%,white 0 2px,transparent 3px),
-    radial-gradient(circle at 70% 30%,white 0 2px,transparent 3px),
-    radial-gradient(circle at 45% 75%,white 0 2px,transparent 3px),
-    radial-gradient(circle at 85% 80%,white 0 2px,transparent 3px),
-    radial-gradient(circle at 10% 80%,white 0 2px,transparent 3px),
-    linear-gradient(#030014,#13052e 55%,#080016);
-}
-
-.planet{
-  position:absolute;
-  right:10%;
-  top:20%;
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#7139c8,#a55bf2);
-  box-shadow:0 0 40px #8b54ff;
-}
-
-.planetRing{
-  position:absolute;
-  left:-50px;
-  top:70px;
-  width:320px;
-  height:80px;
-  border:12px solid #d2a8ff;
-  border-radius:50%;
-  transform:rotate(-15deg);
-}
-
-/* ================= CASTLE ================= */
-
-.castleWorld{
-  background:#2c1b12;
-}
-
-.castleWall{
-  position:absolute;
-  inset:0;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      #70492f 0,
-      #70492f 45px,
-      #4d301f 46px,
-      #4d301f 50px
-    );
-}
-
-.castleWindow{
-  position:absolute;
-  top:20%;
-  width:70px;
-  height:110px;
-  border:10px solid #302017;
-  border-radius:50px 50px 5px 5px;
-  background:#72cfff;
-}
-
-.castleWindow1{
-  left:15%;
-}
-
-.castleWindow2{
-  right:15%;
-}
-
-.castleDoor{
-  position:absolute;
-  left:50%;
-  bottom:0;
-  width:130px;
-  height:210px;
-  border:8px solid #a36b3d;
-  border-radius:70px 70px 0 0;
-  background:#24170f;
-  transform:translateX(-50%);
-}
-
-/* ================= OBBY ================= */
-
-.obbyWorld{
-  background:#72d2ff;
-}
-
-.obbyPlatform{
-  position:absolute;
-  height:24px;
-  z-index:40;
-  border:4px solid #197437;
-  border-radius:7px;
-  background:#38b85a;
-}
-
-.obbyPlatform.bad{
-  background:#e74c3c;
-  border-color:#8d241b;
-}
-
-.obbyPlatform.bouncy{
-  background:#b55cff;
-  border-color:#702bb3;
-}
-
-.obbyStage{
-  position:absolute;
-  top:10px;
-  left:50%;
-  z-index:120;
-  padding:8px 18px;
-  border-radius:15px;
-  background:#111c;
-  transform:translateX(-50%);
-  font-weight:bold;
-  white-space:nowrap;
-}
-
-.obbyHint{
-  position:absolute;
-  bottom:15px;
-  left:50%;
-  z-index:120;
-  padding:8px 15px;
+.answer{
+  width:min(520px,95%);
+  padding:15px;
   border-radius:12px;
-  background:#111c;
-  transform:translateX(-50%);
-  font-size:14px;
-  white-space:nowrap;
+  border:3px solid transparent;
+  text-align:center;
+  font-size:20px
 }
-
-/* ================= ENDING ================= */
-
-#endingOverlay{
+.feedback{min-height:30px;margin:15px;font-weight:bold}
+.progress{
+  height:16px;
+  background:#0005;
+  border-radius:20px;
+  overflow:hidden
+}
+.bar{height:100%;width:0;background:#39d353}
+.ending{
   position:absolute;
   inset:0;
-  z-index:300;
+  background:#000b;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#000b;
+  padding:20px;
+  z-index:10
 }
-
 .endingBox{
-  width:min(520px,90%);
+  max-width:520px;
+  width:100%;
+  background:#202b45;
   padding:35px;
-  border-radius:25px;
-  background:#18233c;
-  text-align:center;
-  box-shadow:0 10px 50px #000;
+  border-radius:20px;
+  text-align:center
 }
-
-.endingEmoji{
-  font-size:65px;
-}
-
-.endingBox h1{
+.endingBox h2{font-size:34px}
+.character{font-size:100px;text-align:center;padding:40px}
+.friend{
+  display:flex;
+  justify-content:space-between;
+  background:#202b45;
+  padding:15px;
+  border-radius:12px;
   margin:10px 0;
+  max-width:500px
 }
-
-.endingBox p{
-  color:#d8dfeb;
-  font-size:18px;
-}
-
-.endingBox button{
-  margin-top:10px;
-  color:white;
-  background:#249df2;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:650px){
-
-  .topbar{
-    padding:0 8px;
-    gap:6px;
-  }
-
-  .logo{
-    font-size:17px;
-  }
-
-  .topbar button{
-    padding:7px;
-  }
-
-  .characterContent{
-    padding:20px;
-  }
-
-  .obbyHint{
-    font-size:11px;
-  }
+@media(max-width:600px){
+  .pair{font-size:58px;gap:12px}
+  .sceneText{margin-top:130px}
+  .page{padding:15px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= ACCOUNT ================= -->
+<div id="hub">
+<header class="top">
+  <div class="logo">🎮 Roblox Jr.</div>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <div class="coins">🪙 <span id="coinCount">0</span></div>
+    <button id="characterBtn">Character</button>
+    <button id="logoutBtn">Log Out</button>
+  </div>
+</header>
 
-<div id="accountScreen">
+<nav class="tabs">
+  <button class="tab active" data-page="games">🎮 Games</button>
+  <button class="tab" data-page="friends">👥 Friends</button>
+  <button class="tab" data-page="market">🛒 Marketplace</button>
+</nav>
 
-  <div class="accountBox">
+<section id="games" class="page">
+  <h1>Games</h1>
 
-    <h1>🎮 Roblox Jr.</h1>
-
-    <p>Game Hub</p>
-
-    <input id="email" type="email" placeholder="Email">
-
-    <input id="password" type="password" placeholder="Password">
-
-    <div class="accountButtons">
-
-      <button class="loginBtn" onclick="login()">
-        Log In
-      </button>
-
-      <button class="signupBtn" onclick="signup()">
-        Sign Up
-      </button>
-
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🪙</div>
+      <h2>Coin Dash</h2>
+      <p>Collect coins and reach the finish.</p>
+      <button class="play" data-game="coin">Play</button>
     </div>
 
-    <div id="accountMessage"></div>
+    <div class="card">
+      <div class="icon">🧠</div>
+      <h2>Brainrot Heist</h2>
+      <p>Complete the brainrot mission.</p>
+      <button class="play" data-game="brainrot">Play</button>
+    </div>
 
+    <div class="card">
+      <div class="icon">🧩</div>
+      <h2>Emoji Combo</h2>
+      <p>Combine two emojis and guess the answer.</p>
+      <button class="play" data-game="emoji">Play</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚀</div>
+      <h2>Space Escape</h2>
+      <p>Escape through outer space.</p>
+      <button class="play" data-game="space">Play</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">💎</div>
+      <h2>Gem Hunt</h2>
+      <p>Find the hidden gems.</p>
+      <button class="play" data-game="gem">Play</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🐶</div>
+      <h2>Pet Race</h2>
+      <p>Race your pet to the finish.</p>
+      <button class="play" data-game="pet">Play</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌲</div>
+      <h2>Forest Adventure</h2>
+      <p>Explore a real forest with trees, plants, and wildlife.</p>
+      <button class="play" data-game="forest">Play</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏰</div>
+      <h2>Castle Quest</h2>
+      <p>Explore the inside of a giant castle.</p>
+      <button class="play" data-game="castle">Play</button>
+    </div>
   </div>
+</section>
 
+<section id="friends" class="page hidden">
+  <h1>Friends</h1>
+  <div class="friend"><span>👤 Alex</span><span>🟢 Online</span></div>
+  <div class="friend"><span>👤 Sam</span><span>🟢 Online</span></div>
+  <div class="friend"><span>👤 Max</span><span>⚪ Offline</span></div>
+</section>
+
+<section id="market" class="page hidden">
+  <h1>Marketplace</h1>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🧢</div>
+      <h2>Cool Hat</h2>
+      <p>25 coins</p>
+      <button class="buy" data-price="25">Buy</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">😎</div>
+      <h2>Cool Glasses</h2>
+      <p>30 coins</p>
+      <button class="buy" data-price="30">Buy</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">👑</div>
+      <h2>King Crown</h2>
+      <p>75 coins</p>
+      <button class="buy" data-price="75">Buy</button>
+    </div>
+  </div>
+</section>
 </div>
 
+<section id="characterPage" class="hidden">
+  <header class="top">
+    <div class="logo">👤 Character</div>
+    <button id="backCharacter">Back</button>
+  </header>
 
-<!-- ================= HUB ================= -->
-
-<div id="hubScreen" class="hidden">
-
-  <div class="topbar">
-
-    <div class="logo">
-      🎮 Roblox Jr.
-    </div>
-
-    <div class="coins">
-      🪙 <span id="coinCount">100</span>
-    </div>
-
-    <button onclick="openCharacter()">
-      Character
-    </button>
-
-    <button onclick="logout()">
-      Log Out
-    </button>
-
+  <div class="page panel">
+    <h1>Character</h1>
+    <div class="character" id="avatar">🧍</div>
+    <button data-avatar="🧍">Normal</button>
+    <button data-avatar="🧢🧍">Hat</button>
+    <button data-avatar="👑🧍">Crown</button>
   </div>
+</section>
 
+<section id="gameScreen" class="hidden">
+  <header class="top">
+    <strong id="gameTitle">Game</strong>
+    <button id="backGame">← Back</button>
+  </header>
 
-  <div class="tabs">
+  <div id="world" class="world">
+    <div id="gameContent"></div>
 
-    <button class="tab active"
-      onclick="showTab('gamesTab',this)">
-      Games
-    </button>
-
-    <button class="tab"
-      onclick="showTab('friendsTab',this)">
-      Friends
-    </button>
-
-    <button class="tab"
-      onclick="showTab('marketplaceTab',this)">
-      Marketplace
-    </button>
-
+    <div id="ending" class="ending hidden">
+      <div class="endingBox">
+        <h2 id="endingTitle"></h2>
+        <p id="endingText"></p>
+        <button id="endingBack" class="primary">Back to Games</button>
+      </div>
+    </div>
   </div>
-
-
-  <!-- ================= GAMES ================= -->
-
-  <div id="gamesTab">
-
-    <div class="gamesGrid">
-
-      <div class="gameCard">
-        <div class="gameImage coinImage">🪙</div>
-        <div class="gameInfo">
-          <h3>Coin Dash</h3>
-          <p>Collect every coin you can!</p>
-          <button class="play" data-game="coin">
-            Play
-          </button>
-        </div>
-      </div>
-
-
-      <div class="gameCard">
-        <div class="gameImage brainImage">🧠</div>
-        <div class="gameInfo">
-          <h3>Brainrot Heist</h3>
-          <p>Grab the brainrot and escape!</p>
-          <button class="play" data-game="brain">
-            Play
-          </button>
-        </div>
-      </div>
-
-
-      <div class="gameCard">
-        <div class="gameImage obbyImage">🏃</div>
-        <div class="gameInfo">
-          <h3>Obby Tower</h3>
-          <p>Jump through five different screens!</p>
-          <button class="play" data-game="obby">
-            Play
-          </button>
-        </div>
-      </div>
-
-
-      <div class="gameCard">
-        <div class="gameImage spaceImage">🚀</div>
-        <div class="gameInfo">
-          <h3>Space Escape</h3>
-          <p>Find the rocket and escape!</p>
-          <button class="play" data-game="space">
-            Play
-          </button>
-        </div>
-      </div>
-
-
-      <div class="gameCard">
-        <div class="gameImage gemImage">💎</div>
-        <div class="gameInfo">
-          <h3>Gem Hunt</h3>
-          <p>Find all the hidden gems!</p>
-          <button class="play" data-game="gem">
-            Play
-          </button>
-        </div>
-      </div>
-
-
-      <div class="gameCard">
-        <div class="gameImage petImage">🐶</div>
-        <div class="gameInfo">
-          <h3>Pet Race</h3>
-          <p>Race your pet to the finish!</p>
-          <button class="play" data-game="pet">
-            Play
-          </button>
-        </div>
-      </div>
-
-
-      <div class="gameCard">
-        <div class="gameImage forestImage">🌲</div>
-        <div class="gameInfo">
-          <h3>Forest Adventure</h3>
-          <p>Explore the forest and find treasure!</p>
-          <button class="play" data-game="forest">
-            Play
-          </button>
-        </div>
-      </div>
-
-
-      <div class="gameCard">
-        <div class="gameImage castleImage">🏰</div>
-        <div class="gameInfo">
-          <h3>Castle Quest</h3>
-          <p>Explore the castle and find its treasure!</p>
-          <button class="play" data-game="castle">
-            Play
-          </button>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- ================= FRIENDS ================= -->
-
-  <div id="friendsTab" class="hidden">
-
-    <h2>👥 Friends</h2>
-
-    <div class="friend">
-      <div class="friendAvatar">😀</div>
-      <div>
-        <b>Alex</b>
-        <div>Online</div>
-      </div>
-    </div>
-
-    <div class="friend">
-      <div class="friendAvatar">😎</div>
-      <div>
-        <b>Sam</b>
-        <div>Playing Obby Tower</div>
-      </div>
-    </div>
-
-    <div class="friend">
-      <div class="friendAvatar">🤓</div>
-      <div>
-        <b>Max</b>
-        <div>Offline</div>
-      </div>
-    </div>
-
-  </div>
-
-
-  <!-- ================= MARKETPLACE ================= -->
-
-  <div id="marketplaceTab" class="hidden">
-
-    <h2>🛍️ Marketplace</h2>
-
-    <div class="marketItem">
-      <div class="marketIcon">🎩</div>
-      <div class="marketText">
-        <b>Cool Hat</b>
-        <div>25 coins</div>
-      </div>
-      <button class="buy"
-        onclick="buyItem(this,25,'hat')">
-        Buy
-      </button>
-    </div>
-
-    <div class="marketItem">
-      <div class="marketIcon">🕶️</div>
-      <div class="marketText">
-        <b>Cool Glasses</b>
-        <div>30 coins</div>
-      </div>
-      <button class="buy"
-        onclick="buyItem(this,30,'glasses')">
-        Buy
-      </button>
-    </div>
-
-    <div class="marketItem">
-      <div class="marketIcon">👑</div>
-      <div class="marketText">
-        <b>King Crown</b>
-        <div>75 coins</div>
-      </div>
-      <button class="buy"
-        onclick="buyItem(this,75,'crown')">
-        Buy
-      </button>
-    </div>
-
-    <div class="marketItem">
-      <div class="marketIcon">🎒</div>
-      <div class="marketText">
-        <b>Adventure Backpack</b>
-        <div>50 coins</div>
-      </div>
-      <button class="buy"
-        onclick="buyItem(this,50,'backpack')">
-        Buy
-      </button>
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ================= CHARACTER ================= -->
-
-<div id="characterScreen" class="hidden">
-
-  <div class="characterTop">
-
-    <button onclick="closeCharacter()">
-      ← Back
-    </button>
-
-    <h2>My Character</h2>
-
-  </div>
-
-
-  <div class="characterContent">
-
-    <div class="characterPreview">
-
-      <div class="fullCharacter">
-
-        <div id="charAccessory"
-          class="charHair"></div>
-
-        <div class="charHead">
-          <div class="charEyes">• •</div>
-        </div>
-
-        <div id="charBody"
-          class="charBody"></div>
-
-        <div class="charArm leftArm"></div>
-        <div class="charArm rightArm"></div>
-
-        <div class="charLeg leftLeg"></div>
-        <div class="charLeg rightLeg"></div>
-
-        <div class="charFoot leftFoot"></div>
-        <div class="charFoot rightFoot"></div>
-
-      </div>
-
-      <div class="characterFloor"></div>
-
-    </div>
-
-
-    <div class="accessories">
-
-      <h2>Customize</h2>
-
-      <button onclick="changeShirt('#2488e8')">
-        Blue Shirt
-      </button>
-
-      <button onclick="changeShirt('#e83d3d')">
-        Red Shirt
-      </button>
-
-      <button onclick="changeShirt('#35b85c')">
-        Green Shirt
-      </button>
-
-      <button onclick="changeShirt('#9c4de0')">
-        Purple Shirt
-      </button>
-
-      <hr>
-
-      <button onclick="setAccessory('🎩')">
-        🎩 Cool Hat
-      </button>
-
-      <button onclick="setAccessory('🕶️')">
-        🕶️ Glasses
-      </button>
-
-      <button onclick="setAccessory('👑')">
-        👑 Crown
-      </button>
-
-      <button onclick="setAccessory('')">
-        Remove Accessory
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ================= GAME ================= -->
-
-<div id="gameScreen" class="hidden">
-
-  <div class="gameHeader">
-
-    <button id="backToHub"
-      onclick="leaveGame()">
-      ← Back
-    </button>
-
-    <h2 id="gameTitle">
-      Game
-    </h2>
-
-    <div class="coins">
-      🪙 <span id="gameCoinCount">100</span>
-    </div>
-
-  </div>
-
-
-  <div id="world">
-
-    <div id="gameMessage"
-      class="gameMessage hidden">
-    </div>
-
-
-    <div id="player">
-
-      <div id="playerAccessory"
-        class="playerAccessory">
-      </div>
-
-      <div class="playerHair"></div>
-
-      <div class="playerHead"></div>
-
-      <div class="playerBody"></div>
-
-      <div class="playerLeg1"></div>
-
-      <div class="playerLeg2"></div>
-
-    </div>
-
-  </div>
-
-
-  <div id="endingOverlay"
-    class="hidden">
-
-    <div class="endingBox">
-
-      <div id="endingEmoji"
-        class="endingEmoji">
-        🎉
-      </div>
-
-      <h1 id="endingTitle">
-        You Won!
-      </h1>
-
-      <p id="endingText">
-        Great job!
-      </p>
-
-      <button onclick="leaveGame()">
-        Back to Game Hub
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<script type="module">
-
-/* ==================================================
-   SUPABASE
-================================================== */
-
-import {
-  createClient
-} from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-
-const SUPABASE_URL =
-"https://rewbdyajylagepnrbixu.supabase.co";
-
-const SUPABASE_KEY =
-"sb_publishable_77k0d-o6J210zPyWGtsqEA_yB71FFi6";
-
-const supabase =
-createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
-
-/* ==================================================
-   ELEMENTS
-================================================== */
-
-const accountScreen =
-document.getElementById("accountScreen");
-
-const hubScreen =
-document.getElementById("hubScreen");
-
-const characterScreen =
-document.getElementById("characterScreen");
-
-const gameScreen =
-document.getElementById("gameScreen");
-
-const world =
-document.getElementById("world");
-
-const player =
-document.getElementById("player");
-
-const coinCount =
-document.getElementById("coinCount");
-
-const gameCoinCount =
-document.getElementById("gameCoinCount");
-
-const accountMessage =
-document.getElementById("accountMessage");
-
-const endingOverlay =
-document.getElementById("endingOverlay");
-
-const endingEmoji =
-document.getElementById("endingEmoji");
-
-const endingTitle =
-document.getElementById("endingTitle");
-
-const endingText =
-document.getElementById("endingText");
-
-
-/* ==================================================
-   COINS
-================================================== */
-
-let coins =
-Number(
-  localStorage.getItem(
-    "robloxJrCoins"
-  ) || 100
-);
+</section>
+
+<script>
+let coins=Number(localStorage.getItem("robloxJrCoins")||0);
+let currentGame="";
+let emojiIndex=0;
+let emojiLocked=false;
+
+const $=id=>document.getElementById(id);
 
 function updateCoins(){
-
-  coinCount.textContent=coins;
-
-  gameCoinCount.textContent=coins;
-
-  localStorage.setItem(
-    "robloxJrCoins",
-    coins
-  );
-
+  $("coinCount").textContent=coins;
+  localStorage.setItem("robloxJrCoins",coins);
 }
 
 function addCoins(amount){
-
   coins+=amount;
-
   updateCoins();
-
 }
 
-
-/* ==================================================
-   ACCOUNT
-================================================== */
-
-async function signup(){
-
-  const email =
-  document.getElementById("email").value.trim();
-
-  const password =
-  document.getElementById("password").value;
-
-
-  if(!email || !password){
-
-    accountMessage.textContent=
-    "Enter an email and password.";
-
-    return;
-
-  }
-
-
-  const {error} =
-  await supabase.auth.signUp({
-    email,
-    password
-  });
-
-
-  if(error){
-
-    accountMessage.textContent=
-    error.message;
-
-  }else{
-
-    accountMessage.textContent=
-    "Account created! You can log in.";
-
-  }
-
-}
-
-window.signup=signup;
-
-
-async function login(){
-
-  const email =
-  document.getElementById("email").value.trim();
-
-  const password =
-  document.getElementById("password").value;
-
-
-  if(!email || !password){
-
-    accountMessage.textContent=
-    "Enter an email and password.";
-
-    return;
-
-  }
-
-
-  const {error} =
-  await supabase.auth.signInWithPassword({
-    email,
-    password
-  });
-
-
-  if(error){
-
-    accountMessage.textContent=
-    error.message;
-
-  }else{
-
-    showHub();
-
-  }
-
-}
-
-window.login=login;
-
-
-async function logout(){
-
-  await supabase.auth.signOut();
-
-  gameRunning=false;
-
-  accountScreen.classList.remove("hidden");
-
-  hubScreen.classList.add("hidden");
-
-  characterScreen.classList.add("hidden");
-
-  gameScreen.classList.add("hidden");
-
-}
-
-window.logout=logout;
-
-
-function showHub(){
-
-  accountScreen.classList.add("hidden");
-
-  characterScreen.classList.add("hidden");
-
-  gameScreen.classList.add("hidden");
-
-  hubScreen.classList.remove("hidden");
-
-  updateCoins();
-
-}
-
-
-/* ==================================================
-   TABS
-================================================== */
-
-function showTab(tab,button){
-
-  document.getElementById("gamesTab")
-    .classList.add("hidden");
-
-  document.getElementById("friendsTab")
-    .classList.add("hidden");
-
-  document.getElementById("marketplaceTab")
-    .classList.add("hidden");
-
-
-  document.getElementById(tab)
-    .classList.remove("hidden");
-
-
-  document.querySelectorAll(".tab")
-    .forEach(tabButton=>{
-      tabButton.classList.remove("active");
+updateCoins();
+
+document.querySelectorAll(".tab").forEach(button=>{
+  button.onclick=()=>{
+    document.querySelectorAll(".tab").forEach(tab=>{
+      tab.classList.remove("active");
     });
 
-
-  button.classList.add("active");
-
-}
-
-window.showTab=showTab;
-
-
-/* ==================================================
-   CHARACTER
-================================================== */
-
-function openCharacter(){
-
-  hubScreen.classList.add("hidden");
-
-  characterScreen.classList.remove("hidden");
-
-}
-
-window.openCharacter=openCharacter;
-
-
-function closeCharacter(){
-
-  characterScreen.classList.add("hidden");
-
-  hubScreen.classList.remove("hidden");
-
-}
-
-window.closeCharacter=closeCharacter;
-
-
-function changeShirt(color){
-
-  document.getElementById(
-    "charBody"
-  ).style.background=color;
-
-  document.querySelector(
-    ".playerBody"
-  ).style.background=color;
-
-}
-
-window.changeShirt=changeShirt;
-
-
-function setAccessory(item){
-
-  document.getElementById(
-    "charAccessory"
-  ).textContent=item;
-
-  document.getElementById(
-    "playerAccessory"
-  ).textContent=item;
-
-}
-
-window.setAccessory=setAccessory;
-
-
-/* ==================================================
-   MARKETPLACE
-================================================== */
-
-function buyItem(button,cost,item){
-
-  if(button.classList.contains("owned")){
-    return;
-  }
-
-
-  if(coins<cost){
-
-    alert(
-      "You don't have enough coins!"
-    );
-
-    return;
-
-  }
-
-
-  coins-=cost;
-
-  updateCoins();
-
-  button.textContent="Owned";
-
-  button.classList.add("owned");
-
-}
-
-window.buyItem=buyItem;
-
-
-/* ==================================================
-   GAME VARIABLES
-================================================== */
-
-let currentGame="";
-
-let gameRunning=false;
-
-
-/* ==================================================
-   KEYBOARD STATE
-================================================== */
-
-const keys={};
-
-
-/*
-  IMPORTANT:
-
-  We listen for the keyboard here,
-  but the Obby ONLY uses:
-
-  A
-  D
-  Left Arrow
-  Right Arrow
-  Space
-
-  W/S/Up/Down are NEVER used by
-  the Obby physics.
-*/
-
-document.addEventListener(
-  "keydown",
-  event=>{
-
-    const key=
-    event.key.toLowerCase();
-
-    keys[key]=true;
-
-
-    if(
-      currentGame==="obby" &&
-      event.code==="Space"
-    ){
-
-      event.preventDefault();
-
-      /*
-        Jump ONLY if the player is
-        standing on a platform.
-      */
-
-      if(
-        gameRunning &&
-        !obbyFinished &&
-        obbyOnGround
-      ){
-
-        obbyVelocityY=
-        OBBY_JUMP;
-
-        obbyOnGround=false;
-
-      }
-
-    }
-
-  }
-);
-
-
-document.addEventListener(
-  "keyup",
-  event=>{
-
-    keys[
-      event.key.toLowerCase()
-    ]=false;
-
-  }
-);
-
-
-/* ==================================================
-   START GAME
-================================================== */
-
-function start(type){
-
-  currentGame=type;
-
-  gameRunning=true;
-
-  endingOverlay.classList.add(
-    "hidden"
-  );
-
-  hubScreen.classList.add(
-    "hidden"
-  );
-
-  characterScreen.classList.add(
-    "hidden"
-  );
-
-  gameScreen.classList.remove(
-    "hidden"
-  );
-
-
-  clearWorld();
-
-
-  document.getElementById(
-    "gameTitle"
-  ).textContent=
-  gameTitles[type];
-
-
-  updateCoins();
-
-
-  if(type==="coin"){
-    startCoinDash();
-  }
-
-  else if(type==="brain"){
-    startBrainrot();
-  }
-
-  else if(type==="obby"){
-    startObby();
-  }
-
-  else if(type==="space"){
-    startSpace();
-  }
-
-  else if(type==="gem"){
-    startGem();
-  }
-
-  else if(type==="pet"){
-    startPet();
-  }
-
-  else if(type==="forest"){
-    startForest();
-  }
-
-  else if(type==="castle"){
-    startCastle();
-  }
-
-}
-
-window.start=start;
-
-
-const gameTitles={
-
-  coin:"Coin Dash",
-
-  brain:"Brainrot Heist",
-
-  obby:"Obby Tower",
-
-  space:"Space Escape",
-
-  gem:"Gem Hunt",
-
-  pet:"Pet Race",
-
-  forest:"Forest Adventure",
-
-  castle:"Castle Quest"
-
+    button.classList.add("active");
+
+    ["games","friends","market"].forEach(id=>{
+      $(id).classList.add("hidden");
+    });
+
+    $(button.dataset.page).classList.remove("hidden");
+  };
+});
+
+$("characterBtn").onclick=()=>{
+  $("hub").classList.add("hidden");
+  $("characterPage").classList.remove("hidden");
 };
 
-
-/* ==================================================
-   CLEAR WORLD
-================================================== */
-
-function clearWorld(){
-
-  world.className="";
-
-  world.style.background="";
-
-
-  world.querySelectorAll(
-    ".collectible,"+
-    ".obbyPlatform,"+
-    ".obbyStage,"+
-    ".obbyHint,"+
-    ".ground,"+
-    ".road,"+
-    ".house,"+
-    ".tree,"+
-    ".planet,"+
-    ".planetRing,"+
-    ".castleWall,"+
-    ".castleWindow,"+
-    ".castleDoor"
-  ).forEach(
-    element=>element.remove()
-  );
-
-}
-
-
-/* ==================================================
-   BASIC WORLD
-================================================== */
-
-function createBasicWorld(){
-
-  world.classList.add(
-    "normalWorld"
-  );
-
-
-  const ground=
-  document.createElement("div");
-
-  ground.className="ground";
-
-  world.appendChild(ground);
-
-
-  const road=
-  document.createElement("div");
-
-  road.className="road";
-
-  world.appendChild(road);
-
-
-  const house1=
-  document.createElement("div");
-
-  house1.className=
-  "house house1";
-
-  world.appendChild(house1);
-
-
-  const house2=
-  document.createElement("div");
-
-  house2.className=
-  "house house2";
-
-  world.appendChild(house2);
-
-
-  const tree1=
-  document.createElement("div");
-
-  tree1.className="tree";
-
-  tree1.style.left="35%";
-
-  world.appendChild(tree1);
-
-
-  const tree2=
-  document.createElement("div");
-
-  tree2.className="tree";
-
-  tree2.style.left="60%";
-
-  world.appendChild(tree2);
-
-}
-
-
-/* ==================================================
-   MESSAGE
-================================================== */
-
-function showMessage(message){
-
-  const box=
-  document.getElementById(
-    "gameMessage"
-  );
-
-  box.textContent=message;
-
-  box.classList.remove(
-    "hidden"
-  );
-
-
-  clearTimeout(
-    showMessage.timer
-  );
-
-
-  showMessage.timer=
-  setTimeout(
-    ()=>{
-      box.classList.add(
-        "hidden"
-      );
-    },
-    1800
-  );
-
-}
-
-
-/* ==================================================
-   ENDING
-================================================== */
-
-function showEnding(
-  emoji,
-  title,
-  text
-){
-
-  endingEmoji.textContent=emoji;
-
-  endingTitle.textContent=title;
-
-  endingText.textContent=text;
-
-  endingOverlay.classList.remove(
-    "hidden"
-  );
-
-  gameRunning=false;
-
-}
-
-
-/* ==================================================
-   COLLECTIBLES
-================================================== */
-
-function createCollectible(
-  emoji,
-  x,
-  y,
-  reward,
-  callback
-){
-
-  const item=
-  document.createElement("div");
-
-  item.className=
-  "collectible";
-
-  item.textContent=emoji;
-
-  item.style.left=x+"%";
-
-  item.style.top=y+"%";
-
-
-  item.addEventListener(
-    "click",
-    ()=>{
-
-      if(!gameRunning){
-        return;
-      }
-
-
-      item.remove();
-
-      addCoins(reward);
-
-      showMessage(
-        "+"+reward+" coins!"
-      );
-
-
-      if(callback){
-        callback();
-      }
-
-    }
-  );
-
-
-  world.appendChild(item);
-
-}
-
-
-/* ==================================================
-   COIN DASH
-================================================== */
-
-let coinsRemaining=0;
-
-
-function startCoinDash(){
-
-  createBasicWorld();
-
-  coinsRemaining=10;
-
-
-  for(let i=0;i<10;i++){
-
-    createCollectible(
-
-      "🪙",
-
-      5+Math.random()*88,
-
-      15+Math.random()*58,
-
-      10,
-
-      ()=>{
-
-        coinsRemaining--;
-
-        if(coinsRemaining===0){
-
-          showEnding(
-            "🪙",
-            "Amazing!",
-            "You collected every coin!"
-          );
-
-        }
-
-      }
-
-    );
-
-  }
-
-
-  movePlayerNormal(50,60);
-
-  showMessage(
-    "Collect all 10 coins!"
-  );
-
-}
-
-
-/* ==================================================
-   BRAINROT
-================================================== */
-
-function startBrainrot(){
-
-  createBasicWorld();
-
-  movePlayerNormal(50,60);
-
-
-  createCollectible(
-    "🧠",
-    72,
-    35,
-    25,
-    ()=>{
-
-      showEnding(
-        "🧠",
-        "Heist Complete!",
-        "You grabbed the brainrot and escaped!"
-      );
-
-    }
-  );
-
-
-  createCollectible(
-    "💰",
-    25,
-    50,
-    15
-  );
-
-
-  showMessage(
-    "Grab the brainrot!"
-  );
-
-}
-
-
-/* ==================================================
-   GEM HUNT
-================================================== */
-
-let gemsRemaining=0;
-
-
-function startGem(){
-
-  createBasicWorld();
-
-  movePlayerNormal(50,60);
-
-  gemsRemaining=8;
-
-
-  for(let i=0;i<8;i++){
-
-    createCollectible(
-
-      "💎",
-
-      5+Math.random()*88,
-
-      15+Math.random()*60,
-
-      15,
-
-      ()=>{
-
-        gemsRemaining--;
-
-        if(gemsRemaining===0){
-
-          showEnding(
-            "💎",
-            "Treasure Found!",
-            "You found all the gems!"
-          );
-
-        }
-
-      }
-
-    );
-
-  }
-
-
-  showMessage(
-    "Find all 8 gems!"
-  );
-
-}
-
-
-/* ==================================================
-   PET RACE
-================================================== */
-
-function startPet(){
-
-  createBasicWorld();
-
-  movePlayerNormal(50,60);
-
-
-  createCollectible(
-    "🐶",
-    80,
-    45,
-    20,
-    ()=>{
-
-      showEnding(
-        "🏆",
-        "You Won!",
-        "Your pet crossed the finish line!"
-      );
-
-    }
-  );
-
-
-  showMessage(
-    "Reach the pet!"
-  );
-
-}
-
-
-/* ==================================================
-   FOREST
-================================================== */
-
-function startForest(){
-
-  world.style.background=
-  "linear-gradient(#8ed5ff 0%,#c9f2ff 55%,#397b39 55%)";
-
-
-  const ground=
-  document.createElement("div");
-
-  ground.className="ground";
-
-  world.appendChild(ground);
-
-
-  for(let i=0;i<9;i++){
-
-    const tree=
-    document.createElement("div");
-
-    tree.className="tree";
-
-    tree.style.left=
-    (4+i*11)+"%";
-
-    world.appendChild(tree);
-
-  }
-
-
-  movePlayerNormal(50,60);
-
-
-  createCollectible(
-    "🎁",
-    75,
-    45,
-    35,
-    ()=>{
-
-      showEnding(
-        "🎁",
-        "Forest Treasure!",
-        "You found the hidden treasure!"
-      );
-
-    }
-  );
-
-
-  showMessage(
-    "Find the treasure!"
-  );
-
-}
-
-
-/* ==================================================
-   CASTLE
-================================================== */
-
-function startCastle(){
-
-  world.classList.add(
-    "castleWorld"
-  );
-
-
-  const wall=
-  document.createElement("div");
-
-  wall.className="castleWall";
-
-  world.appendChild(wall);
-
-
-  const window1=
-  document.createElement("div");
-
-  window1.className=
-  "castleWindow castleWindow1";
-
-  world.appendChild(window1);
-
-
-  const window2=
-  document.createElement("div");
-
-  window2.className=
-  "castleWindow castleWindow2";
-
-  world.appendChild(window2);
-
-
-  const door=
-  document.createElement("div");
-
-  door.className="castleDoor";
-
-  world.appendChild(door);
-
-
-  movePlayerNormal(50,60);
-
-
-  createCollectible(
-    "💰",
-    45,
-    42,
-    40,
-    ()=>{
-
-      showEnding(
-        "🏰",
-        "Quest Complete!",
-        "You found the castle treasure!"
-      );
-
-    }
-  );
-
-
-  showMessage(
-    "Find the castle treasure!"
-  );
-
-}
-
-
-/* ==================================================
-   SPACE ESCAPE
-================================================== */
-
-function startSpace(){
-
-  world.classList.add(
-    "spaceWorld"
-  );
-
-
-  const planet=
-  document.createElement("div");
-
-  planet.className="planet";
-
-
-  const ring=
-  document.createElement("div");
-
-  ring.className="planetRing";
-
-  planet.appendChild(ring);
-
-  world.appendChild(planet);
-
-
-  for(let i=0;i<30;i++){
-
-    const star=
-    document.createElement("div");
-
-    star.textContent="✦";
-
-    star.style.position="absolute";
-
-    star.style.left=
-    Math.random()*100+"%";
-
-    star.style.top=
-    Math.random()*100+"%";
-
-    star.style.fontSize=
-    (8+Math.random()*12)+"px";
-
-    world.appendChild(star);
-
-  }
-
-
-  movePlayerNormal(50,60);
-
-
-  createCollectible(
-    "🚀",
-    20,
-    55,
-    20,
-    ()=>{
-
-      showEnding(
-        "🚀",
-        "You Escaped!",
-        "You launched the rocket and escaped into space!"
-      );
-
-    }
-  );
-
-
-  showMessage(
-    "Find the rocket!"
-  );
-
-}
-
-
-/* ==================================================
-   NORMAL GAME MOVEMENT
-================================================== */
-
-/*
-  This is ONLY for the non-Obby games.
-
-  The Obby NEVER calls this movement.
-
-  Therefore the Obby cannot fly because
-  of this code.
-*/
-
-let normalX=50;
-
-let normalY=60;
-
-
-function movePlayerNormal(x,y){
-
-  normalX=x;
-
-  normalY=y;
-
-  player.style.left=
-  normalX+"%";
-
-  player.style.top=
-  normalY+"%";
-
-}
-
-
-function normalMovement(){
-
-  if(
-    !gameRunning ||
-    currentGame==="obby"
-  ){
-
-    return;
-
-  }
-
-
-  if(
-    keys["a"] ||
-    keys["arrowleft"]
-  ){
-
-    normalX-=0.8;
-
-  }
-
-
-  if(
-    keys["d"] ||
-    keys["arrowright"]
-  ){
-
-    normalX+=0.8;
-
-  }
-
-
-  if(
-    keys["w"] ||
-    keys["arrowup"]
-  ){
-
-    normalY-=0.8;
-
-  }
-
-
-  if(
-    keys["s"] ||
-    keys["arrowdown"]
-  ){
-
-    normalY+=0.8;
-
-  }
-
-
-  normalX=
-  Math.max(
-    2,
-    Math.min(
-      96,
-      normalX
-    )
-  );
-
-
-  normalY=
-  Math.max(
-    5,
-    Math.min(
-      80,
-      normalY
-    )
-  );
-
-
-  player.style.left=
-  normalX+"%";
-
-  player.style.top=
-  normalY+"%";
-
-}
-
-
-/* ==================================================
-   REAL OBBY
-================================================== */
-
-let obbyScreen=1;
-
-let obbyPlatforms=[];
-
-let obbyX=100;
-
-let obbyY=100;
-
-let obbyVelocityY=0;
-
-let obbyOnGround=false;
-
-let obbyFinished=false;
-
-
-/*
-  Physics values.
-
-  Gravity is positive, so the player
-  constantly accelerates DOWN.
-
-  Jump is negative, so the player
-  initially moves UP.
-*/
-
-const OBBY_GRAVITY=0.7;
-
-const OBBY_JUMP=-13;
-
-const OBBY_SPEED=5;
-
-
-/* ==================================================
-   START OBBY
-================================================== */
-
-function startObby(){
-
-  currentGame="obby";
-
-  obbyScreen=1;
-
-  obbyFinished=false;
-
-  obbyVelocityY=0;
-
-  obbyOnGround=false;
-
-
-  generateObbyScreen();
-
-}
-
-
-/* ==================================================
-   OBBY BACKGROUND
-================================================== */
-
-function setObbyBackground(){
-
-  if(obbyScreen===1){
-
-    world.style.background=
-    "linear-gradient(#70d1ff 0%,#d8f7ff 60%,#71bc55 60%)";
-
-  }
-
-
-  if(obbyScreen===2){
-
-    world.style.background=
-    "linear-gradient(#9aaebd 0%,#e4edf2 55%,#555c65 55%)";
-
-  }
-
-
-  if(obbyScreen===3){
-
-    world.style.background=
-    "linear-gradient(#76d8ff 0%,#d6ffd4 52%,#39833f 52%)";
-
-  }
-
-
-  if(obbyScreen===4){
-
-    world.style.background=
-    "linear-gradient(#422c20,#795038 55%,#29180f 55%)";
-
-  }
-
-
-  if(obbyScreen===5){
-
-    world.style.background=
-    "radial-gradient(circle at 15% 15%,white 0 2px,transparent 3px),"+
-    "radial-gradient(circle at 30% 45%,white 0 2px,transparent 3px),"+
-    "radial-gradient(circle at 65% 20%,white 0 2px,transparent 3px),"+
-    "radial-gradient(circle at 80% 65%,white 0 2px,transparent 3px),"+
-    "radial-gradient(circle at 50% 80%,white 0 2px,transparent 3px),"+
-    "linear-gradient(#030014,#17043a 60%,#05000f)";
-
-  }
-
-}
-
-
-/* ==================================================
-   GENERATE OBBY SCREEN
-================================================== */
-
-function generateObbyScreen(){
-
-  clearObby();
-
-
-  setObbyBackground();
-
-
-  obbyPlatforms=[];
-
-
-  const width=
-  world.clientWidth;
-
-  const height=
-  world.clientHeight;
-
-
-  /*
-    Platforms are arranged in a
-    staircase-like path.
-
-    The vertical gaps are intentionally
-    small enough for the jump.
-  */
-
-  const platformHeight=24;
-
-
-  const platformData=[
-
-    {
-      x:0.05,
-      y:height-55,
-      w:210
-    },
-
-    {
-      x:0.55,
-      y:height-145,
-      w:190
-    },
-
-    {
-      x:0.18,
-      y:height-235,
-      w:190
-    },
-
-    {
-      x:0.62,
-      y:height-325,
-      w:190
-    },
-
-    {
-      x:0.30,
-      y:height-415,
-      w:190
-    },
-
-    {
-      x:0.68,
-      y:height-505,
-      w:190
-    },
-
-    {
-      x:0.10,
-      y:Math.max(
-        35,
-        height-595
-      ),
-      w:210
-    }
-
-  ];
-
-
-  for(
-    let i=0;
-    i<platformData.length;
-    i++
-  ){
-
-    const data=
-    platformData[i];
-
-
-    const platform=
-    document.createElement("div");
-
-    platform.className=
-    "obbyPlatform";
-
-
-    /*
-      Some screens have different
-      platform types.
-    */
-
-    if(
-      obbyScreen===2 &&
-      (i===2 || i===5)
-    ){
-
-      platform.classList.add(
-        "bad"
-      );
-
-    }
-
-
-    if(
-      obbyScreen===3 &&
-      (i===1 || i===4)
-    ){
-
-      platform.classList.add(
-        "bouncy"
-      );
-
-    }
-
-
-    const platformWidth=
-    Math.min(
-      data.w,
-      width-20
-    );
-
-
-    const left=
-    Math.max(
-      10,
-      Math.min(
-        width-platformWidth-10,
-        data.x*width
-      )
-    );
-
-
-    platform.style.left=
-    left+"px";
-
-    platform.style.top=
-    data.y+"px";
-
-    platform.style.width=
-    platformWidth+"px";
-
-    platform.style.height=
-    platformHeight+"px";
-
-
-    world.appendChild(
-      platform
-    );
-
-
-    obbyPlatforms.push({
-
-      x:left,
-
-      y:data.y,
-
-      width:platformWidth,
-
-      height:platformHeight,
-
-      element:platform,
-
-      bad:
-      platform.classList.contains(
-        "bad"
-      ),
-
-      final:
-      obbyScreen===5 &&
-      i===platformData.length-1
-
-    });
-
-  }
-
-
-  /*
-    Put player on the first
-    platform.
-  */
-
-  const startingPlatform=
-  obbyPlatforms[0];
-
-
-  obbyX=
-  startingPlatform.x+
-  startingPlatform.width/2-
-  player.offsetWidth/2;
-
-
-  obbyY=
-  startingPlatform.y-
-  player.offsetHeight;
-
-
-  obbyVelocityY=0;
-
-  obbyOnGround=true;
-
-
-  updateObbyPlayer();
-
-
-  /*
-    Screen counter.
-  */
-
-  const stage=
-  document.createElement("div");
-
-  stage.className=
-  "obbyStage";
-
-
-  if(obbyScreen===5){
-
-    stage.textContent=
-    "🚀 SPACE — SCREEN 5 / 5";
-
-  }else{
-
-    stage.textContent=
-    "OBBY SCREEN "+
-    obbyScreen+
-    " / 5";
-
-  }
-
-
-  world.appendChild(stage);
-
-
-  /*
-    Controls reminder.
-  */
-
-  const hint=
-  document.createElement("div");
-
-  hint.className=
-  "obbyHint";
-
-  hint.textContent=
-  "A / D or ← / → = move     SPACE = jump";
-
-
-  world.appendChild(hint);
-
-
-  showMessage(
-    obbyScreen===5
-    ? "Final screen! Reach the last platform!"
-    : "Jump to the top!"
-  );
-
-}
-
-
-/* ==================================================
-   CLEAR OBBY
-================================================== */
-
-function clearObby(){
-
-  world.querySelectorAll(
-    ".obbyPlatform,.obbyStage,.obbyHint"
-  ).forEach(
-    element=>element.remove()
-  );
-
-}
-
-
-/* ==================================================
-   UPDATE OBBY PLAYER
-================================================== */
-
-function updateObbyPlayer(){
-
-  player.style.left=
-  obbyX+"px";
-
-  player.style.top=
-  obbyY+"px";
-
-}
-
-
-/* ==================================================
-   OBBY COLLISION
-================================================== */
-
-function obbyPhysics(){
-
-  /*
-    Do absolutely NOTHING if this
-    is not the Obby.
-  */
-
-  if(
-    currentGame!=="obby" ||
-    !gameRunning ||
-    obbyFinished
-  ){
-
-    return;
-
-  }
-
-
-  const width=
-  world.clientWidth;
-
-  const height=
-  world.clientHeight;
-
-
-  const playerWidth=
-  player.offsetWidth;
-
-  const playerHeight=
-  player.offsetHeight;
-
-
-  /* =========================
-     LEFT / RIGHT
-  ========================= */
-
-  let horizontal=0;
-
-
-  if(
-    keys["a"] ||
-    keys["arrowleft"]
-  ){
-
-    horizontal-=OBBY_SPEED;
-
-  }
-
-
-  if(
-    keys["d"] ||
-    keys["arrowright"]
-  ){
-
-    horizontal+=OBBY_SPEED;
-
-  }
-
-
-  obbyX+=horizontal;
-
-
-  /*
-    Keep player inside screen.
-  */
-
-  if(obbyX<0){
-
-    obbyX=0;
-
-  }
-
-
-  if(
-    obbyX>
-    width-playerWidth
-  ){
-
-    obbyX=
-    width-playerWidth;
-
-  }
-
-
-  /* =========================
-     GRAVITY
-  ========================= */
-
-  /*
-    THIS RUNS EVERY FRAME.
-
-    There is no code that moves
-    the player upward except
-    the Space jump.
-  */
-
-  obbyVelocityY+=
-  OBBY_GRAVITY;
-
-
-  obbyY+=
-  obbyVelocityY;
-
-
-  /*
-    Start each frame assuming
-    player is in the air.
-  */
-
-  obbyOnGround=false;
-
-
-  /* =========================
-     PLATFORM COLLISION
-  ========================= */
-
-  if(obbyVelocityY>=0){
-
-    const playerBottom=
-    obbyY+
-    playerHeight;
-
-
-    for(
-      const platform
-      of obbyPlatforms
-    ){
-
-      const horizontalCollision=
-      obbyX+
-      playerWidth>
-      platform.x &&
-
-      obbyX<
-      platform.x+
-      platform.width;
-
-
-      const verticalCollision=
-      playerBottom>=
-      platform.y &&
-
-      playerBottom<=
-      platform.y+
-      platform.height+
-      8;
-
-
-      if(
-        horizontalCollision &&
-        verticalCollision
-      ){
-
-        /*
-          Land ON TOP.
-        */
-
-        obbyY=
-        platform.y-
-        playerHeight;
-
-
-        obbyVelocityY=0;
-
-        obbyOnGround=true;
-
-
-        /*
-          RED PLATFORM
-        */
-
-        if(platform.bad){
-
-          showMessage(
-            "Oops! Try again!"
-          );
-
-          resetObbyPlayer();
-
-          return;
-
-        }
-
-
-        /*
-          LAST PLATFORM
-        */
-
-        if(platform.final){
-
-          winObby();
-
-          return;
-
-        }
-
-
-        /*
-          Stop checking once
-          we have landed.
-        */
-
-        break;
-
-      }
-
-    }
-
-  }
-
-
-  /* =========================
-     FALLING
-  ========================= */
-
-  if(
-    obbyY>
-    height+120
-  ){
-
-    showMessage(
-      "You fell! Try again!"
-    );
-
-    resetObbyPlayer();
-
-    return;
-
-  }
-
-
-  /* =========================
-     TOP OF SCREEN
-  ========================= */
-
-  /*
-    When the player reaches the
-    top, switch to the next
-    screen.
-
-    The player is then placed
-    back at the bottom.
-  */
-
-  if(
-    obbyY<=0
-  ){
-
-    if(obbyScreen<5){
-
-      obbyScreen++;
-
-      generateObbyScreen();
-
-      return;
-
-    }
-
-  }
-
-
-  updateObbyPlayer();
-
-}
-
-
-/* ==================================================
-   RESET OBBY
-================================================== */
-
-function resetObbyPlayer(){
-
-  const startingPlatform=
-  obbyPlatforms[0];
-
-
-  obbyX=
-  startingPlatform.x+
-  startingPlatform.width/2-
-  player.offsetWidth/2;
-
-
-  obbyY=
-  startingPlatform.y-
-  player.offsetHeight;
-
-
-  obbyVelocityY=0;
-
-  obbyOnGround=true;
-
-
-  updateObbyPlayer();
-
-}
-
-
-/* ==================================================
-   OBBY WIN
-================================================== */
-
-function winObby(){
-
-  if(obbyFinished){
-    return;
-  }
-
-
-  obbyFinished=true;
-
-  gameRunning=false;
-
-
-  /*
-    EXACTLY 50 COINS.
-    Saved immediately.
-  */
-
-  addCoins(50);
-
-
-  showEnding(
-    "🎉",
-    "Good job! You beat this Obby!",
-    "You completed all 5 screens and earned 50 coins!"
-  );
-
-}
-
-
-/* ==================================================
-   GAME LOOP
-================================================== */
-
-function gameLoop(){
-
-  /*
-    Normal games use their
-    normal movement.
-
-    Obby uses ONLY its physics.
-  */
-
-  if(
-    currentGame==="obby"
-  ){
-
-    obbyPhysics();
-
-  }else{
-
-    normalMovement();
-
-  }
-
-
-  requestAnimationFrame(
-    gameLoop
-  );
-
-}
-
-gameLoop();
-
-
-/* ==================================================
-   PLAY BUTTONS
-================================================== */
-
-document.querySelectorAll(
-  ".play"
-).forEach(button=>{
-
-  button.addEventListener(
-    "click",
-    ()=>{
-
-      start(
-        button.dataset.game
-      );
-
-    }
-  );
-
+$("backCharacter").onclick=()=>{
+  $("characterPage").classList.add("hidden");
+  $("hub").classList.remove("hidden");
+};
+
+document.querySelectorAll("[data-avatar]").forEach(button=>{
+  button.onclick=()=>{
+    $("avatar").textContent=button.dataset.avatar;
+  };
 });
 
+document.querySelectorAll(".buy").forEach(button=>{
+  button.onclick=()=>{
+    let price=Number(button.dataset.price);
 
-/* ==================================================
-   LEAVE GAME
-================================================== */
-
-function leaveGame(){
-
-  gameRunning=false;
-
-  endingOverlay.classList.add(
-    "hidden"
-  );
-
-  gameScreen.classList.add(
-    "hidden"
-  );
-
-  hubScreen.classList.remove(
-    "hidden"
-  );
-
-  updateCoins();
-
-}
-
-window.leaveGame=leaveGame;
-
-
-/* ==================================================
-   SUPABASE SESSION
-================================================== */
-
-supabase.auth.getSession()
-.then(({data})=>{
-
-  if(data.session){
-
-    showHub();
-
-  }
-
+    if(coins>=price){
+      coins-=price;
+      updateCoins();
+      button.textContent="Owned";
+      button.disabled=true;
+    }else{
+      alert("You need more coins!");
+    }
+  };
 });
 
+document.querySelectorAll(".play").forEach(button=>{
+  button.onclick=()=>{
+    startGame(button.dataset.game);
+  };
+});
 
-/*
-  DO NOT REGENERATE THE OBBY
-  WHEN THE WINDOW RESIZES.
+const names={
+  coin:"🪙 Coin Dash",
+  brainrot:"🧠 Brainrot Heist",
+  emoji:"🧩 Emoji Combo",
+  space:"🚀 Space Escape",
+  gem:"💎 Gem Hunt",
+  pet:"🐶 Pet Race",
+  forest:"🌲 Forest Adventure",
+  castle:"🏰 Castle Quest"
+};
 
-  This is important because
-  regenerating it would teleport
-  the player back to the starting
-  platform.
-*/
+function startGame(game){
+  currentGame=game;
 
-window.addEventListener(
-  "resize",
-  ()=>{
+  $("hub").classList.add("hidden");
+  $("characterPage").classList.add("hidden");
+  $("gameScreen").classList.remove("hidden");
+  $("gameTitle").textContent=names[game];
+  $("ending").classList.add("hidden");
+  $("world").className="world";
+  $("gameContent").innerHTML="";
 
-    /*
-      Intentionally empty.
-    */
-
+  if(game==="emoji"){
+    startEmoji();
+    return;
   }
-);
 
+  if(game==="forest"){
+    forestScene();
+    return;
+  }
+
+  let scenes={
+    coin:[
+      "🪙 Coin Dash Complete!",
+      "You collected the coins and reached the finish line!"
+    ],
+    brainrot:[
+      "🧠 Heist Complete!",
+      "You escaped with the brainrot!"
+    ],
+    space:[
+      "🚀 Space Escape Complete!",
+      "You safely escaped the space station!"
+    ],
+    gem:[
+      "💎 Gem Hunt Complete!",
+      "You found the hidden treasure!"
+    ],
+    pet:[
+      "🐶 Pet Race Complete!",
+      "Your pet crossed the finish line!"
+    ],
+    castle:[
+      "🏰 Castle Quest Complete!",
+      "You discovered the castle's secret room!"
+    ]
+  };
+
+  let scene=scenes[game];
+
+  $("gameContent").innerHTML=`
+    <div class="sceneText">
+      <h1>${names[game]}</h1>
+      <p>⭐ Mission area</p>
+      <p>This mission is ready for its ending cutscene.</p>
+      <button class="primary" id="finishMission">Finish Mission</button>
+    </div>
+  `;
+
+  $("finishMission").onclick=()=>{
+    addCoins(10);
+    showEnding(scene[0],scene[1]+" You earned 10 coins!");
+  };
+}
+
+function forestScene(){
+  $("world").classList.add("forest");
+
+  $("gameContent").innerHTML=`
+    <div class="sceneText">
+      <h1>🌲 Forest Adventure</h1>
+      <p>You walk through tall trees, pass bushes and mushrooms, and discover a glowing trail.</p>
+      <button class="primary" id="forestFinish">
+        Reach the Forest Clearing
+      </button>
+    </div>
+  `;
+
+  $("forestFinish").onclick=()=>{
+    addCoins(10);
+    showEnding(
+      "🌲 Forest Adventure Complete!",
+      "You reached the peaceful forest clearing and discovered a friendly woodland animal. You earned 10 coins!"
+    );
+  };
+}
+
+const rounds=[
+  ["🍔","👑",["burger king","burgerking"]],
+  ["🔥","🐶",["hot dog","hotdog"]],
+  ["🌙","🚶",["moonwalker","moon walker"]],
+  ["🌟","🐟",["starfish","star fish"]],
+  ["🦷","🧚",["tooth fairy","toothfairy"]],
+  ["🌧️","🧥",["raincoat","rain coat"]],
+  ["🧈","🪰",["butterfly","butter fly"]],
+  ["☀️","🌻",["sunflower","sun flower"]],
+  ["🎂","🎉",["birthday party","birthdayparty"]],
+  ["🐟","🍟",["fish and chips","fish chips","fish and chip"]]
+];
+
+function clean(text){
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[!?.,]/g,"")
+    .replace(/\s+/g," ");
+}
+
+function startEmoji(){
+  emojiIndex=0;
+  emojiLocked=false;
+  $("world").classList.add("emojiWorld");
+  renderEmoji();
+}
+
+function renderEmoji(){
+  let round=rounds[emojiIndex];
+
+  $("gameContent").innerHTML=`
+    <div class="emojiBox">
+      <h1>🧩 Emoji Combo</h1>
+      <p>Get the answer correct to unlock the next round.</p>
+      <p>🪙 5 coins per correct answer</p>
+
+      <div class="progress">
+        <div id="bar" class="bar"></div>
+      </div>
+
+      <h2>Round ${emojiIndex+1} of ${rounds.length}</h2>
+
+      <div class="pair">
+        <span>${round[0]}</span>
+        <b>+</b>
+        <span>${round[1]}</span>
+      </div>
+
+      <input
+        id="answer"
+        class="answer"
+        placeholder="What do they make?"
+        autocomplete="off"
+      >
+
+      <br>
+
+      <button id="guess" class="primary" style="margin-top:12px">
+        Guess
+      </button>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+    </div>
+  `;
+
+  $("bar").style.width=(emojiIndex/rounds.length*100)+"%";
+
+  $("guess").onclick=checkEmoji;
+
+  $("answer").onkeydown=event=>{
+    if(event.key==="Enter"){
+      checkEmoji();
+    }
+  };
+
+  $("answer").focus();
+}
+
+function checkEmoji(){
+  if(emojiLocked)return;
+
+  let input=$("answer");
+  let feedback=$("feedback");
+  let answer=clean(input.value);
+
+  if(!answer){
+    feedback.textContent="Type an answer first!";
+    return;
+  }
+
+  let correctAnswers=rounds[emojiIndex][2].map(clean);
+
+  if(correctAnswers.includes(answer)){
+    emojiLocked=true;
+    addCoins(5);
+
+    feedback.textContent="✅ Correct! +5 coins!";
+    input.disabled=true;
+    $("guess").disabled=true;
+
+    setTimeout(()=>{
+      emojiIndex++;
+
+      if(emojiIndex===rounds.length){
+        showEnding(
+          "🎉 Emoji Master!",
+          "You completed all 10 rounds and earned 50 coins!"
+        );
+      }else{
+        emojiLocked=false;
+        renderEmoji();
+      }
+    },700);
+  }else{
+    feedback.textContent="❌ Not correct yet. Try again!";
+    input.select();
+  }
+}
+
+function showEnding(title,text){
+  $("endingTitle").textContent=title;
+  $("endingText").textContent=text;
+  $("ending").classList.remove("hidden");
+}
+
+function backToHub(){
+  $("gameScreen").classList.add("hidden");
+  $("hub").classList.remove("hidden");
+  $("ending").classList.add("hidden");
+}
+
+$("backGame").onclick=backToHub;
+$("endingBack").onclick=backToHub;
+
+$("logoutBtn").onclick=()=>{
+  alert("You have been logged out of this demo.");
+  backToHub();
+};
 </script>
 
 </body>
